@@ -1,6 +1,6 @@
 # lowcode-antd-materials
 
-一个面向 PC 的业务组件库
+一个面向 PC 的业务组件库，基于Antd 5.x版本
 
 ## 调试
 启动调试
