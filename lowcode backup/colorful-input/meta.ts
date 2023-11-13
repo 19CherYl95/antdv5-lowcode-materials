@@ -8,7 +8,7 @@ const ColorfulInputMeta: IPublicTypeComponentMetadata = {
   "screenshot": "",
   "devMode": "proCode",
   "npm": {
-    "package": "lowcode-antd-materials",
+    "package": "antdv5-lowcode-materials",
     "version": "0.1.0",
     "exportName": "ColorfulInput",
     "main": "src\\index.tsx",

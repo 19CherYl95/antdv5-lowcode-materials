@@ -5,6 +5,15 @@ export default {
   componentName: 'Anchor.Link',
   title: '锚点链接',
   category: '其他',
+  devMode: 'proCode',
+  npm: {
+    package: 'antdv5-lowcode-materials',
+    version: '0.1.0',
+    exportName: 'Anchor',
+    main: 'src\\index.tsx',
+    destructuring: true,
+    subName: 'Link',
+  },
   props: [
     {
       name: 'href',

@@ -1,961 +1,497 @@
-
-import { IPublicTypeComponentMetadata, IPublicTypeSnippet } from '@alilc/lowcode-types';
-
-const ListMeta: IPublicTypeComponentMetadata = {
-  "componentName": "List",
-  "title": "List",
-  "docUrl": "",
-  "screenshot": "",
-  "devMode": "proCode",
-  "npm": {
-    "package": "lowcode-antd-materials",
-    "version": "0.1.0",
-    "exportName": "List",
-    "main": "src\\index.tsx",
-    "destructuring": true,
-    "subName": ""
-  },
-  "configure": {
-    "props": [
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "bordered",
-            "zh-CN": "bordered"
-          }
-        },
-        "name": "bordered",
-        "setter": {
-          "componentName": "BoolSetter",
-          "isRequired": false,
-          "initialValue": false
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "rootClassName",
-            "zh-CN": "rootClassName"
-          }
-        },
-        "name": "rootClassName",
-        "setter": {
-          "componentName": "StringSetter",
-          "isRequired": false,
-          "initialValue": ""
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "dataSource",
-            "zh-CN": "dataSource"
-          }
-        },
-        "name": "dataSource",
-        "setter": {
-          "componentName": "ArraySetter",
-          "props": {
-            "itemSetter": {
-              "componentName": "ObjectSetter",
-              "props": {
-                "config": {
-                  "extraSetter": {
-                    "componentName": "MixedSetter",
-                    "isRequired": false,
-                    "props": {}
-                  }
-                }
-              },
-              "isRequired": false,
-              "initialValue": {}
-            }
-          },
-          "initialValue": []
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "extra",
-            "zh-CN": "extra"
-          }
-        },
-        "name": "extra",
-        "setter": {
-          "componentName": "SlotSetter",
-          "props": {
-            "mode": "node"
-          },
-          "isRequired": false,
-          "initialValue": {
-            "type": "JSSlot",
-            "value": []
-          }
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "grid",
-            "zh-CN": "grid"
-          }
-        },
-        "name": "grid",
-        "setter": {
-          "componentName": "ObjectSetter",
-          "props": {
-            "config": {
-              "items": [
-                {
-                  "title": {
-                    "label": {
-                      "type": "i18n",
-                      "en-US": "gutter",
-                      "zh-CN": "gutter"
-                    }
-                  },
-                  "name": "gutter",
-                  "setter": {
-                    "componentName": "NumberSetter",
-                    "isRequired": false,
-                    "initialValue": 0
-                  }
-                },
-                {
-                  "title": {
-                    "label": {
-                      "type": "i18n",
-                      "en-US": "column",
-                      "zh-CN": "column"
-                    }
-                  },
-                  "name": "column",
-                  "setter": {
-                    "componentName": "NumberSetter",
-                    "isRequired": false,
-                    "initialValue": 0
-                  }
-                },
-                {
-                  "title": {
-                    "label": {
-                      "type": "i18n",
-                      "en-US": "xs",
-                      "zh-CN": "xs"
-                    }
-                  },
-                  "name": "xs",
-                  "setter": {
-                    "componentName": "NumberSetter",
-                    "isRequired": false,
-                    "initialValue": 0
-                  }
-                },
-                {
-                  "title": {
-                    "label": {
-                      "type": "i18n",
-                      "en-US": "sm",
-                      "zh-CN": "sm"
-                    }
-                  },
-                  "name": "sm",
-                  "setter": {
-                    "componentName": "NumberSetter",
-                    "isRequired": false,
-                    "initialValue": 0
-                  }
-                },
-                {
-                  "title": {
-                    "label": {
-                      "type": "i18n",
-                      "en-US": "md",
-                      "zh-CN": "md"
-                    }
-                  },
-                  "name": "md",
-                  "setter": {
-                    "componentName": "NumberSetter",
-                    "isRequired": false,
-                    "initialValue": 0
-                  }
-                },
-                {
-                  "title": {
-                    "label": {
-                      "type": "i18n",
-                      "en-US": "lg",
-                      "zh-CN": "lg"
-                    }
-                  },
-                  "name": "lg",
-                  "setter": {
-                    "componentName": "NumberSetter",
-                    "isRequired": false,
-                    "initialValue": 0
-                  }
-                },
-                {
-                  "title": {
-                    "label": {
-                      "type": "i18n",
-                      "en-US": "xl",
-                      "zh-CN": "xl"
-                    }
-                  },
-                  "name": "xl",
-                  "setter": {
-                    "componentName": "NumberSetter",
-                    "isRequired": false,
-                    "initialValue": 0
-                  }
-                },
-                {
-                  "title": {
-                    "label": {
-                      "type": "i18n",
-                      "en-US": "xxl",
-                      "zh-CN": "xxl"
-                    }
-                  },
-                  "name": "xxl",
-                  "setter": {
-                    "componentName": "NumberSetter",
-                    "isRequired": false,
-                    "initialValue": 0
-                  }
-                }
-              ],
-              "extraSetter": {
-                "componentName": "MixedSetter",
-                "isRequired": false,
-                "props": {}
-              }
-            }
-          }
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "id",
-            "zh-CN": "id"
-          }
-        },
-        "name": "id",
-        "setter": {
-          "componentName": "StringSetter",
-          "isRequired": false,
-          "initialValue": ""
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "itemLayout",
-            "zh-CN": "itemLayout"
-          }
-        },
-        "name": "itemLayout",
-        "setter": {
-          "componentName": "RadioGroupSetter",
-          "props": {
-            "dataSource": [
-              {
-                "label": "vertical",
-                "value": "vertical"
-              },
-              {
-                "label": "horizontal",
-                "value": "horizontal"
-              }
-            ],
-            "options": [
-              {
-                "label": "vertical",
-                "value": "vertical"
-              },
-              {
-                "label": "horizontal",
-                "value": "horizontal"
-              }
-            ]
-          },
-          "initialValue": "vertical"
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "loading",
-            "zh-CN": "loading"
-          }
-        },
-        "name": "loading",
-        "setter": {
-          "componentName": "MixedSetter",
-          "props": {
-            "setters": [
-              {
-                "componentName": "BoolSetter",
-                "isRequired": false,
-                "initialValue": false
-              },
-              {
-                "componentName": "ObjectSetter",
-                "props": {
-                  "config": {
-                    "items": [
-                      {
-                        "title": {
-                          "label": {
-                            "type": "i18n",
-                            "en-US": "prefixCls",
-                            "zh-CN": "prefixCls"
-                          }
-                        },
-                        "name": "prefixCls",
-                        "setter": {
-                          "componentName": "StringSetter",
-                          "isRequired": false,
-                          "initialValue": ""
-                        }
-                      },
-                      {
-                        "title": {
-                          "label": {
-                            "type": "i18n",
-                            "en-US": "className",
-                            "zh-CN": "className"
-                          }
-                        },
-                        "name": "className",
-                        "setter": {
-                          "componentName": "StringSetter",
-                          "isRequired": false,
-                          "initialValue": ""
-                        }
-                      },
-                      {
-                        "title": {
-                          "label": {
-                            "type": "i18n",
-                            "en-US": "rootClassName",
-                            "zh-CN": "rootClassName"
-                          }
-                        },
-                        "name": "rootClassName",
-                        "setter": {
-                          "componentName": "StringSetter",
-                          "isRequired": false,
-                          "initialValue": ""
-                        }
-                      },
-                      {
-                        "title": {
-                          "label": {
-                            "type": "i18n",
-                            "en-US": "spinning",
-                            "zh-CN": "spinning"
-                          }
-                        },
-                        "name": "spinning",
-                        "setter": {
-                          "componentName": "BoolSetter",
-                          "isRequired": false,
-                          "initialValue": false
-                        }
-                      },
-                      {
-                        "title": {
-                          "label": {
-                            "type": "i18n",
-                            "en-US": "style",
-                            "zh-CN": "style"
-                          }
-                        },
-                        "name": "style",
-                        "setter": {
-                          "componentName": "ObjectSetter",
-                          "props": {
-                            "config": {
-                              "extraSetter": {
-                                "componentName": "MixedSetter",
-                                "isRequired": false,
-                                "props": {}
-                              }
-                            }
-                          },
-                          "isRequired": false,
-                          "initialValue": {}
-                        }
-                      },
-                      {
-                        "title": {
-                          "label": {
-                            "type": "i18n",
-                            "en-US": "size",
-                            "zh-CN": "size"
-                          }
-                        },
-                        "name": "size",
-                        "setter": {
-                          "componentName": "RadioGroupSetter",
-                          "props": {
-                            "dataSource": [
-                              {
-                                "label": "large",
-                                "value": "large"
-                              },
-                              {
-                                "label": "small",
-                                "value": "small"
-                              },
-                              {
-                                "label": "default",
-                                "value": "default"
-                              }
-                            ],
-                            "options": [
-                              {
-                                "label": "large",
-                                "value": "large"
-                              },
-                              {
-                                "label": "small",
-                                "value": "small"
-                              },
-                              {
-                                "label": "default",
-                                "value": "default"
-                              }
-                            ]
-                          },
-                          "initialValue": "large"
-                        }
-                      },
-                      {
-                        "title": {
-                          "label": {
-                            "type": "i18n",
-                            "en-US": "tip",
-                            "zh-CN": "tip"
-                          }
-                        },
-                        "name": "tip",
-                        "setter": {
-                          "componentName": "SlotSetter",
-                          "props": {
-                            "mode": "node"
-                          },
-                          "isRequired": false,
-                          "initialValue": {
-                            "type": "JSSlot",
-                            "value": []
-                          }
-                        }
-                      },
-                      {
-                        "title": {
-                          "label": {
-                            "type": "i18n",
-                            "en-US": "delay",
-                            "zh-CN": "delay"
-                          }
-                        },
-                        "name": "delay",
-                        "setter": {
-                          "componentName": "NumberSetter",
-                          "isRequired": false,
-                          "initialValue": 0
-                        }
-                      },
-                      {
-                        "title": {
-                          "label": {
-                            "type": "i18n",
-                            "en-US": "wrapperClassName",
-                            "zh-CN": "wrapperClassName"
-                          }
-                        },
-                        "name": "wrapperClassName",
-                        "setter": {
-                          "componentName": "StringSetter",
-                          "isRequired": false,
-                          "initialValue": ""
-                        }
-                      },
-                      {
-                        "title": {
-                          "label": {
-                            "type": "i18n",
-                            "en-US": "indicator",
-                            "zh-CN": "indicator"
-                          }
-                        },
-                        "name": "indicator",
-                        "setter": {
-                          "componentName": "ObjectSetter",
-                          "props": {
-                            "config": {
-                              "extraSetter": {
-                                "componentName": "MixedSetter",
-                                "isRequired": false,
-                                "props": {}
-                              }
-                            }
-                          },
-                          "isRequired": false,
-                          "initialValue": {}
-                        }
-                      },
-                      {
-                        "title": {
-                          "label": {
-                            "type": "i18n",
-                            "en-US": "children",
-                            "zh-CN": "children"
-                          }
-                        },
-                        "name": "children",
-                        "setter": {
-                          "componentName": "SlotSetter",
-                          "props": {
-                            "mode": "node"
-                          },
-                          "isRequired": false,
-                          "initialValue": {
-                            "type": "JSSlot",
-                            "value": []
-                          }
-                        }
-                      },
-                      {
-                        "title": {
-                          "label": {
-                            "type": "i18n",
-                            "en-US": "fullscreen",
-                            "zh-CN": "fullscreen"
-                          }
-                        },
-                        "name": "fullscreen",
-                        "setter": {
-                          "componentName": "BoolSetter",
-                          "isRequired": false,
-                          "initialValue": false
-                        }
-                      }
-                    ],
-                    "extraSetter": {
-                      "componentName": "MixedSetter",
-                      "isRequired": false,
-                      "props": {}
-                    }
-                  }
-                }
-              }
-            ]
-          }
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "loadMore",
-            "zh-CN": "loadMore"
-          }
-        },
-        "name": "loadMore",
-        "setter": {
-          "componentName": "SlotSetter",
-          "props": {
-            "mode": "node"
-          },
-          "isRequired": false,
-          "initialValue": {
-            "type": "JSSlot",
-            "value": []
-          }
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "pagination",
-            "zh-CN": "pagination"
-          }
-        },
-        "name": "pagination",
-        "setter": {
-          "componentName": "MixedSetter",
-          "props": {
-            "setters": [
-              {
-                "componentName": "ObjectSetter",
-                "props": {
-                  "config": {
-                    "items": [
-                      {
-                        "title": {
-                          "label": {
-                            "type": "i18n",
-                            "en-US": "position",
-                            "zh-CN": "position"
-                          }
-                        },
-                        "name": "position",
-                        "setter": {
-                          "componentName": "RadioGroupSetter",
-                          "props": {
-                            "dataSource": [
-                              {
-                                "label": "top",
-                                "value": "top"
-                              },
-                              {
-                                "label": "bottom",
-                                "value": "bottom"
-                              },
-                              {
-                                "label": "both",
-                                "value": "both"
-                              }
-                            ],
-                            "options": [
-                              {
-                                "label": "top",
-                                "value": "top"
-                              },
-                              {
-                                "label": "bottom",
-                                "value": "bottom"
-                              },
-                              {
-                                "label": "both",
-                                "value": "both"
-                              }
-                            ]
-                          },
-                          "initialValue": "top"
-                        }
-                      },
-                      {
-                        "title": {
-                          "label": {
-                            "type": "i18n",
-                            "en-US": "align",
-                            "zh-CN": "align"
-                          }
-                        },
-                        "name": "align",
-                        "setter": {
-                          "componentName": "RadioGroupSetter",
-                          "props": {
-                            "dataSource": [
-                              {
-                                "label": "start",
-                                "value": "start"
-                              },
-                              {
-                                "label": "end",
-                                "value": "end"
-                              },
-                              {
-                                "label": "center",
-                                "value": "center"
-                              }
-                            ],
-                            "options": [
-                              {
-                                "label": "start",
-                                "value": "start"
-                              },
-                              {
-                                "label": "end",
-                                "value": "end"
-                              },
-                              {
-                                "label": "center",
-                                "value": "center"
-                              }
-                            ]
-                          },
-                          "initialValue": "start"
-                        }
-                      }
-                    ],
-                    "extraSetter": {
-                      "componentName": "MixedSetter",
-                      "isRequired": false,
-                      "props": {}
-                    }
-                  }
-                }
-              },
-              {
-                "componentName": "RadioGroupSetter",
-                "props": {
-                  "dataSource": [
-                    {
-                      "label": "false",
-                      "value": false
-                    }
-                  ],
-                  "options": [
-                    {
-                      "label": "false",
-                      "value": false
-                    }
-                  ]
-                },
-                "initialValue": false
-              }
-            ]
-          }
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "prefixCls",
-            "zh-CN": "prefixCls"
-          }
-        },
-        "name": "prefixCls",
-        "setter": {
-          "componentName": "StringSetter",
-          "isRequired": false,
-          "initialValue": ""
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "rowKey",
-            "zh-CN": "rowKey"
-          }
-        },
-        "name": "rowKey",
-        "setter": {
-          "componentName": "MixedSetter",
-          "props": {
-            "setters": [
-              {
-                "componentName": "FunctionSetter",
-                "isRequired": false
-              },
-              {
-                "componentName": "ObjectSetter",
-                "props": {
-                  "config": {
-                    "extraSetter": {
-                      "componentName": "MixedSetter",
-                      "isRequired": false,
-                      "props": {}
-                    }
-                  }
-                },
-                "isRequired": false,
-                "initialValue": {}
-              }
-            ]
-          }
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "renderItem",
-            "zh-CN": "renderItem"
-          }
-        },
-        "name": "renderItem",
-        "setter": {
-          "componentName": "FunctionSetter",
-          "isRequired": false
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "size",
-            "zh-CN": "size"
-          }
-        },
-        "name": "size",
-        "setter": {
-          "componentName": "RadioGroupSetter",
-          "props": {
-            "dataSource": [
-              {
-                "label": "large",
-                "value": "large"
-              },
-              {
-                "label": "small",
-                "value": "small"
-              },
-              {
-                "label": "default",
-                "value": "default"
-              }
-            ],
-            "options": [
-              {
-                "label": "large",
-                "value": "large"
-              },
-              {
-                "label": "small",
-                "value": "small"
-              },
-              {
-                "label": "default",
-                "value": "default"
-              }
-            ]
-          },
-          "initialValue": "large"
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "split",
-            "zh-CN": "split"
-          }
-        },
-        "name": "split",
-        "setter": {
-          "componentName": "BoolSetter",
-          "isRequired": false,
-          "initialValue": false
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "header",
-            "zh-CN": "header"
-          }
-        },
-        "name": "header",
-        "setter": {
-          "componentName": "SlotSetter",
-          "props": {
-            "mode": "node"
-          },
-          "isRequired": false,
-          "initialValue": {
-            "type": "JSSlot",
-            "value": []
-          }
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "footer",
-            "zh-CN": "footer"
-          }
-        },
-        "name": "footer",
-        "setter": {
-          "componentName": "SlotSetter",
-          "props": {
-            "mode": "node"
-          },
-          "isRequired": false,
-          "initialValue": {
-            "type": "JSSlot",
-            "value": []
-          }
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "locale",
-            "zh-CN": "locale"
-          }
-        },
-        "name": "locale",
-        "setter": {
-          "componentName": "ObjectSetter",
-          "props": {
-            "config": {
-              "items": [
-                {
-                  "title": {
-                    "label": {
-                      "type": "i18n",
-                      "en-US": "emptyText",
-                      "zh-CN": "emptyText"
-                    }
-                  },
-                  "name": "emptyText",
-                  "setter": {
-                    "componentName": "SlotSetter",
-                    "props": {
-                      "mode": "node"
-                    },
-                    "isRequired": true,
-                    "initialValue": {
-                      "type": "JSSlot",
-                      "value": []
-                    }
-                  }
-                }
-              ],
-              "extraSetter": {
-                "componentName": "MixedSetter",
-                "isRequired": false,
-                "props": {}
-              }
-            }
-          }
-        }
-      }
-    ],
-    "supports": {
-      "className": true,
-      "style": true
-    },
-    "component": {}
-  }
-};
-const snippets: IPublicTypeSnippet[] = [
-  {
-    "title": "List",
-    "screenshot": "",
-    "schema": {
-      "componentName": "List",
-      "props": {}
-    }
-  }
-];
+import snippets from './snippets';
 
 export default {
-  ...ListMeta,
-  snippets
+  snippets,
+  componentName: 'List',
+  title: '列表',
+  category: '数据展示',
+  devMode: 'proCode',
+  npm: {
+    package: 'antdv5-lowcode-materials',
+    version: '0.1.0',
+    exportName: 'List',
+    main: 'src\\index.tsx',
+    destructuring: true,
+    subName: '',
+  },
+  props: [
+    {
+      title: '数据源',
+      display: 'block',
+      type: 'group',
+      items: [
+        {
+          name: 'dataSource',
+          title: { label: '列表数据源', tip: '列表数据源' },
+          propType: { type: 'arrayOf', value: 'any' },
+          setter: ['JsonSetter', 'VariableSetter'],
+        },
+        {
+          name: 'loading',
+          title: {
+            label: '是否加载中',
+            tip: 'loading | 当卡片内容还在加载中时，可以用 loading 展示一个占位',
+          },
+          propType: 'bool',
+          defaultValue: false,
+          setter: ['BoolSetter', 'VariableSetter'],
+        },
+        {
+          name: 'rowKey',
+          title: {
+            label: '行Key',
+            tip: 'rowKey | 当 renderItem 自定义渲染列表项有效时，自定义每一行的 key 的获取方式',
+          },
+          propType: {
+            type: 'oneOfType',
+            value: ['string', 'function'],
+          },
+          defaultValue: 'id',
+          setter: [
+            'StringSetter',
+            {
+              componentName: 'FunctionSetter',
+              props: {
+                template:
+                  'rowKey(item,${extParams}){\n// 自定义每一行的 key\nreturn `key-${item.id}`;\n}',
+              },
+            },
+            'VariableSetter',
+          ],
+        },
+      ],
+    },
+    {
+      title: '外观',
+      display: 'block',
+      type: 'group',
+      items: [
+        {
+          name: 'itemLayout',
+          title: {
+            label: '尺寸',
+            tip: 'itemLayout  | 设置 List.Item 布局, 设置成 vertical 则竖直样式显示, 默认横排',
+          },
+          propType: { type: 'oneOf', value: ['horizontal', 'vertical'] },
+          defaultValue: 'horizontal',
+          setter: [
+            {
+              componentName: 'RadioGroupSetter',
+              props: {
+                options: [
+                  {
+                    title: '水平',
+                    value: 'horizontal',
+                  },
+                  {
+                    title: '垂直',
+                    value: 'vertical',
+                  },
+                ],
+              },
+            },
+            'VariableSetter',
+          ],
+        },
+        {
+          name: 'size',
+          title: { label: '尺寸', tip: 'size  | 列表的尺寸' },
+          propType: { type: 'oneOf', value: ['default', 'large', 'small'] },
+          defaultValue: 'default',
+          setter: [
+            {
+              componentName: 'RadioGroupSetter',
+              props: {
+                options: [
+                  {
+                    title: '默认',
+                    value: 'default',
+                  },
+                  {
+                    title: '大',
+                    value: 'large',
+                  },
+                  {
+                    title: '小',
+                    value: 'small',
+                  },
+                ],
+              },
+            },
+            'VariableSetter',
+          ],
+        },
+        {
+          name: 'bordered',
+          title: { label: '显示边框', tip: 'bordered | 是否展示边框' },
+          propType: 'bool',
+          defaultValue: true,
+          setter: 'BoolSetter',
+        },
+        {
+          name: 'split',
+          title: { label: '展示分割线', tip: 'split | 是否展示分割线' },
+          propType: 'bool',
+          defaultValue: true,
+          setter: 'BoolSetter',
+        },
+      ],
+    },
+    {
+      title: '栅格',
+      display: 'block',
+      type: 'group',
+      items: [
+        {
+          name: 'gridEnable',
+          title: { label: '启用栅格', tip: 'grid | 是否启用栅格' },
+          propType: 'bool',
+          setter: 'BoolSetter',
+          extraProps: {
+            setValue(target, value) {
+              if (value === false) {
+                const { node } = target;
+                node.setPropValue('grid', false);
+              }
+            },
+          },
+        },
+        {
+          name: 'grid.column',
+          title: { label: '列数', tip: 'grid.column | 栅格的列数' },
+          propType: 'number',
+          setter: 'NumberSetter',
+          defaultValue: 4,
+          condition: {
+            type: 'JSFunction',
+            value: 'target => !!target.getProps().getPropValue("gridEnable")',
+          },
+        },
+        {
+          name: 'grid.gutter',
+          title: { label: '间隔', tip: 'grid.gutter | 栅格的间隔' },
+          propType: 'number',
+          setter: 'NumberSetter',
+          defaultValue: 0,
+          condition: {
+            type: 'JSFunction',
+            value: 'target => !!target.getProps().getPropValue("gridEnable")',
+          },
+        },
+      ],
+    },
+    {
+      title: '分页',
+      display: 'block',
+      type: 'group',
+      items: [
+        {
+          name: 'pagination',
+          title: { label: '显示分页', tip: 'pagination | 显示分页' },
+          propType: 'object',
+          setter: 'BoolSetter',
+          extraProps: {
+            setValue: (target, value) => {
+              if (value) {
+                target.parent.setPropValue('pagination', {
+                  pageSize: 5,
+                });
+              }
+            },
+          },
+        },
+        {
+          name: 'pagination.pageSize',
+          title: { label: '每页条数', tip: 'pagination.pageSize | 每页条数' },
+          setter: 'NumberSetter',
+          condition: {
+            type: 'JSFunction',
+            value: 'target => !!target.getProps().getPropValue("pagination")',
+          },
+        },
+        {
+          name: 'pagination.total',
+          title: { label: '数据总数', tip: 'pagination.total | 数据总数' },
+          setter: 'NumberSetter',
+          condition: {
+            type: 'JSFunction',
+            value: 'target => !!target.getProps().getPropValue("pagination")',
+          },
+        },
+        // {
+        //   name: 'pagination.defaultCurrent',
+        //   title: {
+        //     label: '默认当前页',
+        //     tip: 'pagination.defaultCurrent | 默认的当前页数',
+        //   },
+        //   setter: [
+        //     {
+        //       componentName: 'NumberSetter',
+        //       props: {
+        //         initialValue: 1,
+        //       },
+        //     },
+        //     'VariableSetter',
+        //   ],
+        //   condition: {
+        //     type: 'JSFunction',
+        //     value: 'target => !!target.getProps().getPropValue("pagination")',
+        //   },
+        // },
+        {
+          name: 'pagination.current',
+          title: { label: '当前页数', tip: 'pagination.current | 当前页数' },
+          setter: 'NumberSetter',
+          condition: {
+            type: 'JSFunction',
+            value: 'target => !!target.getProps().getPropValue("pagination")',
+          },
+        },
+        {
+          name: 'pagination.showTotal',
+          title: {
+            label: '显示总数',
+            tip: 'pagination.showTotal | 用于显示数据总量和当前数据顺序',
+          },
+          propType: 'func',
+          setter: [
+            {
+              componentName: 'FunctionSetter',
+              props: {
+                template:
+                  'showTotal(total,range,${extParams}){\n// 用于格式化显示表格数据总量\nreturn `共 ${total} 条`;\n}',
+              },
+            },
+            'VariableSetter',
+          ],
+          condition: {
+            type: 'JSFunction',
+            value: 'target => !!target.getProps().getPropValue("pagination")',
+          },
+        },
+        {
+          name: 'pagination.showSizeChanger',
+          title: {
+            label: '页数切换',
+            tip: 'pagination.showSizeChanger | 是否展示 pageSize 切换器',
+          },
+          propType: 'bool',
+          setter: 'BoolSetter',
+          defaultValue: false,
+          condition: {
+            type: 'JSFunction',
+            value: 'target => !!target.getProps().getPropValue("pagination")',
+          },
+        },
+        {
+          name: 'pagination.showQuickJumper',
+          title: {
+            label: '快速跳转',
+            tip: 'pagination.showQuickJumper | 是否可以快速跳转至某页',
+          },
+          propType: 'bool',
+          setter: 'BoolSetter',
+          defaultValue: false,
+          condition: {
+            type: 'JSFunction',
+            value: 'target => !!target.getProps().getPropValue("pagination")',
+          },
+        },
+        {
+          name: 'pagination.simple',
+          title: { label: '简单分页', tip: 'pagination.simple | 简单分页' },
+          propType: 'bool',
+          setter: 'BoolSetter',
+          defaultValue: false,
+          condition: {
+            type: 'JSFunction',
+            value: 'target => !!target.getProps().getPropValue("pagination")',
+          },
+        },
+        {
+          name: 'pagination.size',
+          title: { label: '分页尺寸', tip: 'pagination.size | 分页尺寸' },
+          propType: {
+            type: 'oneOf',
+            value: ['default', 'small'],
+          },
+          setter: [
+            {
+              componentName: 'RadioGroupSetter',
+              props: {
+                options: [
+                  {
+                    title: '默认',
+                    value: 'default',
+                  },
+                  {
+                    title: '小',
+                    value: 'small',
+                  },
+                ],
+              },
+            },
+            'VariableSetter',
+          ],
+          defaultValue: 'default',
+          condition: {
+            type: 'JSFunction',
+            value: 'target => !!target.getProps().getPropValue("pagination")',
+          },
+        },
+        {
+          name: 'pagination.position',
+          title: { label: '分页位置', tip: 'pagination.position | 分页位置' },
+          setter: {
+            componentName: 'SelectSetter',
+            props: {
+              options: [
+                {
+                  title: '上',
+                  value: 'top',
+                },
+                {
+                  title: '下',
+                  value: 'bottom',
+                },
+                {
+                  title: '上下',
+                  value: 'both',
+                },
+              ],
+            },
+            initialValue: 'bottomRight',
+          },
+          condition: {
+            type: 'JSFunction',
+            value: 'target => !!target.getProps().getPropValue("pagination")',
+          },
+        },
+      ],
+    },
+    {
+      title: '扩展',
+      display: 'block',
+      type: 'group',
+      items: [
+        {
+          name: 'renderItem',
+          title: {
+            label: '渲染函数',
+            tip: 'renderItem | 当使用 dataSource 时，可以用 `renderItem` 自定义渲染列表项',
+          },
+          propType: 'func',
+          setter: [
+            {
+              componentName: 'SlotSetter',
+              title: '渲染函数插槽',
+              initialValue: {
+                type: 'JSSlot',
+                params: ['item'],
+                value: [
+                  {
+                    componentName: 'List.Item',
+                    props: {},
+                    children: {
+                      componentName: 'Typography.Text',
+                      props: {
+                        children: {
+                          type: 'JSExpression',
+                          value: 'this.item.text',
+                        },
+                      },
+                    },
+                  },
+                ],
+              },
+            },
+            {
+              componentName: 'FunctionSetter',
+              props: {
+                template: 'renderItem(item,${extParams}){\n// 自定义渲染列表项\nreturn `item`;\n}',
+              },
+            },
+            'VariableSetter',
+          ],
+        },
+        {
+          name: 'header',
+          title: {
+            label: '列表头部',
+            tip: 'header | 列表头部',
+          },
+          propType: 'node',
+          setter: {
+            componentName: 'SlotSetter',
+            initialValue: {
+              type: 'JSSlot',
+              value: [
+                {
+                  componentName: 'Typography.Text',
+                  props: {
+                    children: '列表头部',
+                  },
+                },
+              ],
+            },
+          },
+        },
+        {
+          name: 'footer',
+          title: {
+            label: '列表底部',
+            tip: 'footer | 列表底部',
+          },
+          propType: 'node',
+          setter: {
+            componentName: 'SlotSetter',
+            initialValue: {
+              type: 'JSSlot',
+              value: [
+                {
+                  componentName: 'Typography.Text',
+                  props: {
+                    children: '列表底部',
+                  },
+                },
+              ],
+            },
+          },
+        },
+        {
+          name: 'loadMore',
+          title: {
+            label: '加载更多',
+            tip: 'loadMore | 加载更多',
+          },
+          propType: 'node',
+          setter: {
+            componentName: 'SlotSetter',
+            initialValue: {
+              type: 'JSSlot',
+              value: [
+                {
+                  componentName: 'Button',
+                  props: {
+                    children: 'loading more',
+                  },
+                },
+              ],
+            },
+          },
+        },
+      ],
+    },
+  ],
+  configure: {
+    supports: {
+      style: true,
+      events: [
+        {
+          name: 'pagination.onChange',
+          template: 'onChange(page,pageSize,${extParams}){\n// 页码或 pageSize 改变的回调\n}',
+        },
+      ],
+    },
+  },
 };

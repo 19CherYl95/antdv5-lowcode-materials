@@ -1,590 +1,219 @@
+import { uuid } from '../_utils/utils';
 
-import { IPublicTypeComponentMetadata, IPublicTypeSnippet } from '@alilc/lowcode-types';
-
-const CollapseMeta: IPublicTypeComponentMetadata = {
-  "componentName": "Collapse",
-  "title": "Collapse",
-  "docUrl": "",
-  "screenshot": "",
-  "devMode": "proCode",
-  "npm": {
-    "package": "lowcode-antd-materials",
-    "version": "0.1.0",
-    "exportName": "Collapse",
-    "main": "src\\index.tsx",
-    "destructuring": true,
-    "subName": ""
-  },
-  "configure": {
-    "props": [
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "activeKey",
-            "zh-CN": "activeKey"
-          }
-        },
-        "name": "activeKey",
-        "setter": {
-          "componentName": "MixedSetter",
-          "props": {
-            "setters": [
-              {
-                "componentName": "StringSetter",
-                "isRequired": false,
-                "initialValue": ""
-              },
-              {
-                "componentName": "NumberSetter",
-                "isRequired": false,
-                "initialValue": 0
-              },
-              {
-                "componentName": "ArraySetter",
-                "props": {
-                  "itemSetter": {
-                    "componentName": "MixedSetter",
-                    "props": {
-                      "setters": [
-                        {
-                          "componentName": "StringSetter",
-                          "isRequired": false,
-                          "initialValue": ""
-                        },
-                        {
-                          "componentName": "NumberSetter",
-                          "isRequired": false,
-                          "initialValue": 0
-                        }
-                      ]
-                    }
-                  }
-                },
-                "initialValue": []
-              }
-            ]
-          }
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "defaultActiveKey",
-            "zh-CN": "defaultActiveKey"
-          }
-        },
-        "name": "defaultActiveKey",
-        "setter": {
-          "componentName": "MixedSetter",
-          "props": {
-            "setters": [
-              {
-                "componentName": "StringSetter",
-                "isRequired": false,
-                "initialValue": ""
-              },
-              {
-                "componentName": "NumberSetter",
-                "isRequired": false,
-                "initialValue": 0
-              },
-              {
-                "componentName": "ArraySetter",
-                "props": {
-                  "itemSetter": {
-                    "componentName": "MixedSetter",
-                    "props": {
-                      "setters": [
-                        {
-                          "componentName": "StringSetter",
-                          "isRequired": false,
-                          "initialValue": ""
-                        },
-                        {
-                          "componentName": "NumberSetter",
-                          "isRequired": false,
-                          "initialValue": 0
-                        }
-                      ]
-                    }
-                  }
-                },
-                "initialValue": []
-              }
-            ]
-          }
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "accordion",
-            "zh-CN": "手风琴效果"
-          },
-          "tip": "accordion | 手风琴效果"
-        },
-        "name": "accordion",
-        "description": "手风琴效果",
-        "setter": {
-          "componentName": "BoolSetter",
-          "isRequired": false,
-          "initialValue": false
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "destroyInactivePanel",
-            "zh-CN": "destroyInactivePanel"
-          }
-        },
-        "name": "destroyInactivePanel",
-        "setter": {
-          "componentName": "BoolSetter",
-          "isRequired": false,
-          "initialValue": false
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "onChange",
-            "zh-CN": "onChange"
-          }
-        },
-        "name": "onChange",
-        "setter": {
-          "componentName": "FunctionSetter"
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "rootClassName",
-            "zh-CN": "rootClassName"
-          }
-        },
-        "name": "rootClassName",
-        "setter": {
-          "componentName": "StringSetter",
-          "isRequired": false,
-          "initialValue": ""
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "bordered",
-            "zh-CN": "bordered"
-          }
-        },
-        "name": "bordered",
-        "setter": {
-          "componentName": "BoolSetter",
-          "isRequired": false,
-          "initialValue": false
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "prefixCls",
-            "zh-CN": "prefixCls"
-          }
-        },
-        "name": "prefixCls",
-        "setter": {
-          "componentName": "StringSetter",
-          "isRequired": false,
-          "initialValue": ""
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "expandIcon",
-            "zh-CN": "expandIcon"
-          }
-        },
-        "name": "expandIcon",
-        "setter": {
-          "componentName": "FunctionSetter"
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "expandIconPosition",
-            "zh-CN": "expandIconPosition"
-          }
-        },
-        "name": "expandIconPosition",
-        "setter": {
-          "componentName": "SelectSetter",
-          "props": {
-            "dataSource": [
-              {
-                "label": "start",
-                "value": "start"
-              },
-              {
-                "label": "end",
-                "value": "end"
-              },
-              {
-                "label": "left",
-                "value": "left"
-              },
-              {
-                "label": "right",
-                "value": "right"
-              }
-            ],
-            "options": [
-              {
-                "label": "start",
-                "value": "start"
-              },
-              {
-                "label": "end",
-                "value": "end"
-              },
-              {
-                "label": "left",
-                "value": "left"
-              },
-              {
-                "label": "right",
-                "value": "right"
-              }
-            ]
-          },
-          "initialValue": "start"
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "ghost",
-            "zh-CN": "ghost"
-          }
-        },
-        "name": "ghost",
-        "setter": {
-          "componentName": "BoolSetter",
-          "isRequired": false,
-          "initialValue": false
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "size",
-            "zh-CN": "size"
-          }
-        },
-        "name": "size",
-        "setter": {
-          "componentName": "RadioGroupSetter",
-          "props": {
-            "dataSource": [
-              {
-                "label": "large",
-                "value": "large"
-              },
-              {
-                "label": "small",
-                "value": "small"
-              },
-              {
-                "label": "middle",
-                "value": "middle"
-              }
-            ],
-            "options": [
-              {
-                "label": "large",
-                "value": "large"
-              },
-              {
-                "label": "small",
-                "value": "small"
-              },
-              {
-                "label": "middle",
-                "value": "middle"
-              }
-            ]
-          },
-          "initialValue": "large"
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "collapsible",
-            "zh-CN": "collapsible"
-          }
-        },
-        "name": "collapsible",
-        "setter": {
-          "componentName": "RadioGroupSetter",
-          "props": {
-            "dataSource": [
-              {
-                "label": "icon",
-                "value": "icon"
-              },
-              {
-                "label": "disabled",
-                "value": "disabled"
-              },
-              {
-                "label": "header",
-                "value": "header"
-              }
-            ],
-            "options": [
-              {
-                "label": "icon",
-                "value": "icon"
-              },
-              {
-                "label": "disabled",
-                "value": "disabled"
-              },
-              {
-                "label": "header",
-                "value": "header"
-              }
-            ]
-          },
-          "initialValue": "icon"
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "children",
-            "zh-CN": "@deprecate"
-          },
-          "tip": "children | @deprecated use `items` instead"
-        },
-        "name": "children",
-        "description": "@deprecated use `items` instead",
-        "setter": {
-          "componentName": "SlotSetter",
-          "props": {
-            "mode": "node"
-          },
-          "isRequired": false,
-          "initialValue": {
-            "type": "JSSlot",
-            "value": []
-          }
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "items",
-            "zh-CN": "Collapse i"
-          },
-          "tip": "items | Collapse items content"
-        },
-        "name": "items",
-        "description": "Collapse items content",
-        "setter": {
-          "componentName": "ArraySetter",
-          "props": {
-            "itemSetter": {
-              "componentName": "ObjectSetter",
-              "props": {
-                "config": {
-                  "items": [
-                    {
-                      "title": {
-                        "label": {
-                          "type": "i18n",
-                          "en-US": "key",
-                          "zh-CN": "key"
-                        }
-                      },
-                      "name": "key",
-                      "setter": {
-                        "componentName": "MixedSetter",
-                        "props": {
-                          "setters": [
-                            {
-                              "componentName": "StringSetter",
-                              "isRequired": false,
-                              "initialValue": ""
-                            },
-                            {
-                              "componentName": "NumberSetter",
-                              "isRequired": false,
-                              "initialValue": 0
-                            }
-                          ]
-                        }
-                      }
-                    },
-                    {
-                      "title": {
-                        "label": {
-                          "type": "i18n",
-                          "en-US": "label",
-                          "zh-CN": "label"
-                        }
-                      },
-                      "name": "label",
-                      "setter": {
-                        "componentName": "SlotSetter",
-                        "props": {
-                          "mode": "node"
-                        },
-                        "isRequired": false,
-                        "initialValue": {
-                          "type": "JSSlot",
-                          "value": []
-                        }
-                      }
-                    },
-                    {
-                      "title": {
-                        "label": {
-                          "type": "i18n",
-                          "en-US": "ref",
-                          "zh-CN": "ref"
-                        }
-                      },
-                      "name": "ref",
-                      "setter": {
-                        "componentName": "ObjectSetter",
-                        "props": {
-                          "config": {
-                            "extraSetter": {
-                              "componentName": "MixedSetter",
-                              "isRequired": false,
-                              "props": {}
-                            }
-                          }
-                        },
-                        "isRequired": false,
-                        "initialValue": {}
-                      }
-                    }
-                  ],
-                  "extraSetter": {
-                    "componentName": "MixedSetter",
-                    "isRequired": false,
-                    "props": {}
-                  }
-                }
-              }
-            }
-          },
-          "initialValue": []
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "ref",
-            "zh-CN": "ref"
-          }
-        },
-        "name": "ref",
-        "setter": {
-          "componentName": "MixedSetter",
-          "props": {
-            "setters": [
-              {
-                "componentName": "FunctionSetter"
-              },
-              {
-                "componentName": "ObjectSetter",
-                "props": {
-                  "config": {
-                    "extraSetter": {
-                      "componentName": "MixedSetter",
-                      "isRequired": false,
-                      "props": {}
-                    }
-                  }
-                },
-                "isRequired": false,
-                "initialValue": {}
-              }
-            ]
-          }
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "key",
-            "zh-CN": "key"
-          }
-        },
-        "name": "key",
-        "setter": {
-          "componentName": "MixedSetter",
-          "props": {
-            "setters": [
-              {
-                "componentName": "StringSetter",
-                "isRequired": false,
-                "initialValue": ""
-              },
-              {
-                "componentName": "NumberSetter",
-                "isRequired": false,
-                "initialValue": 0
-              }
-            ]
-          }
-        }
-      }
-    ],
-    "supports": {
-      "style": true,
-      "className": true
-    },
-    "component": {
-      "isContainer": true
-    }
-  }
-};
-const snippets: IPublicTypeSnippet[] = [
-  {
-    "title": "Collapse",
-    "screenshot": "",
-    "schema": {
-      "componentName": "Collapse",
-      "props": {}
-    }
-  }
-];
+import snippets from './snippets';
 
 export default {
-  ...CollapseMeta,
-  snippets
+  snippets,
+  componentName: 'Collapse',
+  title: '折叠面板',
+  category: '数据展示',
+  devMode: 'proCode',
+  npm: {
+    package: 'antdv5-lowcode-materials',
+    version: '0.1.0',
+    exportName: 'Collapse',
+    main: 'src\\index.tsx',
+    destructuring: true,
+    subName: '',
+  },
+  props: [
+    {
+      name: 'bordered',
+      title: { label: '显示边框', tip: '带边框风格的折叠面板' },
+      propType: 'bool',
+      defaultValue: true,
+      setter: 'BoolSetter',
+      supportVariable: true
+    },
+    {
+      name: 'accordion',
+      title: { label: '手风琴模式', tip: '手风琴模式' },
+      propType: 'bool',
+      defaultValue: false,
+      setter: 'BoolSetter',
+      supportVariable: true
+    },
+    {
+      name: 'collapsible',
+      title: '可折叠触发区域',
+      propType: {
+        type: 'oneOf',
+        value: ['-', 'header', 'disabled'],
+      },
+    },
+    // {
+    //   name: 'expandIcon',
+    //   title: { label: '自定义切换图标', tip: '自定义切换图标' },
+    //   propType: 'func',
+    // },
+    {
+      name: 'expandIconPosition',
+      title: { label: '图标位置', tip: '设置图标位置' },
+      propType: { type: 'oneOf', value: ['left', 'right'] },
+    },
+    {
+      name: 'destroyInactivePanel',
+      title: { label: '隐藏时销毁', tip: '销毁折叠隐藏的面板' },
+      propType: 'bool',
+      defaultValue: false,
+      setter: 'BoolSetter',
+      supportVariable: true
+    },
+    {
+      name: 'ghost',
+      title: { label: '透明无边框', tip: '使折叠面板透明且无边框' },
+      propType: 'bool',
+      defaultValue: false,
+      setter: 'BoolSetter',
+      supportVariable: true
+    },
+    {
+      name: 'collapses',
+      title: '折叠项',
+      setter: {
+        componentName: 'ArraySetter',
+        props: {
+          itemSetter: {
+            componentName: 'ObjectSetter',
+            props: {
+              config: {
+                items: [
+                  {
+                    name: 'key',
+                    title: 'key',
+                    setter: 'StringSetter',
+                    initialValue: (val) => val || uuid()
+                  },
+                  {
+                    name: 'header',
+                    title: '面板头内容',
+                    setter: 'StringSetter',
+                    initialValue: '折叠项'
+                  },
+                ],
+              },
+            },
+            initialValue: () => {
+              return {
+                key: uuid(),
+                header: '折叠项',
+                showArrow: true,
+                collapsible: undefined,
+                forceRender: false,
+              };
+            },
+          },
+        },
+      },
+      extraProps: {
+        getValue(target, fieldValue) {
+          console.log('getValue', target.node.children.length);
+          const map = target.node.children.map((child) => {
+            const key = child.getPropValue('key') ? String(child.getPropValue('key')) : child.id;
+            return {
+              key,
+              header: child.getPropValue('header'),
+              showArrow: child.getPropValue('showArrow'),
+              collapsible: child.getPropValue('collapsible'),
+              forceRender: child.getPropValue('forceRender'),
+            };
+          });
+          return map;
+        },
+        setValue(target, value) {
+          const { node } = target;
+          const map = {};
+
+          // console.log('setValue',value);
+
+          if (!Array.isArray(value)) {
+            value = [];
+          }
+          value.forEach((item) => {
+            const tabItem = Object.assign({}, item);
+            map[item.key] = tabItem;
+          });
+
+          node.children.mergeChildren(
+            (child) => {
+              const key = String(child.getPropValue('key'));
+              if (Object.hasOwnProperty.call(map, key)) {
+                child.setPropValue('header', map[key].header);
+                child.setPropValue('showArrow', map[key].showArrow);
+                child.setPropValue('collapsible', map[key].collapsible);
+                child.setPropValue('forceRender', map[key].forceRender);
+                delete map[key];
+                return false;
+              }
+              return true;
+            },
+            () => {
+              const items = [];
+              for (const key in map) {
+                if (Object.hasOwnProperty.call(map, key)) {
+                  items.push({
+                    componentName: 'Collapse.Panel',
+                    props: map[key],
+                  });
+                }
+              }
+              return items;
+            },
+            (child1, child2) => {
+              const a = value.findIndex(
+                (item) => String(item.key) === String(child1.getPropValue('key')),
+              );
+              const b = value.findIndex(
+                (item) => String(item.key) === String(child2.getPropValue('key')),
+              );
+              return a - b;
+            },
+          );
+        },
+      },
+    },
+    {
+      name: 'defaultActiveKey',
+      title: { label: '初始化选中面板的 key', tip: '初始化选中面板的 key' },
+      propType: {
+        type: 'oneOfType',
+        value: [
+          'string',
+          { type: 'arrayOf', value: 'string' },
+          'number',
+          { type: 'arrayOf', value: 'number' },
+        ],
+      },
+    },
+    {
+      name: 'activeKey',
+      title: {
+        label: '当前激活 tab 面板的 key',
+        tip: '当前激活 tab 面板的 key',
+      },
+      propType: {
+        type: 'oneOfType',
+        value: [
+          'string',
+          { type: 'arrayOf', value: 'string' },
+          'number',
+          { type: 'arrayOf', value: 'number' },
+        ],
+      },
+    },
+  ],
+  configure: {
+    supports: {
+      style: true,
+      events: [
+        {
+          name: 'onChange',
+          template: "onChange(${extParams}){\n// 切换面板的回调\nconsole.log('onChange');}",
+        },
+      ],
+    },
+    component: {
+      isContainer: true,
+    },
+  },
 };

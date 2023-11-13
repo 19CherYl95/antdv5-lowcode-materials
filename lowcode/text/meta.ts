@@ -8,7 +8,7 @@ const TextMeta: IPublicTypeComponentMetadata = {
   "screenshot": "",
   "devMode": "proCode",
   "npm": {
-    "package": "lowcode-antd-materials",
+    "package": "antdv5-lowcode-materials",
     "version": "0.1.0",
     "exportName": "Typography",
     "main": "src\\index.tsx",

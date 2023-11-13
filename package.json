@@ -1,7 +1,7 @@
 {
-  "name": "lowcode-antd-materials",
+  "name": "antdv5-lowcode-materials",
   "version": "0.1.0",
-  "description": "lowcode-antd-materials",
+  "description": "antdv5-lowcode-materials",
   "main": "lib/index.js",
   "module": "es/index.js",
   "exports": {
@@ -71,6 +71,7 @@
     "f2elint": "^1.2.0"
   },
   "dependencies": {
+    "@ant-design/icons": "^5.2.6",
     "antd": "^5.11.1",
     "moment": "^2.29.4",
     "prop-types": "^15.5.8",

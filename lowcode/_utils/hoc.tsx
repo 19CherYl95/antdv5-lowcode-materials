@@ -1,4 +1,4 @@
-import React, { ComponentType, ReactNode, useState } from 'react';
+import React, { ComponentType, ReactNode, useState, createElement } from 'react';
 import moment from 'moment';
 import { get, set, has } from './utils';
 
@@ -8,7 +8,7 @@ function convertProps(
   mapper: (v: any, key: string) => any,
 ) {
   const out: Record<string, any> = {};
-  list.forEach(key => {
+  list.forEach((key) => {
     if (has(props, key)) {
       set(out, key, mapper(get(props, key), key));
     }
@@ -30,12 +30,9 @@ export function withWrap(Comp: ComponentType<any>) {
  * 某些组件会用React.Children.only检查子节点
  * 需要做处理避免报错
  */
-export function withSingleChild(
-  Comp: ComponentType<any>,
-  needsConvert = ['children'],
-) {
+export function withSingleChild(Comp: ComponentType<any>, needsConvert = ['children']) {
   return (props: any) => {
-    const convertedProps = convertProps(props, needsConvert, prop => {
+    const convertedProps = convertProps(props, needsConvert, (prop) => {
       let node = React.Children.toArray(prop)[0];
       if (node === null || typeof node !== 'object') {
         node = <div>{node}</div>;
@@ -55,11 +52,7 @@ export function withSingleFunctionChild(Comp: ComponentType<any>) {
     if (typeof children === 'function') {
       node = children;
     }
-    if (
-      Array.isArray(children) &&
-      children.length === 1 &&
-      typeof children[0] === 'function'
-    ) {
+    if (Array.isArray(children) && children.length === 1 && typeof children[0] === 'function') {
       node = children[0];
     }
 
@@ -79,10 +72,10 @@ export function withMomentProps(
   needsConvert = ['value', 'defaultValue'],
 ) {
   return (props: any) => {
-    const convertedProps = convertProps(props, needsConvert, prop => {
+    const convertedProps = convertProps(props, needsConvert, (prop) => {
       if (prop) {
         if (Array.isArray(prop)) {
-          return prop.map(v => (moment.isMoment(v) ? v : moment(v)));
+          return prop.map((v) => (moment.isMoment(v) ? v : moment(v)));
         }
         return moment.isMoment(prop) ? prop : moment(prop);
       }

@@ -96,7 +96,7 @@ export { Timeline } from 'antd';
 
 export { Tooltip } from 'antd';
 
-export { Typography } from 'antd';
+// export { Typography } from 'antd';
 
 export { version } from 'antd';
 
@@ -143,3 +143,5 @@ export { default as Select } from './components/select';
 export { default as Cascader } from './components/cascader';
 
 export { default as AutoComplete } from './components/auto-complete';
+
+export { default as Typography } from './components/typography';

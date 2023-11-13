@@ -1,209 +1,69 @@
-
-import { IPublicTypeComponentMetadata, IPublicTypeSnippet } from '@alilc/lowcode-types';
-
-const DividerMeta: IPublicTypeComponentMetadata = {
-  "componentName": "Divider",
-  "title": "Divider",
-  "docUrl": "",
-  "screenshot": "",
-  "devMode": "proCode",
-  "npm": {
-    "package": "lowcode-antd-materials",
-    "version": "0.1.0",
-    "exportName": "Divider",
-    "main": "src\\index.tsx",
-    "destructuring": true,
-    "subName": ""
-  },
-  "configure": {
-    "props": [
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "prefixCls",
-            "zh-CN": "prefixCls"
-          }
-        },
-        "name": "prefixCls",
-        "setter": {
-          "componentName": "StringSetter",
-          "isRequired": false,
-          "initialValue": ""
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "type",
-            "zh-CN": "type"
-          }
-        },
-        "name": "type",
-        "setter": {
-          "componentName": "RadioGroupSetter",
-          "props": {
-            "dataSource": [
-              {
-                "label": "vertical",
-                "value": "vertical"
-              },
-              {
-                "label": "horizontal",
-                "value": "horizontal"
-              }
-            ],
-            "options": [
-              {
-                "label": "vertical",
-                "value": "vertical"
-              },
-              {
-                "label": "horizontal",
-                "value": "horizontal"
-              }
-            ]
-          },
-          "initialValue": "vertical"
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "orientation",
-            "zh-CN": "orientation"
-          }
-        },
-        "name": "orientation",
-        "setter": {
-          "componentName": "RadioGroupSetter",
-          "props": {
-            "dataSource": [
-              {
-                "label": "left",
-                "value": "left"
-              },
-              {
-                "label": "right",
-                "value": "right"
-              },
-              {
-                "label": "center",
-                "value": "center"
-              }
-            ],
-            "options": [
-              {
-                "label": "left",
-                "value": "left"
-              },
-              {
-                "label": "right",
-                "value": "right"
-              },
-              {
-                "label": "center",
-                "value": "center"
-              }
-            ]
-          },
-          "initialValue": "left"
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "orientationMargin",
-            "zh-CN": "orientationMargin"
-          }
-        },
-        "name": "orientationMargin",
-        "setter": {
-          "componentName": "MixedSetter",
-          "props": {
-            "setters": [
-              {
-                "componentName": "StringSetter",
-                "isRequired": false,
-                "initialValue": ""
-              },
-              {
-                "componentName": "NumberSetter",
-                "isRequired": false,
-                "initialValue": 0
-              }
-            ]
-          }
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "rootClassName",
-            "zh-CN": "rootClassName"
-          }
-        },
-        "name": "rootClassName",
-        "setter": {
-          "componentName": "StringSetter",
-          "isRequired": false,
-          "initialValue": ""
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "dashed",
-            "zh-CN": "dashed"
-          }
-        },
-        "name": "dashed",
-        "setter": {
-          "componentName": "BoolSetter",
-          "isRequired": false,
-          "initialValue": false
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "plain",
-            "zh-CN": "plain"
-          }
-        },
-        "name": "plain",
-        "setter": {
-          "componentName": "BoolSetter",
-          "isRequired": false,
-          "initialValue": false
-        }
-      }
-    ],
-    "supports": {
-      "className": true,
-      "style": true
-    },
-    "component": {}
-  }
-};
-const snippets: IPublicTypeSnippet[] = [
-  {
-    "title": "Divider",
-    "screenshot": "",
-    "schema": {
-      "componentName": "Divider",
-      "props": {}
-    }
-  }
-];
+import snippets from './snippets';
 
 export default {
-  ...DividerMeta,
-  snippets
+  snippets,
+  componentName: 'Divider',
+  title: '分割线',
+  category: '布局',
+  devMode: 'proCode',
+  npm: {
+    package: 'antdv5-lowcode-materials',
+    version: '0.1.0',
+    exportName: 'Divider',
+    main: 'src\\index.tsx',
+    destructuring: true,
+    subName: '',
+  },
+  props: [
+    {
+      name: 'className',
+      title: { label: '分割线样式类', tip: '分割线样式类' },
+      propType: 'string',
+    },
+    {
+      name: 'dashed',
+      title: { label: '是否虚线', tip: '是否虚线' },
+      propType: 'bool',
+      defaultValue: false,
+    },
+    {
+      name: 'orientation',
+      title: { label: '标题位置', tip: '分割线标题的位置' },
+      propType: { type: 'oneOf', value: ['left', 'right', 'center'] },
+    },
+    {
+      name: 'orientationMargin',
+      title: {
+        label: '标题边距',
+        tip:
+          '标题和最近 left/right 边框之间的距离，去除了分割线，同时 orientation 必须为 left 或 right',
+      },
+      propType: { type: 'oneOfType', value: ['string', 'number'] },
+    },
+    {
+      name: 'style',
+      title: { label: '分割线样式对象', tip: '分割线样式对象' },
+      propType: 'object',
+    },
+    {
+      name: 'type',
+      title: { label: '方向', tip: '水平还是垂直类型' },
+      propType: { type: 'oneOf', value: ['horizontal', 'vertical'] },
+    },
+    {
+      name: 'plain',
+      title: {
+        label: '普通正文样式',
+        tip: '文字是否显示为普通正文样式',
+      },
+      propType: 'bool',
+      defaultValue: false,
+    },
+  ],
+  configure: {
+    component: {
+      isContainer: true,
+    },
+    supports: { style: true, className: true },
+  },
 };

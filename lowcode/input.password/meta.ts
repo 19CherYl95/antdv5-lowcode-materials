@@ -5,13 +5,14 @@ export default {
   componentName: 'Input.Password',
   title: '密码框',
   category: '表单',
+  devMode: 'proCode',
   npm: {
-    package: 'lowcode-antd-materials',
+    package: 'antdv5-lowcode-materials',
     version: '0.1.0',
-    exportName: 'Input.Password',
+    exportName: 'Input',
     main: 'src\\index.tsx',
     destructuring: true,
-    subName: '',
+    subName: 'Password',
   },
   props: [
     {
@@ -37,28 +38,28 @@ export default {
       title: { label: '显示边框', tip: '是否有边框' },
       propType: 'bool',
       defaultValue: true,
-      setter: 'BoolSetter'
+      setter: 'BoolSetter',
     },
     {
       name: 'disabled',
       title: { label: '是否禁用', tip: '是否为禁用状态' },
       propType: 'bool',
       defaultValue: false,
-      setter: 'BoolSetter'
+      setter: 'BoolSetter',
     },
     {
       name: 'visibilityToggle',
       title: { label: '切换按钮', tip: '是否显示切换按钮' },
       propType: 'bool',
       defaultValue: true,
-      setter: 'BoolSetter'
+      setter: 'BoolSetter',
     },
     {
       name: 'placeholder',
       title: { label: '占位提示', tip: '占位提示' },
       propType: 'string',
       defaultValue: '请输入',
-      setter: 'StringSetter'
+      setter: 'StringSetter',
     },
     // {
     //   name: 'id',
@@ -69,7 +70,7 @@ export default {
       name: 'maxLength',
       title: { label: '最大长度', tip: '最大长度' },
       propType: 'number',
-      setter: 'NumberSetter'
+      setter: 'NumberSetter',
     },
     {
       name: 'size',

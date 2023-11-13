@@ -5,6 +5,15 @@ export default {
   componentName: 'Avatar',
   title: '头像',
   category: '数据展示',
+  devMode: 'proCode',
+  npm: {
+    package: 'antdv5-lowcode-materials',
+    version: '0.1.0',
+    exportName: 'Avatar',
+    main: 'src\\index.tsx',
+    destructuring: true,
+    subName: '',
+  },
   props: [
     {
       name: 'icon',

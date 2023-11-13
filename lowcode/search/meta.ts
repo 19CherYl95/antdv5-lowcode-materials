@@ -8,7 +8,7 @@ const SearchMeta: IPublicTypeComponentMetadata = {
   "screenshot": "",
   "devMode": "proCode",
   "npm": {
-    "package": "lowcode-antd-materials",
+    "package": "antdv5-lowcode-materials",
     "version": "0.1.0",
     "exportName": "Transfer",
     "main": "src\\index.tsx",

@@ -7,7 +7,7 @@ export default {
   category: '导航',
   devMode: 'proCode',
   npm: {
-    package: 'lowcode-antd-materials',
+    package: 'antdv5-lowcode-materials',
     version: '0.1.0',
     exportName: 'Affix',
     main: 'src\\index.tsx',

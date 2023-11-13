@@ -1,357 +1,120 @@
-
-import { IPublicTypeComponentMetadata, IPublicTypeSnippet } from '@alilc/lowcode-types';
-
-const SwitchMeta: IPublicTypeComponentMetadata = {
-  "componentName": "Switch",
-  "title": "Switch",
-  "docUrl": "",
-  "screenshot": "",
-  "devMode": "proCode",
-  "npm": {
-    "package": "lowcode-antd-materials",
-    "version": "0.1.0",
-    "exportName": "Switch",
-    "main": "src\\index.tsx",
-    "destructuring": true,
-    "subName": ""
-  },
-  "configure": {
-    "props": [
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "prefixCls",
-            "zh-CN": "prefixCls"
-          }
-        },
-        "name": "prefixCls",
-        "setter": {
-          "componentName": "StringSetter",
-          "isRequired": false,
-          "initialValue": ""
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "size",
-            "zh-CN": "size"
-          }
-        },
-        "name": "size",
-        "setter": {
-          "componentName": "RadioGroupSetter",
-          "props": {
-            "dataSource": [
-              {
-                "label": "small",
-                "value": "small"
-              },
-              {
-                "label": "default",
-                "value": "default"
-              }
-            ],
-            "options": [
-              {
-                "label": "small",
-                "value": "small"
-              },
-              {
-                "label": "default",
-                "value": "default"
-              }
-            ]
-          },
-          "initialValue": "small"
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "rootClassName",
-            "zh-CN": "rootClassName"
-          }
-        },
-        "name": "rootClassName",
-        "setter": {
-          "componentName": "StringSetter",
-          "isRequired": false,
-          "initialValue": ""
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "checked",
-            "zh-CN": "checked"
-          }
-        },
-        "name": "checked",
-        "setter": {
-          "componentName": "BoolSetter",
-          "isRequired": false,
-          "initialValue": false
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "defaultChecked",
-            "zh-CN": "defaultChecked"
-          }
-        },
-        "name": "defaultChecked",
-        "setter": {
-          "componentName": "BoolSetter",
-          "isRequired": false,
-          "initialValue": false
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "onChange",
-            "zh-CN": "onChange"
-          }
-        },
-        "name": "onChange",
-        "setter": {
-          "componentName": "FunctionSetter"
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "onClick",
-            "zh-CN": "onClick"
-          }
-        },
-        "name": "onClick",
-        "setter": {
-          "componentName": "FunctionSetter"
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "checkedChildren",
-            "zh-CN": "checkedChildren"
-          }
-        },
-        "name": "checkedChildren",
-        "setter": {
-          "componentName": "SlotSetter",
-          "props": {
-            "mode": "node"
-          },
-          "isRequired": false,
-          "initialValue": {
-            "type": "JSSlot",
-            "value": []
-          }
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "unCheckedChildren",
-            "zh-CN": "unCheckedChildren"
-          }
-        },
-        "name": "unCheckedChildren",
-        "setter": {
-          "componentName": "SlotSetter",
-          "props": {
-            "mode": "node"
-          },
-          "isRequired": false,
-          "initialValue": {
-            "type": "JSSlot",
-            "value": []
-          }
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "disabled",
-            "zh-CN": "disabled"
-          }
-        },
-        "name": "disabled",
-        "setter": {
-          "componentName": "BoolSetter",
-          "isRequired": false,
-          "initialValue": false
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "loading",
-            "zh-CN": "loading"
-          }
-        },
-        "name": "loading",
-        "setter": {
-          "componentName": "BoolSetter",
-          "isRequired": false,
-          "initialValue": false
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "autoFocus",
-            "zh-CN": "autoFocus"
-          }
-        },
-        "name": "autoFocus",
-        "setter": {
-          "componentName": "BoolSetter",
-          "isRequired": false,
-          "initialValue": false
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "title",
-            "zh-CN": "title"
-          }
-        },
-        "name": "title",
-        "setter": {
-          "componentName": "StringSetter",
-          "isRequired": false,
-          "initialValue": ""
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "tabIndex",
-            "zh-CN": "tabIndex"
-          }
-        },
-        "name": "tabIndex",
-        "setter": {
-          "componentName": "NumberSetter",
-          "isRequired": false,
-          "initialValue": 0
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "id",
-            "zh-CN": "id"
-          }
-        },
-        "name": "id",
-        "setter": {
-          "componentName": "StringSetter",
-          "isRequired": false,
-          "initialValue": ""
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "ref",
-            "zh-CN": "ref"
-          }
-        },
-        "name": "ref",
-        "setter": {
-          "componentName": "MixedSetter",
-          "props": {
-            "setters": [
-              {
-                "componentName": "FunctionSetter"
-              },
-              {
-                "componentName": "ObjectSetter",
-                "props": {
-                  "config": {
-                    "extraSetter": {
-                      "componentName": "MixedSetter",
-                      "isRequired": false,
-                      "props": {}
-                    }
-                  }
-                },
-                "isRequired": false,
-                "initialValue": {}
-              }
-            ]
-          }
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "key",
-            "zh-CN": "key"
-          }
-        },
-        "name": "key",
-        "setter": {
-          "componentName": "MixedSetter",
-          "props": {
-            "setters": [
-              {
-                "componentName": "StringSetter",
-                "isRequired": false,
-                "initialValue": ""
-              },
-              {
-                "componentName": "NumberSetter",
-                "isRequired": false,
-                "initialValue": 0
-              }
-            ]
-          }
-        }
-      }
-    ],
-    "supports": {
-      "className": true,
-      "style": true
-    },
-    "component": {}
-  }
-};
-const snippets: IPublicTypeSnippet[] = [
-  {
-    "title": "Switch",
-    "screenshot": "",
-    "schema": {
-      "componentName": "Switch",
-      "props": {}
-    }
-  }
-];
+import snippets from './snippets';
 
 export default {
-  ...SwitchMeta,
-  snippets
+  snippets,
+  componentName: 'Switch',
+  title: '开关',
+  category: '表单',
+  devMode: 'proCode',
+  npm: {
+    package: 'antdv5-lowcode-materials',
+    version: '0.1.0',
+    exportName: 'Switch',
+    main: 'src\\index.tsx',
+    destructuring: true,
+    subName: '',
+  },
+  props: [
+    {
+      name: 'defaultChecked',
+      title: { label: '默认选中', tip: '默认是否选中' },
+      propType: 'bool',
+      defaultValue: false,
+      setter: 'BoolSetter'
+    },
+    {
+      name: 'checked',
+      title: { label: '是否选中', tip: '当前是否选中' },
+      propType: 'bool',
+      defaultValue: false,
+      setter: 'BoolSetter',
+      supportVariable: true,
+    },
+    {
+      name: 'autoFocus',
+      title: { label: '自动聚焦', tip: '组件自动获取焦点' },
+      propType: 'bool',
+      defaultValue: false,
+      setter: 'BoolSetter'
+    },
+    {
+      name: 'checkedChildren',
+      title: { label: '选中时内容', tip: '选中时的内容' },
+      propType: 'string',
+      setter: 'StringSetter'
+    },
+    {
+      name: 'unCheckedChildren',
+      title: { label: '非选中时内容', tip: '非选中时的内容' },
+      propType: 'string',
+      setter: 'StringSetter'
+    },
+    {
+      name: 'disabled',
+      title: { label: '是否禁用', tip: '是否为禁用状态' },
+      propType: 'bool',
+      defaultValue: false,
+      setter: 'BoolSetter'
+    },
+    {
+      name: 'loading',
+      title: { label: '加载中', tip: '加载中' },
+      propType: 'bool',
+      defaultValue: false,
+      setter: 'BoolSetter'
+    },
+    {
+      name: 'size',
+      title: { label: '尺寸', tip: '开关大小' },
+      propType: { type: 'oneOf', value: ['default', 'small'] },
+      setter: {
+        componentName: 'RadioGroupSetter',
+        props: {
+          options: [
+            {
+              title: '默认',
+              value: 'default',
+            },
+            {
+              title: '小',
+              value: 'small',
+            },
+          ],
+        },
+      },
+      defaultValue: 'default',
+    },
+    {
+      name: 'onChange',
+      title: { label: '变化时回调函数', tip: '变化时回调函数' },
+      propType: 'func',
+    },
+    {
+      name: 'onClick',
+      title: { label: '点击时回调函数', tip: '点击时回调函数' },
+      propType: 'func',
+    },
+    // {
+    //   name: 'className',
+    //   title: { label: '类名', tip: '类名' },
+    //   propType: 'string',
+    // },
+  ],
+  configure: {
+    supports: {
+      style: true,
+      events: [
+        {
+          name: 'onChange',
+          template:
+            "onChange(checked,event,${extParams}){\n// 变化时回调函数\nconsole.log('onChange',checked,event);}",
+        },
+        {
+          name: 'onClick',
+          template:
+            "onClick(checked,event,${extParams}){\n// 点击时回调函数\nconsole.log('onClick',checked,event);}",
+        },
+      ],
+    },
+  },
 };

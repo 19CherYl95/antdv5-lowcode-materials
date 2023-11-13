@@ -1,140 +1,38 @@
-
-import { IPublicTypeComponentMetadata, IPublicTypeSnippet } from '@alilc/lowcode-types';
-
-const EmptyMeta: IPublicTypeComponentMetadata = {
-  "componentName": "Empty",
-  "title": "Empty",
-  "docUrl": "",
-  "screenshot": "",
-  "devMode": "proCode",
-  "npm": {
-    "package": "lowcode-antd-materials",
-    "version": "0.1.0",
-    "exportName": "Empty",
-    "main": "src\\index.tsx",
-    "destructuring": true,
-    "subName": ""
-  },
-  "configure": {
-    "props": [
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "prefixCls",
-            "zh-CN": "prefixCls"
-          }
-        },
-        "name": "prefixCls",
-        "setter": {
-          "componentName": "StringSetter",
-          "isRequired": false,
-          "initialValue": ""
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "rootClassName",
-            "zh-CN": "rootClassName"
-          }
-        },
-        "name": "rootClassName",
-        "setter": {
-          "componentName": "StringSetter",
-          "isRequired": false,
-          "initialValue": ""
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "imageStyle",
-            "zh-CN": "@since 3.1"
-          },
-          "tip": "imageStyle | @since 3.16.0"
-        },
-        "name": "imageStyle",
-        "description": "@since 3.16.0",
-        "setter": {
-          "componentName": "ObjectSetter",
-          "props": {
-            "config": {
-              "extraSetter": {
-                "componentName": "MixedSetter",
-                "isRequired": false,
-                "props": {}
-              }
-            }
-          },
-          "isRequired": false,
-          "initialValue": {}
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "image",
-            "zh-CN": "image"
-          }
-        },
-        "name": "image",
-        "setter": {
-          "componentName": "SlotSetter",
-          "props": {
-            "mode": "node"
-          },
-          "isRequired": false,
-          "initialValue": {
-            "type": "JSSlot",
-            "value": []
-          }
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "description",
-            "zh-CN": "description"
-          }
-        },
-        "name": "description",
-        "setter": {
-          "componentName": "SlotSetter",
-          "props": {
-            "mode": "node"
-          },
-          "isRequired": false,
-          "initialValue": {
-            "type": "JSSlot",
-            "value": []
-          }
-        }
-      }
-    ],
-    "supports": {
-      "className": true,
-      "style": true
-    },
-    "component": {}
-  }
-};
-const snippets: IPublicTypeSnippet[] = [
-  {
-    "title": "Empty",
-    "screenshot": "",
-    "schema": {
-      "componentName": "Empty",
-      "props": {}
-    }
-  }
-];
+import snippets from './snippets';
 
 export default {
-  ...EmptyMeta,
-  snippets
+  snippets,
+  componentName: 'Empty',
+  title: '空状态',
+  category: '数据展示',
+  devMode: 'proCode',
+  npm: {
+    package: 'antdv5-lowcode-materials',
+    version: '0.1.0',
+    exportName: 'Empty',
+    main: 'src\\index.tsx',
+    destructuring: true,
+    subName: '',
+  },
+  props: [
+    {
+      name: 'description',
+      title: { label: '内容描述', tip: '自定义描述内容' },
+      propType: { type: 'oneOfType', value: ['string', 'node'] },
+    },
+    // {
+    //   name: 'imageStyle',
+    //   title: { label: '图片样式', tip: '图片样式' },
+    //   propType: 'object',
+    // },
+    {
+      name: 'image',
+      title: {
+        label: '图片地址',
+        tip: '设置显示图片，为string时表示自定义图片地址。',
+      },
+      propType: { type: 'oneOfType', value: ['string', 'node'] },
+    },
+  ],
+  configure: { supports: { style: true } },
 };

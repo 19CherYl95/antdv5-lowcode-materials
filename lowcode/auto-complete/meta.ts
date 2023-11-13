@@ -7,6 +7,15 @@ export default {
   componentName: 'AutoComplete',
   title: '辅助提示输入框',
   category: '表单',
+  devMode: 'proCode',
+  npm: {
+    package: 'antdv5-lowcode-materials',
+    version: '0.1.0',
+    exportName: 'AutoComplete',
+    main: 'src\\index.tsx',
+    destructuring: true,
+    subName: '',
+  },
   props: [
     {
       name: 'defaultValue',
@@ -195,7 +204,7 @@ export default {
             type: 'i18n',
             zh_CN: '属性: allowClear | 说明：是否允许清除',
             en_US: 'prop: allowClear | description: Allow Clear',
-          }
+          },
         },
         setter: 'BoolSetter',
         supportVariable: true,
@@ -212,7 +221,7 @@ export default {
             type: 'i18n',
             zh_CN: '属性: options | 说明：选项列表',
             en_US: 'prop: options | description: Options',
-          }
+          },
         },
         setter: {
           componentName: 'ArraySetter',
@@ -226,13 +235,13 @@ export default {
                       name: 'label',
                       title: '选项名',
                       setter: 'StringSetter',
-                      isRequired: true
+                      isRequired: true,
                     },
                     {
                       name: 'value',
                       title: '选项值',
                       setter: 'StringSetter',
-                      isRequired: true
+                      isRequired: true,
                     },
                   ],
                 },
@@ -259,7 +268,7 @@ export default {
             type: 'i18n',
             zh_CN: '属性: autoFocus | 说明：自动获取焦点',
             en_US: 'prop: autoFocus | description: Auto Focus',
-          }
+          },
         },
         setter: 'BoolSetter',
         supportVariable: true,
@@ -275,8 +284,9 @@ export default {
           tip: {
             type: 'i18n',
             zh_CN: '属性: backfill | 说明：使用键盘选择选项的时候把选中项回填到输入框中',
-            en_US: 'prop: backfill | description: When using the keyboard to select options, backfill the selected items into the input box',
-          }
+            en_US:
+              'prop: backfill | description: When using the keyboard to select options, backfill the selected items into the input box',
+          },
         },
         setter: 'BoolSetter',
         supportVariable: true,
@@ -292,8 +302,9 @@ export default {
           tip: {
             type: 'i18n',
             zh_CN: '属性: defaultActiveFirstOption | 说明：是否默认高亮第一个选项',
-            en_US: 'prop: defaultActiveFirstOption | description: Whether to highlight the first option by default',
-          }
+            en_US:
+              'prop: defaultActiveFirstOption | description: Whether to highlight the first option by default',
+          },
         },
         setter: 'BoolSetter',
         defaultValue: true,
@@ -311,7 +322,7 @@ export default {
             type: 'i18n',
             zh_CN: '属性: disabled | 说明：是否为禁用状态',
             en_US: 'prop: disabled | description: Disable',
-          }
+          },
         },
         setter: 'BoolSetter',
         supportVariable: true,
@@ -328,7 +339,7 @@ export default {
             type: 'i18n',
             zh_CN: '属性: filterOption | 说明：是否根据输入项进行筛选',
             en_US: 'prop: filterOption | description: Filter based on input',
-          }
+          },
         },
         setter: 'BoolSetter',
         supportVariable: true,
@@ -363,7 +374,7 @@ export default {
             type: 'i18n',
             zh_CN: '属性: defaultOpen | 说明：是否默认展开下拉菜单',
             en_US: 'prop: defaultOpen | description: Expand drop-down menu by default',
-          }
+          },
         },
         setter: 'BoolSetter',
         supportVariable: true,
@@ -396,7 +407,8 @@ export default {
           tip: {
             type: 'i18n',
             zh_CN: '属性: notFoundContent | 说明: 当下拉列表为空时显示的内容',
-            en_US: 'prop: notFoundContent | description: Content displayed when the drop-down list is empty',
+            en_US:
+              'prop: notFoundContent | description: Content displayed when the drop-down list is empty',
           },
         },
         setter: 'StringSetter',

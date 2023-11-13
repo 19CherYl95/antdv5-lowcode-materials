@@ -7,7 +7,7 @@ export default {
   category: '表单',
   devMode: 'proCode',
   npm: {
-    package: 'lowcode-antd-materials',
+    package: 'antdv5-lowcode-materials',
     version: '0.1.0',
     exportName: 'Input',
     main: 'src\\index.tsx',

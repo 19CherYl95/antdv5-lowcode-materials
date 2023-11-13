@@ -1,622 +1,279 @@
+import { uuid } from '../_utils/utils';
 
-import { IPublicTypeComponentMetadata, IPublicTypeSnippet } from '@alilc/lowcode-types';
-
-const StepsMeta: IPublicTypeComponentMetadata = {
-  "componentName": "Steps",
-  "title": "Steps",
-  "docUrl": "",
-  "screenshot": "",
-  "devMode": "proCode",
-  "npm": {
-    "package": "lowcode-antd-materials",
-    "version": "0.1.0",
-    "exportName": "Steps",
-    "main": "src\\index.tsx",
-    "destructuring": true,
-    "subName": ""
-  },
-  "configure": {
-    "props": [
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "type",
-            "zh-CN": "type"
-          }
-        },
-        "name": "type",
-        "setter": {
-          "componentName": "RadioGroupSetter",
-          "props": {
-            "dataSource": [
-              {
-                "label": "default",
-                "value": "default"
-              },
-              {
-                "label": "inline",
-                "value": "inline"
-              },
-              {
-                "label": "navigation",
-                "value": "navigation"
-              }
-            ],
-            "options": [
-              {
-                "label": "default",
-                "value": "default"
-              },
-              {
-                "label": "inline",
-                "value": "inline"
-              },
-              {
-                "label": "navigation",
-                "value": "navigation"
-              }
-            ]
-          },
-          "initialValue": "default"
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "rootClassName",
-            "zh-CN": "rootClassName"
-          }
-        },
-        "name": "rootClassName",
-        "setter": {
-          "componentName": "StringSetter",
-          "isRequired": false,
-          "initialValue": ""
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "current",
-            "zh-CN": "current"
-          }
-        },
-        "name": "current",
-        "setter": {
-          "componentName": "NumberSetter",
-          "isRequired": false,
-          "initialValue": 0
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "direction",
-            "zh-CN": "direction"
-          }
-        },
-        "name": "direction",
-        "setter": {
-          "componentName": "RadioGroupSetter",
-          "props": {
-            "dataSource": [
-              {
-                "label": "vertical",
-                "value": "vertical"
-              },
-              {
-                "label": "horizontal",
-                "value": "horizontal"
-              }
-            ],
-            "options": [
-              {
-                "label": "vertical",
-                "value": "vertical"
-              },
-              {
-                "label": "horizontal",
-                "value": "horizontal"
-              }
-            ]
-          },
-          "initialValue": "vertical"
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "iconPrefix",
-            "zh-CN": "iconPrefix"
-          }
-        },
-        "name": "iconPrefix",
-        "setter": {
-          "componentName": "StringSetter",
-          "isRequired": false,
-          "initialValue": ""
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "initial",
-            "zh-CN": "initial"
-          }
-        },
-        "name": "initial",
-        "setter": {
-          "componentName": "NumberSetter",
-          "isRequired": false,
-          "initialValue": 0
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "labelPlacement",
-            "zh-CN": "labelPlacement"
-          }
-        },
-        "name": "labelPlacement",
-        "setter": {
-          "componentName": "RadioGroupSetter",
-          "props": {
-            "dataSource": [
-              {
-                "label": "vertical",
-                "value": "vertical"
-              },
-              {
-                "label": "horizontal",
-                "value": "horizontal"
-              }
-            ],
-            "options": [
-              {
-                "label": "vertical",
-                "value": "vertical"
-              },
-              {
-                "label": "horizontal",
-                "value": "horizontal"
-              }
-            ]
-          },
-          "initialValue": "vertical"
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "prefixCls",
-            "zh-CN": "prefixCls"
-          }
-        },
-        "name": "prefixCls",
-        "setter": {
-          "componentName": "StringSetter",
-          "isRequired": false,
-          "initialValue": ""
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "progressDot",
-            "zh-CN": "progressDot"
-          }
-        },
-        "name": "progressDot",
-        "setter": {
-          "componentName": "MixedSetter",
-          "props": {
-            "setters": [
-              {
-                "componentName": "BoolSetter",
-                "isRequired": false,
-                "initialValue": false
-              },
-              {
-                "componentName": "FunctionSetter"
-              }
-            ]
-          }
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "responsive",
-            "zh-CN": "responsive"
-          }
-        },
-        "name": "responsive",
-        "setter": {
-          "componentName": "BoolSetter",
-          "isRequired": false,
-          "initialValue": false
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "size",
-            "zh-CN": "size"
-          }
-        },
-        "name": "size",
-        "setter": {
-          "componentName": "RadioGroupSetter",
-          "props": {
-            "dataSource": [
-              {
-                "label": "small",
-                "value": "small"
-              },
-              {
-                "label": "default",
-                "value": "default"
-              }
-            ],
-            "options": [
-              {
-                "label": "small",
-                "value": "small"
-              },
-              {
-                "label": "default",
-                "value": "default"
-              }
-            ]
-          },
-          "initialValue": "small"
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "status",
-            "zh-CN": "status"
-          }
-        },
-        "name": "status",
-        "setter": {
-          "componentName": "SelectSetter",
-          "props": {
-            "dataSource": [
-              {
-                "label": "error",
-                "value": "error"
-              },
-              {
-                "label": "wait",
-                "value": "wait"
-              },
-              {
-                "label": "process",
-                "value": "process"
-              },
-              {
-                "label": "finish",
-                "value": "finish"
-              }
-            ],
-            "options": [
-              {
-                "label": "error",
-                "value": "error"
-              },
-              {
-                "label": "wait",
-                "value": "wait"
-              },
-              {
-                "label": "process",
-                "value": "process"
-              },
-              {
-                "label": "finish",
-                "value": "finish"
-              }
-            ]
-          },
-          "initialValue": "error"
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "percent",
-            "zh-CN": "percent"
-          }
-        },
-        "name": "percent",
-        "setter": {
-          "componentName": "NumberSetter",
-          "isRequired": false,
-          "initialValue": 0
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "onChange",
-            "zh-CN": "onChange"
-          }
-        },
-        "name": "onChange",
-        "setter": {
-          "componentName": "FunctionSetter"
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "items",
-            "zh-CN": "items"
-          }
-        },
-        "name": "items",
-        "setter": {
-          "componentName": "ArraySetter",
-          "props": {
-            "itemSetter": {
-              "componentName": "ObjectSetter",
-              "props": {
-                "config": {
-                  "items": [
-                    {
-                      "title": {
-                        "label": {
-                          "type": "i18n",
-                          "en-US": "className",
-                          "zh-CN": "className"
-                        }
-                      },
-                      "name": "className",
-                      "setter": {
-                        "componentName": "StringSetter",
-                        "isRequired": false,
-                        "initialValue": ""
-                      }
-                    },
-                    {
-                      "title": {
-                        "label": {
-                          "type": "i18n",
-                          "en-US": "description",
-                          "zh-CN": "description"
-                        }
-                      },
-                      "name": "description",
-                      "setter": {
-                        "componentName": "SlotSetter",
-                        "props": {
-                          "mode": "node"
-                        },
-                        "isRequired": false,
-                        "initialValue": {
-                          "type": "JSSlot",
-                          "value": []
-                        }
-                      }
-                    },
-                    {
-                      "title": {
-                        "label": {
-                          "type": "i18n",
-                          "en-US": "icon",
-                          "zh-CN": "icon"
-                        }
-                      },
-                      "name": "icon",
-                      "setter": {
-                        "componentName": "SlotSetter",
-                        "props": {
-                          "mode": "node"
-                        },
-                        "isRequired": false,
-                        "initialValue": {
-                          "type": "JSSlot",
-                          "value": []
-                        }
-                      }
-                    },
-                    {
-                      "title": {
-                        "label": {
-                          "type": "i18n",
-                          "en-US": "onClick",
-                          "zh-CN": "onClick"
-                        }
-                      },
-                      "name": "onClick",
-                      "setter": {
-                        "componentName": "FunctionSetter"
-                      }
-                    },
-                    {
-                      "title": {
-                        "label": {
-                          "type": "i18n",
-                          "en-US": "status",
-                          "zh-CN": "status"
-                        }
-                      },
-                      "name": "status",
-                      "setter": {
-                        "componentName": "SelectSetter",
-                        "props": {
-                          "dataSource": [
-                            {
-                              "label": "error",
-                              "value": "error"
-                            },
-                            {
-                              "label": "wait",
-                              "value": "wait"
-                            },
-                            {
-                              "label": "process",
-                              "value": "process"
-                            },
-                            {
-                              "label": "finish",
-                              "value": "finish"
-                            }
-                          ],
-                          "options": [
-                            {
-                              "label": "error",
-                              "value": "error"
-                            },
-                            {
-                              "label": "wait",
-                              "value": "wait"
-                            },
-                            {
-                              "label": "process",
-                              "value": "process"
-                            },
-                            {
-                              "label": "finish",
-                              "value": "finish"
-                            }
-                          ]
-                        },
-                        "initialValue": "error"
-                      }
-                    },
-                    {
-                      "title": {
-                        "label": {
-                          "type": "i18n",
-                          "en-US": "disabled",
-                          "zh-CN": "disabled"
-                        }
-                      },
-                      "name": "disabled",
-                      "setter": {
-                        "componentName": "BoolSetter",
-                        "isRequired": false,
-                        "initialValue": false
-                      }
-                    },
-                    {
-                      "title": {
-                        "label": {
-                          "type": "i18n",
-                          "en-US": "title",
-                          "zh-CN": "title"
-                        }
-                      },
-                      "name": "title",
-                      "setter": {
-                        "componentName": "SlotSetter",
-                        "props": {
-                          "mode": "node"
-                        },
-                        "isRequired": false,
-                        "initialValue": {
-                          "type": "JSSlot",
-                          "value": []
-                        }
-                      }
-                    },
-                    {
-                      "title": {
-                        "label": {
-                          "type": "i18n",
-                          "en-US": "subTitle",
-                          "zh-CN": "subTitle"
-                        }
-                      },
-                      "name": "subTitle",
-                      "setter": {
-                        "componentName": "SlotSetter",
-                        "props": {
-                          "mode": "node"
-                        },
-                        "isRequired": false,
-                        "initialValue": {
-                          "type": "JSSlot",
-                          "value": []
-                        }
-                      }
-                    },
-                    {
-                      "title": {
-                        "label": {
-                          "type": "i18n",
-                          "en-US": "style",
-                          "zh-CN": "style"
-                        }
-                      },
-                      "name": "style",
-                      "setter": {
-                        "componentName": "ObjectSetter",
-                        "props": {
-                          "config": {
-                            "extraSetter": {
-                              "componentName": "MixedSetter",
-                              "isRequired": false,
-                              "props": {}
-                            }
-                          }
-                        },
-                        "isRequired": false,
-                        "initialValue": {}
-                      }
-                    }
-                  ],
-                  "extraSetter": {
-                    "componentName": "MixedSetter",
-                    "isRequired": false,
-                    "props": {}
-                  }
-                }
-              }
-            }
-          },
-          "initialValue": []
-        }
-      }
-    ],
-    "supports": {
-      "className": true,
-      "style": true
-    },
-    "component": {}
-  }
-};
-const snippets: IPublicTypeSnippet[] = [
-  {
-    "title": "Steps",
-    "screenshot": "",
-    "schema": {
-      "componentName": "Steps",
-      "props": {}
-    }
-  }
-];
+import snippets from './snippets';
 
 export default {
-  ...StepsMeta,
-  snippets
+  snippets,
+  componentName: 'Steps',
+  title: '步骤条',
+  category: '导航',
+  devMode: 'proCode',
+  npm: {
+    package: 'antdv5-lowcode-materials',
+    version: '0.1.0',
+    exportName: 'Steps',
+    main: 'src\\index.tsx',
+    destructuring: true,
+    subName: '',
+  },
+  props: [
+    {
+      name: 'steps',
+      title: '步骤配置',
+      setter: {
+        componentName: 'ArraySetter',
+        props: {
+          itemSetter: {
+            componentName: 'ObjectSetter',
+            props: {
+              config: {
+                items: [
+                  {
+                    name: 'key',
+                    title: 'key',
+                    setter: 'StringSetter',
+                    initialValue: (val) => val || uuid(),
+                  },
+                  {
+                    name: 'title',
+                    title: '标题',
+                    setter: 'StringSetter',
+                  },
+                  {
+                    name: 'subTitle',
+                    title: '子标题',
+                    setter: 'StringSetter',
+                  },
+                  {
+                    name: 'description',
+                    title: '详细描述',
+                    setter: 'StringSetter',
+                  },
+                  {
+                    name: 'disabled',
+                    title: '禁用',
+                    setter: 'BoolSetter',
+                    initialValue: false,
+                  },
+                  {
+                    name: 'status',
+                    title: { label: '状态', tip: '选择框大小' },
+                    setter: {
+                      componentName: 'RadioGroupSetter',
+                      props: {
+                        options: [
+                          {
+                            title: 'wait',
+                            value: 'wait',
+                          },
+                          {
+                            title: 'process',
+                            value: 'process',
+                          },
+                          {
+                            title: 'finish',
+                            value: 'finish',
+                          },
+                          {
+                            title: 'error',
+                            value: 'error',
+                          },
+                        ],
+                      },
+                    },
+                    propType: {
+                      type: 'oneOf',
+                      value: ['wait', 'process', 'finish', 'error'],
+                    },
+                    defaultValue: 'wait',
+                  },
+                ],
+              },
+            },
+            initialValue: () => {
+              return {
+                key: `Steps${uuid()}`,
+                title: '步骤',
+                disabled: false,
+              };
+            },
+          },
+        },
+      },
+      extraProps: {
+        getValue(target, fieldValue) {
+          const map = target.node.children.map((child) => {
+            const key = child.getPropValue('key') ? String(child.getPropValue('key')) : child.id;
+            return {
+              key,
+              title: child.getPropValue('title'),
+              subTitle: child.getPropValue('subTitle'),
+              description: child.getPropValue('description'),
+              disabled: child.getPropValue('disabled'),
+              status: child.getPropValue('status'),
+            };
+          });
+          return map;
+        },
+        setValue(target, value) {
+          const { node } = target;
+          const map = {};
+
+          if (!Array.isArray(value)) {
+            value = [];
+          }
+          value.forEach((item) => {
+            const tabItem = Object.assign({}, item);
+            map[item.key] = tabItem;
+          });
+
+          node.children.mergeChildren(
+            (child) => {
+              const key = String(child.getPropValue('key'));
+              if (Object.hasOwnProperty.call(map, key)) {
+                child.setPropValue('title', map[key].title);
+                child.setPropValue('subTitle', map[key].subTitle);
+                child.setPropValue('description', map[key].description);
+                child.setPropValue('disabled', map[key].disabled);
+                child.setPropValue('status', map[key].status);
+
+                delete map[key];
+                return false;
+              }
+              return true;
+            },
+            () => {
+              const items = [];
+              for (const key in map) {
+                if (Object.hasOwnProperty.call(map, key)) {
+                  items.push({
+                    componentName: 'Steps.Step',
+                    props: map[key],
+                  });
+                }
+              }
+              return items;
+            },
+
+            (child1, child2) => {
+              const a = value.findIndex(
+                (item) => String(item.key) === String(child1.getPropValue('key')),
+              );
+              const b = value.findIndex(
+                (item) => String(item.key) === String(child2.getPropValue('key')),
+              );
+              return a - b;
+            },
+          );
+        },
+      },
+    },
+    {
+      name: 'className',
+      title: { label: '步骤条类名', tip: '步骤条类名' },
+      propType: 'string',
+    },
+    {
+      name: 'type',
+      title: {
+        label: '类型',
+        tip: '步骤条类型，有 `default` 和 `navigation` 两种',
+      },
+      propType: { type: 'oneOf', value: ['default', 'navigation'] },
+      defaultValue: 'default',
+    },
+    {
+      name: 'current',
+      title: {
+        label: '当前步骤',
+        tip: '指定当前步骤，从 0 开始记数。在子 Step 元素中，可以通过 `status` 属性覆盖状态',
+      },
+      propType: 'number',
+    },
+    {
+      name: 'direction',
+      title: {
+        label: '步骤条方向',
+        tip: '指定步骤条方向。目前支持水平（`horizontal`）和竖直（`vertical`）两种方向',
+      },
+      propType: {
+        type: 'oneOf',
+        value: ['horizontal', 'vertical'],
+      },
+    },
+    {
+      name: 'labelPlacement',
+      title: {
+        label: '标签放置位置',
+        tip: '指定标签放置位置，默认水平放图标右侧，可选 `vertical` 放图标下方',
+      },
+      propType: {
+        type: 'oneOf',
+        value: ['horizontal', 'vertical'],
+      },
+      defaultValue: 'horizontal',
+    },
+    {
+      name: 'progressDot',
+      title: {
+        label: '点状步骤条',
+        tip: '点状步骤条，可以设置为一个 func',
+      },
+      propType: { type: 'oneOfType', value: ['bool', 'func'] },
+    },
+    {
+      name: 'size',
+      title: {
+        label: '尺寸',
+        tip: '指定大小',
+      },
+      propType: {
+        type: 'oneOf',
+        value: ['default', 'small'],
+      },
+      defaultValue: 'default',
+    },
+    {
+      name: 'status',
+      title: {
+        label: '当前步骤状态',
+        tip: '指定当前步骤的状态，可选 `wait` `process` `finish` `error`',
+      },
+      propType: {
+        type: 'oneOf',
+        value: ['wait', 'process', 'finish', 'error'],
+      },
+      defaultValue: 'process',
+    },
+    {
+      name: 'initial',
+      title: {
+        label: '起始序号',
+        tip: '起始序号，从 0 开始记数',
+      },
+      propType: 'number',
+      defaultValue: 0,
+    },
+    {
+      name: 'onChange',
+      title: { label: '点击切换步骤时触发', tip: '点击切换步骤时触发' },
+      propType: 'func',
+    },
+  ],
+  configure: {
+    component: {
+      isContainer: true,
+      nestingRule: { childWhitelist: ['Steps.Step'] },
+    },
+    supports: {
+      style: true,
+      events: [
+        {
+          name: 'onChange',
+          template:
+            "onChange(current,${extParams}){\n// 点击切换步骤时触发\nconsole.log('onChange',current);}",
+        },
+      ],
+    },
+  },
 };

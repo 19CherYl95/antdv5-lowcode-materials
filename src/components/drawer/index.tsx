@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createElement } from 'react';
 import { Drawer as OriginalDrawer } from 'antd';
 
 const Drawer: any = (props: any) => {

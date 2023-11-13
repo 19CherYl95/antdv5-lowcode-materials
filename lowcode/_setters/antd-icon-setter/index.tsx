@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Component } from 'react';
+import React, { useState, useEffect, Component, createElement } from 'react';
 // setter使用@alifd/next，和编辑器保持一致
 import { Input, Icon as NextIcon, Radio, Balloon, Search } from '@alifd/next';
 import { get } from '../../_utils/utils';

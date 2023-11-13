@@ -8,7 +8,7 @@ const ItemMeta: IPublicTypeComponentMetadata = {
   "screenshot": "",
   "devMode": "proCode",
   "npm": {
-    "package": "lowcode-antd-materials",
+    "package": "antdv5-lowcode-materials",
     "version": "0.1.0",
     "exportName": "Breadcrumb",
     "main": "src\\index.tsx",
@@ -190,6 +190,62 @@ const ItemMeta: IPublicTypeComponentMetadata = {
                                                 "title": {
                                                   "label": {
                                                     "type": "i18n",
+                                                    "en-US": "dashed",
+                                                    "zh-CN": "dashed"
+                                                  }
+                                                },
+                                                "name": "dashed",
+                                                "setter": {
+                                                  "componentName": "BoolSetter",
+                                                  "isRequired": false,
+                                                  "initialValue": false
+                                                }
+                                              },
+                                              {
+                                                "title": {
+                                                  "label": {
+                                                    "type": "i18n",
+                                                    "en-US": "key",
+                                                    "zh-CN": "key"
+                                                  }
+                                                },
+                                                "name": "key",
+                                                "setter": {
+                                                  "componentName": "MixedSetter",
+                                                  "props": {
+                                                    "setters": [
+                                                      {
+                                                        "componentName": "StringSetter",
+                                                        "isRequired": false,
+                                                        "initialValue": ""
+                                                      },
+                                                      {
+                                                        "componentName": "NumberSetter",
+                                                        "isRequired": false,
+                                                        "initialValue": 0
+                                                      }
+                                                    ]
+                                                  }
+                                                }
+                                              }
+                                            ],
+                                            "extraSetter": {
+                                              "componentName": "MixedSetter",
+                                              "isRequired": false,
+                                              "props": {}
+                                            }
+                                          }
+                                        }
+                                      },
+                                      {
+                                        "componentName": "ObjectSetter",
+                                        "props": {
+                                          "config": {
+                                            "items": [
+                                              {
+                                                "title": {
+                                                  "label": {
+                                                    "type": "i18n",
                                                     "en-US": "danger",
                                                     "zh-CN": "danger"
                                                   }
@@ -235,62 +291,6 @@ const ItemMeta: IPublicTypeComponentMetadata = {
                                                   "componentName": "StringSetter",
                                                   "isRequired": false,
                                                   "initialValue": ""
-                                                }
-                                              }
-                                            ],
-                                            "extraSetter": {
-                                              "componentName": "MixedSetter",
-                                              "isRequired": false,
-                                              "props": {}
-                                            }
-                                          }
-                                        }
-                                      },
-                                      {
-                                        "componentName": "ObjectSetter",
-                                        "props": {
-                                          "config": {
-                                            "items": [
-                                              {
-                                                "title": {
-                                                  "label": {
-                                                    "type": "i18n",
-                                                    "en-US": "dashed",
-                                                    "zh-CN": "dashed"
-                                                  }
-                                                },
-                                                "name": "dashed",
-                                                "setter": {
-                                                  "componentName": "BoolSetter",
-                                                  "isRequired": false,
-                                                  "initialValue": false
-                                                }
-                                              },
-                                              {
-                                                "title": {
-                                                  "label": {
-                                                    "type": "i18n",
-                                                    "en-US": "key",
-                                                    "zh-CN": "key"
-                                                  }
-                                                },
-                                                "name": "key",
-                                                "setter": {
-                                                  "componentName": "MixedSetter",
-                                                  "props": {
-                                                    "setters": [
-                                                      {
-                                                        "componentName": "StringSetter",
-                                                        "isRequired": false,
-                                                        "initialValue": ""
-                                                      },
-                                                      {
-                                                        "componentName": "NumberSetter",
-                                                        "isRequired": false,
-                                                        "initialValue": 0
-                                                      }
-                                                    ]
-                                                  }
                                                 }
                                               }
                                             ],
@@ -1060,12 +1060,12 @@ const ItemMeta: IPublicTypeComponentMetadata = {
                         "props": {
                           "dataSource": [
                             {
-                              "label": "click",
-                              "value": "click"
-                            },
-                            {
                               "label": "hover",
                               "value": "hover"
+                            },
+                            {
+                              "label": "click",
+                              "value": "click"
                             },
                             {
                               "label": "contextMenu",
@@ -1074,12 +1074,12 @@ const ItemMeta: IPublicTypeComponentMetadata = {
                           ],
                           "options": [
                             {
-                              "label": "click",
-                              "value": "click"
-                            },
-                            {
                               "label": "hover",
                               "value": "hover"
+                            },
+                            {
+                              "label": "click",
+                              "value": "click"
                             },
                             {
                               "label": "contextMenu",
@@ -1087,7 +1087,7 @@ const ItemMeta: IPublicTypeComponentMetadata = {
                             }
                           ]
                         },
-                        "initialValue": "click"
+                        "initialValue": "hover"
                       }
                     },
                     "initialValue": []
@@ -1640,6 +1640,10 @@ const ItemMeta: IPublicTypeComponentMetadata = {
                           "value": "topLeft"
                         },
                         {
+                          "label": "topCenter",
+                          "value": "topCenter"
+                        },
+                        {
                           "label": "topRight",
                           "value": "topRight"
                         },
@@ -1648,16 +1652,12 @@ const ItemMeta: IPublicTypeComponentMetadata = {
                           "value": "bottomLeft"
                         },
                         {
-                          "label": "bottomRight",
-                          "value": "bottomRight"
-                        },
-                        {
-                          "label": "topCenter",
-                          "value": "topCenter"
-                        },
-                        {
                           "label": "bottomCenter",
                           "value": "bottomCenter"
+                        },
+                        {
+                          "label": "bottomRight",
+                          "value": "bottomRight"
                         }
                       ],
                       "options": [
@@ -1674,6 +1674,10 @@ const ItemMeta: IPublicTypeComponentMetadata = {
                           "value": "topLeft"
                         },
                         {
+                          "label": "topCenter",
+                          "value": "topCenter"
+                        },
+                        {
                           "label": "topRight",
                           "value": "topRight"
                         },
@@ -1682,16 +1686,12 @@ const ItemMeta: IPublicTypeComponentMetadata = {
                           "value": "bottomLeft"
                         },
                         {
-                          "label": "bottomRight",
-                          "value": "bottomRight"
-                        },
-                        {
-                          "label": "topCenter",
-                          "value": "topCenter"
-                        },
-                        {
                           "label": "bottomCenter",
                           "value": "bottomCenter"
+                        },
+                        {
+                          "label": "bottomRight",
+                          "value": "bottomRight"
                         }
                       ]
                     },

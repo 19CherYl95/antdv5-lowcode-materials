@@ -5,53 +5,54 @@ export default {
   componentName: 'Input.Search',
   title: '搜索框',
   category: '表单',
+  devMode: 'proCode',
   npm: {
-    package: 'lowcode-antd-materials',
+    package: 'antdv5-lowcode-materials',
     version: '0.1.0',
-    exportName: 'Input.Search',
+    exportName: 'Input',
     main: 'src\\index.tsx',
     destructuring: true,
-    subName: '',
+    subName: 'Search',
   },
   props: [
     {
       name: 'defaultValue',
       title: { label: '默认值', tip: '默认值' },
       propType: 'string',
-      setter: 'StringSetter'
+      setter: 'StringSetter',
     },
     {
       name: 'value',
       title: { label: '当前值', tip: '当前值' },
       propType: 'string',
-      setter: 'StringSetter'
+      setter: 'StringSetter',
     },
     {
       name: 'bordered',
       title: { label: '显示边框', tip: '是否有边框' },
       propType: 'bool',
       defaultValue: true,
-      setter: 'BoolSetter'
+      setter: 'BoolSetter',
     },
     {
       name: 'loading',
       title: { label: '加载状态', tip: 'loading' },
       propType: 'bool',
-      setter: 'BoolSetter'
+      setter: 'BoolSetter',
     },
     {
       name: 'disabled',
       title: { label: '是否禁用', tip: '是否为禁用状态' },
       propType: 'bool',
       defaultValue: false,
-      setter: 'BoolSetter'
+      setter: 'BoolSetter',
     },
     {
       name: 'placeholder',
       title: { label: '占位提示', tip: '占位提示' },
       propType: 'string',
       defaultValue: '请输入',
-      setter: 'StringSetter'
+      setter: 'StringSetter',
     },
     // {
     //   name: 'id',

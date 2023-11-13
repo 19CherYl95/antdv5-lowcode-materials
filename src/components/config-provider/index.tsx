@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createElement } from 'react';
 import { ConfigProvider as OriginalConfigProvider } from 'antd';
 import moment from 'moment';
 import 'moment/locale/zh-cn';

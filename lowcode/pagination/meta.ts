@@ -1,885 +1,229 @@
-
-import { IPublicTypeComponentMetadata, IPublicTypeSnippet } from '@alilc/lowcode-types';
-
-const PaginationMeta: IPublicTypeComponentMetadata = {
-  "componentName": "Pagination",
-  "title": "Pagination",
-  "docUrl": "",
-  "screenshot": "",
-  "devMode": "proCode",
-  "npm": {
-    "package": "lowcode-antd-materials",
-    "version": "0.1.0",
-    "exportName": "Pagination",
-    "main": "src\\index.tsx",
-    "destructuring": true,
-    "subName": ""
-  },
-  "configure": {
-    "props": [
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "showQuickJumper",
-            "zh-CN": "showQuickJumper"
-          }
-        },
-        "name": "showQuickJumper",
-        "setter": {
-          "componentName": "MixedSetter",
-          "props": {
-            "setters": [
-              {
-                "componentName": "BoolSetter",
-                "isRequired": false,
-                "initialValue": false
-              },
-              {
-                "componentName": "ObjectSetter",
-                "props": {
-                  "config": {
-                    "items": [
-                      {
-                        "title": {
-                          "label": {
-                            "type": "i18n",
-                            "en-US": "goButton",
-                            "zh-CN": "goButton"
-                          }
-                        },
-                        "name": "goButton",
-                        "setter": {
-                          "componentName": "SlotSetter",
-                          "props": {
-                            "mode": "node"
-                          },
-                          "isRequired": false,
-                          "initialValue": {
-                            "type": "JSSlot",
-                            "value": []
-                          }
-                        }
-                      }
-                    ],
-                    "extraSetter": {
-                      "componentName": "MixedSetter",
-                      "isRequired": false,
-                      "props": {}
-                    }
-                  }
-                }
-              }
-            ]
-          }
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "size",
-            "zh-CN": "size"
-          }
-        },
-        "name": "size",
-        "setter": {
-          "componentName": "RadioGroupSetter",
-          "props": {
-            "dataSource": [
-              {
-                "label": "small",
-                "value": "small"
-              },
-              {
-                "label": "default",
-                "value": "default"
-              }
-            ],
-            "options": [
-              {
-                "label": "small",
-                "value": "small"
-              },
-              {
-                "label": "default",
-                "value": "default"
-              }
-            ]
-          },
-          "initialValue": "small"
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "responsive",
-            "zh-CN": "responsive"
-          }
-        },
-        "name": "responsive",
-        "setter": {
-          "componentName": "BoolSetter",
-          "isRequired": false,
-          "initialValue": false
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "role",
-            "zh-CN": "role"
-          }
-        },
-        "name": "role",
-        "setter": {
-          "componentName": "StringSetter",
-          "isRequired": false,
-          "initialValue": ""
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "totalBoundaryShowSizeChanger",
-            "zh-CN": "totalBoundaryShowSizeChanger"
-          }
-        },
-        "name": "totalBoundaryShowSizeChanger",
-        "setter": {
-          "componentName": "NumberSetter",
-          "isRequired": false,
-          "initialValue": 0
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "rootClassName",
-            "zh-CN": "rootClassName"
-          }
-        },
-        "name": "rootClassName",
-        "setter": {
-          "componentName": "StringSetter",
-          "isRequired": false,
-          "initialValue": ""
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "onChange",
-            "zh-CN": "onChange"
-          }
-        },
-        "name": "onChange",
-        "setter": {
-          "componentName": "FunctionSetter"
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "onShowSizeChange",
-            "zh-CN": "onShowSizeChange"
-          }
-        },
-        "name": "onShowSizeChange",
-        "setter": {
-          "componentName": "FunctionSetter"
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "itemRender",
-            "zh-CN": "itemRender"
-          }
-        },
-        "name": "itemRender",
-        "setter": {
-          "componentName": "FunctionSetter"
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "showTotal",
-            "zh-CN": "showTotal"
-          }
-        },
-        "name": "showTotal",
-        "setter": {
-          "componentName": "FunctionSetter"
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "selectPrefixCls",
-            "zh-CN": "selectPrefixCls"
-          }
-        },
-        "name": "selectPrefixCls",
-        "setter": {
-          "componentName": "StringSetter",
-          "isRequired": false,
-          "initialValue": ""
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "prefixCls",
-            "zh-CN": "prefixCls"
-          }
-        },
-        "name": "prefixCls",
-        "setter": {
-          "componentName": "StringSetter",
-          "isRequired": false,
-          "initialValue": ""
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "pageSizeOptions",
-            "zh-CN": "pageSizeOptions"
-          }
-        },
-        "name": "pageSizeOptions",
-        "setter": {
-          "componentName": "MixedSetter",
-          "props": {
-            "setters": [
-              {
-                "componentName": "ArraySetter",
-                "props": {
-                  "itemSetter": {
-                    "componentName": "StringSetter",
-                    "isRequired": false,
-                    "initialValue": ""
-                  }
-                },
-                "initialValue": []
-              },
-              {
-                "componentName": "ArraySetter",
-                "props": {
-                  "itemSetter": {
-                    "componentName": "NumberSetter",
-                    "isRequired": false,
-                    "initialValue": 0
-                  }
-                },
-                "initialValue": []
-              }
-            ]
-          }
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "current",
-            "zh-CN": "current"
-          }
-        },
-        "name": "current",
-        "setter": {
-          "componentName": "NumberSetter",
-          "isRequired": false,
-          "initialValue": 0
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "defaultCurrent",
-            "zh-CN": "defaultCurrent"
-          }
-        },
-        "name": "defaultCurrent",
-        "setter": {
-          "componentName": "NumberSetter",
-          "isRequired": false,
-          "initialValue": 0
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "total",
-            "zh-CN": "total"
-          }
-        },
-        "name": "total",
-        "setter": {
-          "componentName": "NumberSetter",
-          "isRequired": false,
-          "initialValue": 0
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "pageSize",
-            "zh-CN": "pageSize"
-          }
-        },
-        "name": "pageSize",
-        "setter": {
-          "componentName": "NumberSetter",
-          "isRequired": false,
-          "initialValue": 0
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "defaultPageSize",
-            "zh-CN": "defaultPageSize"
-          }
-        },
-        "name": "defaultPageSize",
-        "setter": {
-          "componentName": "NumberSetter",
-          "isRequired": false,
-          "initialValue": 0
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "hideOnSinglePage",
-            "zh-CN": "hideOnSinglePage"
-          }
-        },
-        "name": "hideOnSinglePage",
-        "setter": {
-          "componentName": "BoolSetter",
-          "isRequired": false,
-          "initialValue": false
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "showSizeChanger",
-            "zh-CN": "showSizeChanger"
-          }
-        },
-        "name": "showSizeChanger",
-        "setter": {
-          "componentName": "BoolSetter",
-          "isRequired": false,
-          "initialValue": false
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "showLessItems",
-            "zh-CN": "showLessItems"
-          }
-        },
-        "name": "showLessItems",
-        "setter": {
-          "componentName": "BoolSetter",
-          "isRequired": false,
-          "initialValue": false
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "showPrevNextJumpers",
-            "zh-CN": "showPrevNextJumpers"
-          }
-        },
-        "name": "showPrevNextJumpers",
-        "setter": {
-          "componentName": "BoolSetter",
-          "isRequired": false,
-          "initialValue": false
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "showTitle",
-            "zh-CN": "showTitle"
-          }
-        },
-        "name": "showTitle",
-        "setter": {
-          "componentName": "BoolSetter",
-          "isRequired": false,
-          "initialValue": false
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "simple",
-            "zh-CN": "simple"
-          }
-        },
-        "name": "simple",
-        "setter": {
-          "componentName": "BoolSetter",
-          "isRequired": false,
-          "initialValue": false
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "disabled",
-            "zh-CN": "disabled"
-          }
-        },
-        "name": "disabled",
-        "setter": {
-          "componentName": "BoolSetter",
-          "isRequired": false,
-          "initialValue": false
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "locale",
-            "zh-CN": "locale"
-          }
-        },
-        "name": "locale",
-        "setter": {
-          "componentName": "ObjectSetter",
-          "props": {
-            "config": {
-              "items": [
-                {
-                  "title": {
-                    "label": {
-                      "type": "i18n",
-                      "en-US": "items_per_page",
-                      "zh-CN": "items_per_page"
-                    }
-                  },
-                  "name": "items_per_page",
-                  "setter": {
-                    "componentName": "StringSetter",
-                    "isRequired": false,
-                    "initialValue": ""
-                  }
-                },
-                {
-                  "title": {
-                    "label": {
-                      "type": "i18n",
-                      "en-US": "jump_to",
-                      "zh-CN": "jump_to"
-                    }
-                  },
-                  "name": "jump_to",
-                  "setter": {
-                    "componentName": "StringSetter",
-                    "isRequired": false,
-                    "initialValue": ""
-                  }
-                },
-                {
-                  "title": {
-                    "label": {
-                      "type": "i18n",
-                      "en-US": "jump_to_confirm",
-                      "zh-CN": "jump_to_confirm"
-                    }
-                  },
-                  "name": "jump_to_confirm",
-                  "setter": {
-                    "componentName": "StringSetter",
-                    "isRequired": false,
-                    "initialValue": ""
-                  }
-                },
-                {
-                  "title": {
-                    "label": {
-                      "type": "i18n",
-                      "en-US": "page",
-                      "zh-CN": "page"
-                    }
-                  },
-                  "name": "page",
-                  "setter": {
-                    "componentName": "StringSetter",
-                    "isRequired": false,
-                    "initialValue": ""
-                  }
-                },
-                {
-                  "title": {
-                    "label": {
-                      "type": "i18n",
-                      "en-US": "prev_page",
-                      "zh-CN": "prev_page"
-                    }
-                  },
-                  "name": "prev_page",
-                  "setter": {
-                    "componentName": "StringSetter",
-                    "isRequired": false,
-                    "initialValue": ""
-                  }
-                },
-                {
-                  "title": {
-                    "label": {
-                      "type": "i18n",
-                      "en-US": "next_page",
-                      "zh-CN": "next_page"
-                    }
-                  },
-                  "name": "next_page",
-                  "setter": {
-                    "componentName": "StringSetter",
-                    "isRequired": false,
-                    "initialValue": ""
-                  }
-                },
-                {
-                  "title": {
-                    "label": {
-                      "type": "i18n",
-                      "en-US": "prev_5",
-                      "zh-CN": "prev_5"
-                    }
-                  },
-                  "name": "prev_5",
-                  "setter": {
-                    "componentName": "StringSetter",
-                    "isRequired": false,
-                    "initialValue": ""
-                  }
-                },
-                {
-                  "title": {
-                    "label": {
-                      "type": "i18n",
-                      "en-US": "next_5",
-                      "zh-CN": "next_5"
-                    }
-                  },
-                  "name": "next_5",
-                  "setter": {
-                    "componentName": "StringSetter",
-                    "isRequired": false,
-                    "initialValue": ""
-                  }
-                },
-                {
-                  "title": {
-                    "label": {
-                      "type": "i18n",
-                      "en-US": "prev_3",
-                      "zh-CN": "prev_3"
-                    }
-                  },
-                  "name": "prev_3",
-                  "setter": {
-                    "componentName": "StringSetter",
-                    "isRequired": false,
-                    "initialValue": ""
-                  }
-                },
-                {
-                  "title": {
-                    "label": {
-                      "type": "i18n",
-                      "en-US": "next_3",
-                      "zh-CN": "next_3"
-                    }
-                  },
-                  "name": "next_3",
-                  "setter": {
-                    "componentName": "StringSetter",
-                    "isRequired": false,
-                    "initialValue": ""
-                  }
-                }
-              ],
-              "extraSetter": {
-                "componentName": "MixedSetter",
-                "isRequired": false,
-                "props": {}
-              }
-            }
-          }
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "selectComponentClass",
-            "zh-CN": "selectComponentClass"
-          }
-        },
-        "name": "selectComponentClass",
-        "setter": {
-          "componentName": "MixedSetter",
-          "props": {
-            "setters": [
-              {
-                "componentName": "ObjectSetter",
-                "props": {
-                  "config": {
-                    "extraSetter": {
-                      "componentName": "MixedSetter",
-                      "isRequired": false,
-                      "props": {}
-                    }
-                  }
-                },
-                "isRequired": false,
-                "initialValue": {}
-              }
-            ]
-          }
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "prevIcon",
-            "zh-CN": "prevIcon"
-          }
-        },
-        "name": "prevIcon",
-        "setter": {
-          "componentName": "MixedSetter",
-          "props": {
-            "setters": [
-              {
-                "componentName": "StringSetter",
-                "isRequired": false,
-                "initialValue": ""
-              },
-              {
-                "componentName": "NumberSetter",
-                "isRequired": false,
-                "initialValue": 0
-              },
-              {
-                "componentName": "BoolSetter",
-                "isRequired": false,
-                "initialValue": false
-              },
-              {
-                "componentName": "ObjectSetter",
-                "props": {
-                  "config": {
-                    "extraSetter": {
-                      "componentName": "MixedSetter",
-                      "isRequired": false,
-                      "props": {}
-                    }
-                  }
-                },
-                "isRequired": false,
-                "initialValue": {}
-              }
-            ]
-          }
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "nextIcon",
-            "zh-CN": "nextIcon"
-          }
-        },
-        "name": "nextIcon",
-        "setter": {
-          "componentName": "MixedSetter",
-          "props": {
-            "setters": [
-              {
-                "componentName": "StringSetter",
-                "isRequired": false,
-                "initialValue": ""
-              },
-              {
-                "componentName": "NumberSetter",
-                "isRequired": false,
-                "initialValue": 0
-              },
-              {
-                "componentName": "BoolSetter",
-                "isRequired": false,
-                "initialValue": false
-              },
-              {
-                "componentName": "ObjectSetter",
-                "props": {
-                  "config": {
-                    "extraSetter": {
-                      "componentName": "MixedSetter",
-                      "isRequired": false,
-                      "props": {}
-                    }
-                  }
-                },
-                "isRequired": false,
-                "initialValue": {}
-              }
-            ]
-          }
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "jumpPrevIcon",
-            "zh-CN": "jumpPrevIcon"
-          }
-        },
-        "name": "jumpPrevIcon",
-        "setter": {
-          "componentName": "MixedSetter",
-          "props": {
-            "setters": [
-              {
-                "componentName": "StringSetter",
-                "isRequired": false,
-                "initialValue": ""
-              },
-              {
-                "componentName": "NumberSetter",
-                "isRequired": false,
-                "initialValue": 0
-              },
-              {
-                "componentName": "BoolSetter",
-                "isRequired": false,
-                "initialValue": false
-              },
-              {
-                "componentName": "ObjectSetter",
-                "props": {
-                  "config": {
-                    "extraSetter": {
-                      "componentName": "MixedSetter",
-                      "isRequired": false,
-                      "props": {}
-                    }
-                  }
-                },
-                "isRequired": false,
-                "initialValue": {}
-              }
-            ]
-          }
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "jumpNextIcon",
-            "zh-CN": "jumpNextIcon"
-          }
-        },
-        "name": "jumpNextIcon",
-        "setter": {
-          "componentName": "MixedSetter",
-          "props": {
-            "setters": [
-              {
-                "componentName": "StringSetter",
-                "isRequired": false,
-                "initialValue": ""
-              },
-              {
-                "componentName": "NumberSetter",
-                "isRequired": false,
-                "initialValue": 0
-              },
-              {
-                "componentName": "BoolSetter",
-                "isRequired": false,
-                "initialValue": false
-              },
-              {
-                "componentName": "ObjectSetter",
-                "props": {
-                  "config": {
-                    "extraSetter": {
-                      "componentName": "MixedSetter",
-                      "isRequired": false,
-                      "props": {}
-                    }
-                  }
-                },
-                "isRequired": false,
-                "initialValue": {}
-              }
-            ]
-          }
-        }
-      }
-    ],
-    "supports": {
-      "className": true,
-      "style": true
-    },
-    "component": {}
-  }
-};
-const snippets: IPublicTypeSnippet[] = [
-  {
-    "title": "Pagination",
-    "screenshot": "",
-    "schema": {
-      "componentName": "Pagination",
-      "props": {}
-    }
-  }
-];
+import snippets from './snippets';
 
 export default {
-  ...PaginationMeta,
-  snippets
+  snippets,
+  componentName: 'Pagination',
+  title: '分页',
+  category: '导航',
+  devMode: 'proCode',
+  npm: {
+    package: 'antdv5-lowcode-materials',
+    version: '0.1.0',
+    exportName: 'Pagination',
+    main: 'src\\index.tsx',
+    destructuring: true,
+    subName: '',
+  },
+  props: [
+    {
+      title: '数据',
+      display: 'block',
+      type: 'group',
+      items: [
+        {
+          name: 'defaultPageSize',
+          title: {
+            label: '默认每页条数',
+            tip: 'defaultPageSize | 默认每页条数',
+          },
+          propType: 'number',
+          setter: 'NumberSetter',
+          defaultValue: 10,
+        },
+        {
+          name: 'pageSize',
+          title: { label: '每页条数', tip: 'pageSize | 每页条数' },
+          propType: 'number',
+          setter: 'NumberSetter',
+          defaultValue: 10,
+        },
+        {
+          name: 'total',
+          title: { label: '数据总数', tip: 'total | 数据总数' },
+          propType: 'number',
+          setter: 'NumberSetter',
+          defaultValue: 15,
+        },
+        {
+          name: 'defaultCurrent',
+          title: {
+            label: '默认当前页',
+            tip: 'defaultCurrent | 默认的当前页数',
+          },
+          propType: 'number',
+          setter: 'NumberSetter',
+          defaultValue: 1,
+        },
+        {
+          name: 'current',
+          title: { label: '当前页数', tip: 'current | 当前页数' },
+          propType: 'number',
+          setter: 'NumberSetter',
+          defaultValue: 1,
+        },
+      ],
+    },
+    {
+      title: '功能',
+      display: 'block',
+      type: 'group',
+      items: [
+        {
+          name: 'disabled',
+          title: {
+            label: '是否禁用',
+            tip: 'disabled | 是否禁用',
+          },
+          propType: 'bool',
+          setter: 'BoolSetter',
+          defaultValue: false,
+        },
+        {
+          name: 'showSizeChanger',
+          title: {
+            label: '页数切换',
+            tip: 'showSizeChanger | 是否展示 pageSize 切换器',
+          },
+          propType: 'bool',
+          setter: 'BoolSetter',
+          defaultValue: false,
+        },
+        {
+          name: 'showQuickJumper',
+          title: {
+            label: '快速跳转',
+            tip: 'showQuickJumper | 是否可以快速跳转至某页',
+          },
+          propType: 'bool',
+          setter: 'BoolSetter',
+          defaultValue: false,
+        },
+        {
+          name: 'hideOnSinglePage',
+          title: {
+            label: '单页隐藏',
+            tip: 'hideOnSinglePage | 只有一页时是否隐藏分页器',
+          },
+          propType: 'bool',
+          setter: 'BoolSetter',
+          defaultValue: false,
+        },
+        {
+          name: 'showLessItems',
+          title: {
+            label: '显示较少页面',
+            tip: 'showLessItems | 是否显示较少页面内容',
+          },
+          propType: 'bool',
+          setter: 'BoolSetter',
+          defaultValue: false,
+        },
+        {
+          name: 'pageSizeOptions',
+          title: {
+            label: '可选分页数',
+            tip: 'pageSizeOptions | 指定 pageSize切换器 可选择的每页条数',
+          },
+          propType: 'object',
+          setter: 'JsonSetter',
+        },
+      ],
+    },
+    {
+      title: '外观',
+      display: 'block',
+      type: 'group',
+      items: [
+        {
+          name: 'simple',
+          title: { label: '简单分页', tip: 'simple | 简单分页' },
+          propType: 'bool',
+          setter: 'BoolSetter',
+          defaultValue: false,
+        },
+        {
+          name: 'size',
+          title: { label: '分页尺寸', tip: 'size | 分页尺寸' },
+          propType: {
+            type: 'oneOf',
+            value: ['default', 'small'],
+          },
+          setter: [
+            {
+              componentName: 'RadioGroupSetter',
+              props: {
+                options: [
+                  {
+                    title: '默认',
+                    value: 'default',
+                  },
+                  {
+                    title: '小',
+                    value: 'small',
+                  },
+                ],
+              },
+            },
+            'VariableSetter',
+          ],
+          defaultValue: 'default',
+        },
+        {
+          name: 'showTotal',
+          title: {
+            label: '显示总数',
+            tip: 'showTotal | 用于显示数据总量和当前数据顺序',
+          },
+          propType: 'func',
+          setter: [
+            {
+              componentName: 'FunctionSetter',
+              props: {
+                template:
+                  'showTotal(total,range,${extParams}){\n// 用于格式化显示表格数据总量\nreturn `共 ${total} 条`;\n}',
+              },
+            },
+            'VariableSetter',
+          ],
+        },
+        {
+          name: 'showTitle',
+          title: {
+            label: '页码提示',
+            tip: 'showTitle | 是否显示原生 tooltip 页码提示',
+          },
+          propType: 'bool',
+          setter: 'BoolSetter',
+          defaultValue: false,
+        },
+        {
+          name: 'responsive',
+          title: {
+            label: '宽度自适应',
+            tip: 'responsive | 当 size 未指定时，根据屏幕宽度自动调整尺寸',
+          },
+          propType: 'bool',
+          setter: 'BoolSetter',
+          defaultValue: false,
+        },
+      ],
+    },
+  ],
+  configure: {
+    supports: {
+      style: true,
+      events: [
+        {
+          name: 'onChange',
+          template:
+            "onChange(page,pageSize,${extParams}){\n// 页码或 pageSize 改变的回调\nconsole.log('onChange',page,pageSize);}",
+        },
+        {
+          name: 'onShowSizeChange',
+          template:
+            "onShowSizeChange(current,size,${extParams}){\n// pageSize 变化的回调\nconsole.log('onShowSizeChange',current,size);}",
+        },
+      ],
+    },
+  },
 };

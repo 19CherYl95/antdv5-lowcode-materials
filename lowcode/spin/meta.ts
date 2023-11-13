@@ -1,221 +1,58 @@
-
-import { IPublicTypeComponentMetadata, IPublicTypeSnippet } from '@alilc/lowcode-types';
-
-const SpinMeta: IPublicTypeComponentMetadata = {
-  "componentName": "Spin",
-  "title": "Spin",
-  "docUrl": "",
-  "screenshot": "",
-  "devMode": "proCode",
-  "npm": {
-    "package": "lowcode-antd-materials",
-    "version": "0.1.0",
-    "exportName": "Spin",
-    "main": "src\\index.tsx",
-    "destructuring": true,
-    "subName": ""
-  },
-  "configure": {
-    "props": [
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "prefixCls",
-            "zh-CN": "prefixCls"
-          }
-        },
-        "name": "prefixCls",
-        "setter": {
-          "componentName": "StringSetter",
-          "isRequired": false,
-          "initialValue": ""
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "rootClassName",
-            "zh-CN": "rootClassName"
-          }
-        },
-        "name": "rootClassName",
-        "setter": {
-          "componentName": "StringSetter",
-          "isRequired": false,
-          "initialValue": ""
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "spinning",
-            "zh-CN": "spinning"
-          }
-        },
-        "name": "spinning",
-        "setter": {
-          "componentName": "BoolSetter",
-          "isRequired": false,
-          "initialValue": false
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "size",
-            "zh-CN": "size"
-          }
-        },
-        "name": "size",
-        "setter": {
-          "componentName": "RadioGroupSetter",
-          "props": {
-            "dataSource": [
-              {
-                "label": "large",
-                "value": "large"
-              },
-              {
-                "label": "small",
-                "value": "small"
-              },
-              {
-                "label": "default",
-                "value": "default"
-              }
-            ],
-            "options": [
-              {
-                "label": "large",
-                "value": "large"
-              },
-              {
-                "label": "small",
-                "value": "small"
-              },
-              {
-                "label": "default",
-                "value": "default"
-              }
-            ]
-          },
-          "initialValue": "large"
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "tip",
-            "zh-CN": "tip"
-          }
-        },
-        "name": "tip",
-        "setter": {
-          "componentName": "SlotSetter",
-          "props": {
-            "mode": "node"
-          },
-          "isRequired": false,
-          "initialValue": {
-            "type": "JSSlot",
-            "value": []
-          }
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "delay",
-            "zh-CN": "delay"
-          }
-        },
-        "name": "delay",
-        "setter": {
-          "componentName": "NumberSetter",
-          "isRequired": false,
-          "initialValue": 0
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "wrapperClassName",
-            "zh-CN": "wrapperClassName"
-          }
-        },
-        "name": "wrapperClassName",
-        "setter": {
-          "componentName": "StringSetter",
-          "isRequired": false,
-          "initialValue": ""
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "indicator",
-            "zh-CN": "indicator"
-          }
-        },
-        "name": "indicator",
-        "setter": {
-          "componentName": "ObjectSetter",
-          "props": {
-            "config": {
-              "extraSetter": {
-                "componentName": "MixedSetter",
-                "isRequired": false,
-                "props": {}
-              }
-            }
-          },
-          "isRequired": false,
-          "initialValue": {}
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "fullscreen",
-            "zh-CN": "fullscreen"
-          }
-        },
-        "name": "fullscreen",
-        "setter": {
-          "componentName": "BoolSetter",
-          "isRequired": false,
-          "initialValue": false
-        }
-      }
-    ],
-    "supports": {
-      "className": true,
-      "style": true
-    },
-    "component": {}
-  }
-};
-const snippets: IPublicTypeSnippet[] = [
-  {
-    "title": "Spin",
-    "screenshot": "",
-    "schema": {
-      "componentName": "Spin",
-      "props": {}
-    }
-  }
-];
+import snippets from './snippets';
 
 export default {
-  ...SpinMeta,
-  snippets
+  snippets,
+  componentName: 'Spin',
+  title: '加载中',
+  category: '反馈',
+  devMode: 'proCode',
+  npm: {
+    package: 'antdv5-lowcode-materials',
+    version: '0.1.0',
+    exportName: 'Spin',
+    main: 'src\\index.tsx',
+    destructuring: true,
+    subName: '',
+  },
+  props: [
+    {
+      name: 'delay',
+      title: { label: '延迟显示', tip: '延迟显示加载效果的时间（防止闪烁）' },
+      propType: 'number',
+    },
+    {
+      name: 'indicator',
+      title: { label: '加载指示符', tip: '加载指示符' },
+      propType: 'node',
+    },
+    {
+      name: 'size',
+      title: {
+        label: '尺寸',
+        tip: '组件大小',
+      },
+      propType: { type: 'oneOf', value: ['small', 'default', 'large'] },
+      defaultValue: 'default',
+    },
+    {
+      name: 'spinning',
+      title: { label: '加载状态', tip: '是否为加载中状态' },
+      propType: 'bool',
+      defaultValue: true,
+    },
+    {
+      name: 'tip',
+      title: { label: '描述文案', tip: '当作为包裹元素时，可以自定义描述文案' },
+      propType: 'string',
+    },
+    {
+      name: 'wrapperClassName',
+      title: { label: '包装器的类属性', tip: '包装器的类属性' },
+      propType: 'string',
+    },
+  ],
+  configure: {
+    component: { isContainer: true },
+    supports: { style: true },
+  },
 };

@@ -8,7 +8,7 @@ const PanelMeta: IPublicTypeComponentMetadata = {
   "screenshot": "",
   "devMode": "proCode",
   "npm": {
-    "package": "lowcode-antd-materials",
+    "package": "antdv5-lowcode-materials",
     "version": "0.1.0",
     "exportName": "Collapse",
     "main": "src\\index.tsx",

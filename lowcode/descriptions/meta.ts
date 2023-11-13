@@ -1,399 +1,228 @@
+import { uuid } from '../_utils/utils';
 
-import { IPublicTypeComponentMetadata, IPublicTypeSnippet } from '@alilc/lowcode-types';
-
-const DescriptionsMeta: IPublicTypeComponentMetadata = {
-  "componentName": "Descriptions",
-  "title": "Descriptions",
-  "docUrl": "",
-  "screenshot": "",
-  "devMode": "proCode",
-  "npm": {
-    "package": "lowcode-antd-materials",
-    "version": "0.1.0",
-    "exportName": "Descriptions",
-    "main": "src\\index.tsx",
-    "destructuring": true,
-    "subName": ""
-  },
-  "configure": {
-    "props": [
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "prefixCls",
-            "zh-CN": "prefixCls"
-          }
-        },
-        "name": "prefixCls",
-        "setter": {
-          "componentName": "StringSetter",
-          "isRequired": false,
-          "initialValue": ""
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "rootClassName",
-            "zh-CN": "rootClassName"
-          }
-        },
-        "name": "rootClassName",
-        "setter": {
-          "componentName": "StringSetter",
-          "isRequired": false,
-          "initialValue": ""
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "bordered",
-            "zh-CN": "bordered"
-          }
-        },
-        "name": "bordered",
-        "setter": {
-          "componentName": "BoolSetter",
-          "isRequired": false,
-          "initialValue": false
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "size",
-            "zh-CN": "size"
-          }
-        },
-        "name": "size",
-        "setter": {
-          "componentName": "RadioGroupSetter",
-          "props": {
-            "dataSource": [
-              {
-                "label": "small",
-                "value": "small"
-              },
-              {
-                "label": "default",
-                "value": "default"
-              },
-              {
-                "label": "middle",
-                "value": "middle"
-              }
-            ],
-            "options": [
-              {
-                "label": "small",
-                "value": "small"
-              },
-              {
-                "label": "default",
-                "value": "default"
-              },
-              {
-                "label": "middle",
-                "value": "middle"
-              }
-            ]
-          },
-          "initialValue": "small"
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "children",
-            "zh-CN": "@deprecate"
-          },
-          "tip": "children | @deprecated use `items` instead"
-        },
-        "name": "children",
-        "description": "@deprecated use `items` instead",
-        "setter": {
-          "componentName": "SlotSetter",
-          "props": {
-            "mode": "node"
-          },
-          "isRequired": false,
-          "initialValue": {
-            "type": "JSSlot",
-            "value": []
-          }
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "title",
-            "zh-CN": "title"
-          }
-        },
-        "name": "title",
-        "setter": {
-          "componentName": "SlotSetter",
-          "props": {
-            "mode": "node"
-          },
-          "isRequired": false,
-          "initialValue": {
-            "type": "JSSlot",
-            "value": []
-          }
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "extra",
-            "zh-CN": "extra"
-          }
-        },
-        "name": "extra",
-        "setter": {
-          "componentName": "SlotSetter",
-          "props": {
-            "mode": "node"
-          },
-          "isRequired": false,
-          "initialValue": {
-            "type": "JSSlot",
-            "value": []
-          }
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "column",
-            "zh-CN": "column"
-          }
-        },
-        "name": "column",
-        "setter": {
-          "componentName": "MixedSetter",
-          "props": {
-            "setters": [
-              {
-                "componentName": "NumberSetter",
-                "isRequired": false,
-                "initialValue": 0
-              },
-              {
-                "componentName": "ObjectSetter",
-                "props": {
-                  "config": {
-                    "extraSetter": {
-                      "componentName": "MixedSetter",
-                      "isRequired": false,
-                      "props": {}
-                    }
-                  }
-                },
-                "isRequired": false,
-                "initialValue": {}
-              }
-            ]
-          }
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "layout",
-            "zh-CN": "layout"
-          }
-        },
-        "name": "layout",
-        "setter": {
-          "componentName": "RadioGroupSetter",
-          "props": {
-            "dataSource": [
-              {
-                "label": "vertical",
-                "value": "vertical"
-              },
-              {
-                "label": "horizontal",
-                "value": "horizontal"
-              }
-            ],
-            "options": [
-              {
-                "label": "vertical",
-                "value": "vertical"
-              },
-              {
-                "label": "horizontal",
-                "value": "horizontal"
-              }
-            ]
-          },
-          "initialValue": "vertical"
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "colon",
-            "zh-CN": "colon"
-          }
-        },
-        "name": "colon",
-        "setter": {
-          "componentName": "BoolSetter",
-          "isRequired": false,
-          "initialValue": false
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "labelStyle",
-            "zh-CN": "labelStyle"
-          }
-        },
-        "name": "labelStyle",
-        "setter": {
-          "componentName": "ObjectSetter",
-          "props": {
-            "config": {
-              "extraSetter": {
-                "componentName": "MixedSetter",
-                "isRequired": false,
-                "props": {}
-              }
-            }
-          },
-          "isRequired": false,
-          "initialValue": {}
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "contentStyle",
-            "zh-CN": "contentStyle"
-          }
-        },
-        "name": "contentStyle",
-        "setter": {
-          "componentName": "ObjectSetter",
-          "props": {
-            "config": {
-              "extraSetter": {
-                "componentName": "MixedSetter",
-                "isRequired": false,
-                "props": {}
-              }
-            }
-          },
-          "isRequired": false,
-          "initialValue": {}
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "items",
-            "zh-CN": "items"
-          }
-        },
-        "name": "items",
-        "setter": {
-          "componentName": "ArraySetter",
-          "props": {
-            "itemSetter": {
-              "componentName": "ObjectSetter",
-              "props": {
-                "config": {
-                  "items": [
-                    {
-                      "title": {
-                        "label": {
-                          "type": "i18n",
-                          "en-US": "span",
-                          "zh-CN": "span"
-                        }
-                      },
-                      "name": "span",
-                      "setter": {
-                        "componentName": "MixedSetter",
-                        "props": {
-                          "setters": [
-                            {
-                              "componentName": "NumberSetter",
-                              "isRequired": false,
-                              "initialValue": 0
-                            },
-                            {
-                              "componentName": "ObjectSetter",
-                              "props": {
-                                "config": {
-                                  "extraSetter": {
-                                    "componentName": "MixedSetter",
-                                    "isRequired": false,
-                                    "props": {}
-                                  }
-                                }
-                              },
-                              "isRequired": false,
-                              "initialValue": {}
-                            }
-                          ]
-                        }
-                      }
-                    }
-                  ],
-                  "extraSetter": {
-                    "componentName": "MixedSetter",
-                    "isRequired": false,
-                    "props": {}
-                  }
-                }
-              }
-            }
-          },
-          "initialValue": []
-        }
-      }
-    ],
-    "supports": {
-      "className": true,
-      "style": true
-    },
-    "component": {
-      "isContainer": true
-    }
-  }
-};
-const snippets: IPublicTypeSnippet[] = [
-  {
-    "title": "Descriptions",
-    "screenshot": "",
-    "schema": {
-      "componentName": "Descriptions",
-      "props": {}
-    }
-  }
-];
+import snippets from './snippets';
 
 export default {
-  ...DescriptionsMeta,
-  snippets
+  snippets,
+  componentName: 'Descriptions',
+  title: '描述列表',
+  category: '数据展示',
+  devMode: 'proCode',
+  npm: {
+    package: 'antdv5-lowcode-materials',
+    version: '0.1.0',
+    exportName: 'Descriptions',
+    main: 'src\\index.tsx',
+    destructuring: true,
+    subName: '',
+  },
+  props: [
+    {
+      name: 'title',
+      title: {
+        label: '标题',
+        tip: '描述列表的标题，显示在最顶部',
+      },
+      propType: {
+        type: 'oneOfType',
+        value: ['string', 'node'],
+      },
+    },
+    {
+      name: 'items',
+      title: {
+        label: '列表项',
+        tip: '列表项',
+      },
+      setter: {
+        componentName: 'ArraySetter',
+        props: {
+          itemSetter: {
+            componentName: 'ObjectSetter',
+            props: {
+              config: {
+                items: [
+                  {
+                    name: 'key',
+                    title: 'key',
+                    setter: 'StringSetter',
+                    initialValue: (val) => val || uuid(),
+                    condition: () => false,
+                  },
+                  {
+                    name: 'label',
+                    title: '标题',
+                    setter: 'StringSetter',
+                    initialValue: '列表项',
+                  },
+                  {
+                    name: 'span',
+                    title: '所占列数',
+                    setter: 'NumberSetter',
+                    initialValue: 1,
+                  },
+                  {
+                    name: 'children',
+                    title: '内容',
+                    setter: {
+                      componentName: 'SlotSetter',
+                      initialValue: {
+                        type: 'JSSlot',
+                        value: [],
+                      },
+                    },
+                  },
+                ],
+              },
+            },
+            initialValue: () => {
+              return {
+                key: uuid(),
+                label: '标签项',
+                span: 1,
+                children: {
+                  type: 'JSSlot',
+                  value: [],
+                },
+              };
+            },
+          },
+        },
+      },
+      extraProps: {
+        getValue(target, fieldValue) {
+          const map = target.node.children.map((child) => {
+            const key = child.getPropValue('key') ? String(child.getPropValue('key')) : child.id;
+            return {
+              key,
+              label: child.getPropValue('label'),
+              span: child.getPropValue('span'),
+              children: child.getPropValue('children'),
+            };
+          });
+          return map;
+        },
+        setValue(target, value) {
+          const { node } = target;
+          const map = {};
+
+          if (!Array.isArray(value)) {
+            value = [];
+          }
+          value.forEach((item) => {
+            const tabItem = Object.assign({}, item);
+            map[item.key] = tabItem;
+          });
+
+          node.children.mergeChildren(
+            (child) => {
+              const key = String(child.getPropValue('key'));
+              if (Object.hasOwnProperty.call(map, key)) {
+                child.setPropValue('label', map[key].label);
+                child.setPropValue('span', map[key].span);
+                child.setPropValue('children', map[key].children);
+                delete map[key];
+                return false;
+              }
+              return true;
+            },
+            () => {
+              const items = [];
+              for (const key in map) {
+                if (Object.hasOwnProperty.call(map, key)) {
+                  items.push({
+                    componentName: 'Descriptions.Item',
+                    props: map[key],
+                  });
+                }
+              }
+              return items;
+            },
+            (child1, child2) => {
+              const a = value.findIndex(
+                (item) => String(item.key) === String(child1.getPropValue('key')),
+              );
+              const b = value.findIndex(
+                (item) => String(item.key) === String(child2.getPropValue('key')),
+              );
+              return a - b;
+            },
+          );
+        },
+        // getValue(target, fieldValue) {
+        //   // const node = target.nodes[0];
+        //   // const children = node.getChildren();
+        //   const map = target.node.children.map(child => {
+        //     return {
+        //       key: child.getPropValue('key') || uuid(),
+        //       label: child.getPropValue('label'),
+        //       span: child.getPropValue('span'),
+        //       children: child.getPropValue('children'),
+        //     };
+        //   });
+        //   return map;
+        // },
+        // setValue(target, value) {
+        //   const node = target.node;
+
+        //   if (!Array.isArray(value)) {
+        //     value = [];
+        //   }
+
+        //   node.children.mergeChildren(
+        //     () => true,
+        //     () => {
+        //       return value.map(item => ({
+        //         componentName: 'Descriptions.Item',
+        //         props: Object.assign({}, item),
+        //       }));
+        //     }
+        //   );
+        // },
+      },
+    },
+    {
+      name: 'bordered',
+      title: { label: '显示边框', tip: '是否展示边框' },
+      propType: 'bool',
+      defaultValue: false,
+    },
+    {
+      name: 'column',
+      title: {
+        label: '列数',
+        tip: '一行的列表项数量',
+      },
+      propType: 'number',
+      defaultValue: 3,
+    },
+    {
+      name: 'size',
+      title: {
+        label: '尺寸',
+        tip:
+          '设置列表的大小。可以设置为 `middle` 、`small`, 或不填（只有设置 `bordered={true}` 生效）',
+      },
+      propType: { type: 'oneOf', value: ['default', 'middle', 'small'] },
+      defaultValue: 'middle',
+    },
+    {
+      name: 'layout',
+      title: { label: '布局方向', tip: '描述布局' },
+      propType: { type: 'oneOf', value: ['horizontal', 'vertical'] },
+      defaultValue: 'horizontal',
+    },
+    {
+      name: 'colon',
+      title: {
+        label: '展示冒号',
+        tip: '配置 `Descriptions.Item` 的 `colon` 的默认值',
+      },
+      propType: 'bool',
+      defaultValue: true,
+    },
+  ],
+  configure: {
+    supports: { style: true },
+  },
 };

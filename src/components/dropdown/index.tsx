@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createElement } from 'react';
 import { Dropdown as OriginalDropdown } from 'antd';
 import { withSingleChild } from '../../utils/hoc';
 

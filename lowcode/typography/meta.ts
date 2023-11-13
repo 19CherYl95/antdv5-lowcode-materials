@@ -1,199 +1,198 @@
-
 import { IPublicTypeComponentMetadata, IPublicTypeSnippet } from '@alilc/lowcode-types';
 
 const TypographyMeta: IPublicTypeComponentMetadata = {
-  "componentName": "Typography",
-  "title": "Typography",
-  "docUrl": "",
-  "screenshot": "",
-  "devMode": "proCode",
-  "npm": {
-    "package": "lowcode-antd-materials",
-    "version": "0.1.0",
-    "exportName": "Typography",
-    "main": "src\\index.tsx",
-    "destructuring": true,
-    "subName": ""
+  componentName: 'Typography',
+  title: 'Typography',
+  docUrl: '',
+  screenshot: '',
+  devMode: 'proCode',
+  npm: {
+    package: 'antdv5-lowcode-materials',
+    version: '0.1.0',
+    exportName: 'Typography',
+    main: 'src\\index.tsx',
+    destructuring: true,
+    subName: '',
   },
-  "configure": {
-    "props": [
+  configure: {
+    props: [
       {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "setContentRef",
-            "zh-CN": "@deprecate"
+        title: {
+          label: {
+            type: 'i18n',
+            'en-US': 'setContentRef',
+            'zh-CN': '@deprecate',
           },
-          "tip": "setContentRef | @deprecated Use `ref` directly if using React 16"
+          tip: 'setContentRef | @deprecated Use `ref` directly if using React 16',
         },
-        "name": "setContentRef",
-        "description": "@deprecated Use `ref` directly if using React 16",
-        "setter": {
-          "componentName": "FunctionSetter"
-        }
+        name: 'setContentRef',
+        description: '@deprecated Use `ref` directly if using React 16',
+        setter: {
+          componentName: 'FunctionSetter',
+        },
       },
       {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "id",
-            "zh-CN": "id"
-          }
+        title: {
+          label: {
+            type: 'i18n',
+            'en-US': 'id',
+            'zh-CN': 'id',
+          },
         },
-        "name": "id",
-        "setter": {
-          "componentName": "StringSetter",
-          "isRequired": false,
-          "initialValue": ""
-        }
+        name: 'id',
+        setter: {
+          componentName: 'StringSetter',
+          isRequired: false,
+          initialValue: '',
+        },
       },
       {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "prefixCls",
-            "zh-CN": "prefixCls"
-          }
+        title: {
+          label: {
+            type: 'i18n',
+            'en-US': 'prefixCls',
+            'zh-CN': 'prefixCls',
+          },
         },
-        "name": "prefixCls",
-        "setter": {
-          "componentName": "StringSetter",
-          "isRequired": false,
-          "initialValue": ""
-        }
+        name: 'prefixCls',
+        setter: {
+          componentName: 'StringSetter',
+          isRequired: false,
+          initialValue: '',
+        },
       },
       {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "rootClassName",
-            "zh-CN": "rootClassName"
-          }
+        title: {
+          label: {
+            type: 'i18n',
+            'en-US': 'rootClassName',
+            'zh-CN': 'rootClassName',
+          },
         },
-        "name": "rootClassName",
-        "setter": {
-          "componentName": "StringSetter",
-          "isRequired": false,
-          "initialValue": ""
-        }
+        name: 'rootClassName',
+        setter: {
+          componentName: 'StringSetter',
+          isRequired: false,
+          initialValue: '',
+        },
       },
       {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "direction",
-            "zh-CN": "direction"
-          }
+        title: {
+          label: {
+            type: 'i18n',
+            'en-US': 'direction',
+            'zh-CN': 'direction',
+          },
         },
-        "name": "direction",
-        "setter": {
-          "componentName": "RadioGroupSetter",
-          "props": {
-            "dataSource": [
+        name: 'direction',
+        setter: {
+          componentName: 'RadioGroupSetter',
+          props: {
+            dataSource: [
               {
-                "label": "rtl",
-                "value": "rtl"
+                label: 'rtl',
+                value: 'rtl',
               },
               {
-                "label": "ltr",
-                "value": "ltr"
-              }
+                label: 'ltr',
+                value: 'ltr',
+              },
             ],
-            "options": [
+            options: [
               {
-                "label": "rtl",
-                "value": "rtl"
+                label: 'rtl',
+                value: 'rtl',
               },
               {
-                "label": "ltr",
-                "value": "ltr"
-              }
-            ]
+                label: 'ltr',
+                value: 'ltr',
+              },
+            ],
           },
-          "initialValue": "rtl"
-        }
+          initialValue: 'rtl',
+        },
       },
       {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "ref",
-            "zh-CN": "ref"
-          }
+        title: {
+          label: {
+            type: 'i18n',
+            'en-US': 'ref',
+            'zh-CN': 'ref',
+          },
         },
-        "name": "ref",
-        "setter": {
-          "componentName": "MixedSetter",
-          "props": {
-            "setters": [
+        name: 'ref',
+        setter: {
+          componentName: 'MixedSetter',
+          props: {
+            setters: [
               {
-                "componentName": "FunctionSetter"
+                componentName: 'FunctionSetter',
               },
               {
-                "componentName": "ObjectSetter",
-                "props": {
-                  "config": {
-                    "extraSetter": {
-                      "componentName": "MixedSetter",
-                      "isRequired": false,
-                      "props": {}
-                    }
-                  }
+                componentName: 'ObjectSetter',
+                props: {
+                  config: {
+                    extraSetter: {
+                      componentName: 'MixedSetter',
+                      isRequired: false,
+                      props: {},
+                    },
+                  },
                 },
-                "isRequired": false,
-                "initialValue": {}
-              }
-            ]
-          }
-        }
+                isRequired: false,
+                initialValue: {},
+              },
+            ],
+          },
+        },
       },
       {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "key",
-            "zh-CN": "key"
-          }
+        title: {
+          label: {
+            type: 'i18n',
+            'en-US': 'key',
+            'zh-CN': 'key',
+          },
         },
-        "name": "key",
-        "setter": {
-          "componentName": "MixedSetter",
-          "props": {
-            "setters": [
+        name: 'key',
+        setter: {
+          componentName: 'MixedSetter',
+          props: {
+            setters: [
               {
-                "componentName": "StringSetter",
-                "isRequired": false,
-                "initialValue": ""
+                componentName: 'StringSetter',
+                isRequired: false,
+                initialValue: '',
               },
               {
-                "componentName": "NumberSetter",
-                "isRequired": false,
-                "initialValue": 0
-              }
-            ]
-          }
-        }
-      }
+                componentName: 'NumberSetter',
+                isRequired: false,
+                initialValue: 0,
+              },
+            ],
+          },
+        },
+      },
     ],
-    "supports": {
-      "className": true,
-      "style": true
+    supports: {
+      className: true,
+      style: true,
     },
-    "component": {}
-  }
+    component: {},
+  },
 };
 const snippets: IPublicTypeSnippet[] = [
   {
-    "title": "Typography",
-    "screenshot": "",
-    "schema": {
-      "componentName": "Typography",
-      "props": {}
-    }
-  }
+    title: 'Typography',
+    screenshot: '',
+    schema: {
+      componentName: 'Typography',
+      props: {},
+    },
+  },
 ];
 
 export default {
   ...TypographyMeta,
-  snippets
+  snippets,
 };

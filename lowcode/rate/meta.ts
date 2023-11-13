@@ -1,405 +1,130 @@
-
-import { IPublicTypeComponentMetadata, IPublicTypeSnippet } from '@alilc/lowcode-types';
-
-const RateMeta: IPublicTypeComponentMetadata = {
-  "componentName": "Rate",
-  "title": "Rate",
-  "docUrl": "",
-  "screenshot": "",
-  "devMode": "proCode",
-  "npm": {
-    "package": "lowcode-antd-materials",
-    "version": "0.1.0",
-    "exportName": "Rate",
-    "main": "src\\index.tsx",
-    "destructuring": true,
-    "subName": ""
-  },
-  "configure": {
-    "props": [
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "rootClassName",
-            "zh-CN": "rootClassName"
-          }
-        },
-        "name": "rootClassName",
-        "setter": {
-          "componentName": "StringSetter",
-          "isRequired": false,
-          "initialValue": ""
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "tooltips",
-            "zh-CN": "tooltips"
-          }
-        },
-        "name": "tooltips",
-        "setter": {
-          "componentName": "ArraySetter",
-          "props": {
-            "itemSetter": {
-              "componentName": "StringSetter",
-              "isRequired": false,
-              "initialValue": ""
-            }
-          },
-          "initialValue": []
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "value",
-            "zh-CN": "value"
-          }
-        },
-        "name": "value",
-        "setter": {
-          "componentName": "NumberSetter",
-          "isRequired": false,
-          "initialValue": 0
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "defaultValue",
-            "zh-CN": "defaultValue"
-          }
-        },
-        "name": "defaultValue",
-        "setter": {
-          "componentName": "NumberSetter",
-          "isRequired": false,
-          "initialValue": 0
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "allowClear",
-            "zh-CN": "allowClear"
-          }
-        },
-        "name": "allowClear",
-        "setter": {
-          "componentName": "BoolSetter",
-          "isRequired": false,
-          "initialValue": false
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "prefixCls",
-            "zh-CN": "prefixCls"
-          }
-        },
-        "name": "prefixCls",
-        "setter": {
-          "componentName": "StringSetter",
-          "isRequired": false,
-          "initialValue": ""
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "onChange",
-            "zh-CN": "onChange"
-          }
-        },
-        "name": "onChange",
-        "setter": {
-          "componentName": "FunctionSetter"
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "onHoverChange",
-            "zh-CN": "onHoverChange"
-          }
-        },
-        "name": "onHoverChange",
-        "setter": {
-          "componentName": "FunctionSetter"
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "tabIndex",
-            "zh-CN": "tabIndex"
-          }
-        },
-        "name": "tabIndex",
-        "setter": {
-          "componentName": "NumberSetter",
-          "isRequired": false,
-          "initialValue": 0
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "onKeyDown",
-            "zh-CN": "onKeyDown"
-          }
-        },
-        "name": "onKeyDown",
-        "setter": {
-          "componentName": "FunctionSetter"
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "onMouseEnter",
-            "zh-CN": "onMouseEnter"
-          }
-        },
-        "name": "onMouseEnter",
-        "setter": {
-          "componentName": "FunctionSetter"
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "onMouseLeave",
-            "zh-CN": "onMouseLeave"
-          }
-        },
-        "name": "onMouseLeave",
-        "setter": {
-          "componentName": "FunctionSetter"
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "id",
-            "zh-CN": "id"
-          }
-        },
-        "name": "id",
-        "setter": {
-          "componentName": "StringSetter",
-          "isRequired": false,
-          "initialValue": ""
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "autoFocus",
-            "zh-CN": "autoFocus"
-          }
-        },
-        "name": "autoFocus",
-        "setter": {
-          "componentName": "BoolSetter",
-          "isRequired": false,
-          "initialValue": false
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "direction",
-            "zh-CN": "direction"
-          }
-        },
-        "name": "direction",
-        "setter": {
-          "componentName": "StringSetter",
-          "isRequired": false,
-          "initialValue": ""
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "count",
-            "zh-CN": "count"
-          }
-        },
-        "name": "count",
-        "setter": {
-          "componentName": "NumberSetter",
-          "isRequired": false,
-          "initialValue": 0
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "disabled",
-            "zh-CN": "disabled"
-          }
-        },
-        "name": "disabled",
-        "setter": {
-          "componentName": "BoolSetter",
-          "isRequired": false,
-          "initialValue": false
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "character",
-            "zh-CN": "character"
-          }
-        },
-        "name": "character",
-        "setter": {
-          "componentName": "MixedSetter",
-          "props": {
-            "setters": [
-              {
-                "componentName": "StringSetter",
-                "isRequired": false,
-                "initialValue": ""
-              },
-              {
-                "componentName": "NumberSetter",
-                "isRequired": false,
-                "initialValue": 0
-              },
-              {
-                "componentName": "BoolSetter",
-                "isRequired": false,
-                "initialValue": false
-              },
-              {
-                "componentName": "ObjectSetter",
-                "props": {
-                  "config": {
-                    "extraSetter": {
-                      "componentName": "MixedSetter",
-                      "isRequired": false,
-                      "props": {}
-                    }
-                  }
-                },
-                "isRequired": false,
-                "initialValue": {}
-              },
-              {
-                "componentName": "FunctionSetter"
-              }
-            ]
-          }
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "characterRender",
-            "zh-CN": "characterRender"
-          }
-        },
-        "name": "characterRender",
-        "setter": {
-          "componentName": "FunctionSetter"
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "allowHalf",
-            "zh-CN": "allowHalf"
-          }
-        },
-        "name": "allowHalf",
-        "setter": {
-          "componentName": "BoolSetter",
-          "isRequired": false,
-          "initialValue": false
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "key",
-            "zh-CN": "key"
-          }
-        },
-        "name": "key",
-        "setter": {
-          "componentName": "MixedSetter",
-          "props": {
-            "setters": [
-              {
-                "componentName": "StringSetter",
-                "isRequired": false,
-                "initialValue": ""
-              },
-              {
-                "componentName": "NumberSetter",
-                "isRequired": false,
-                "initialValue": 0
-              }
-            ]
-          }
-        }
-      }
-    ],
-    "supports": {
-      "style": true,
-      "className": true,
-      "events": [
-        {
-          "name": "onFocus"
-        },
-        {
-          "name": "onBlur"
-        }
-      ]
-    },
-    "component": {}
-  }
-};
-const snippets: IPublicTypeSnippet[] = [
-  {
-    "title": "Rate",
-    "screenshot": "",
-    "schema": {
-      "componentName": "Rate",
-      "props": {}
-    }
-  }
-];
+import snippets from './snippets';
 
 export default {
-  ...RateMeta,
-  snippets
+  snippets,
+  componentName: 'Rate',
+  title: '评分',
+  category: '表单',
+  devMode: 'proCode',
+  npm: {
+    package: 'antdv5-lowcode-materials',
+    version: '0.1.0',
+    exportName: 'Rate',
+    main: 'src\\index.tsx',
+    destructuring: true,
+    subName: '',
+  },
+  props: [
+    {
+      name: 'defaultValue',
+      title: { label: '默认值', tip: '默认值' },
+      propType: 'number',
+      setter: 'NumberSetter',
+    },
+    {
+      name: 'allowClear',
+      title: { label: '支持清除', tip: '是否允许清除' },
+      propType: 'bool',
+      defaultValue: true,
+      setter: 'BoolSetter',
+    },
+    {
+      name: 'allowHalf',
+      title: { label: '支持半选', tip: '支持半选' },
+      propType: 'bool',
+      defaultValue: false,
+      setter: 'BoolSetter',
+    },
+    {
+      name: 'autoFocus',
+      title: { label: '自动聚焦', tip: '自动获取焦点' },
+      propType: 'bool',
+      defaultValue: false,
+      setter: 'BoolSetter',
+    },
+    {
+      name: 'character',
+      title: { label: '符号', tip: '自定义字符' },
+      propType: 'node',
+    },
+    {
+      name: 'count',
+      title: { label: '总数', tip: 'star 总数' },
+      propType: 'number',
+      defaultValue: 5,
+      setter: 'NumberSetter',
+    },
+    // {
+    //   name: 'value',
+    //   title: { label: '当前值', tip: '当前数' },
+    //   propType: 'number',
+    // },
+
+    {
+      name: 'disabled',
+      title: { label: '是否禁用', tip: '是否为禁用状态' },
+      propType: 'bool',
+      defaultValue: false,
+      setter: 'BoolSetter',
+    },
+    {
+      name: 'tooltips',
+      title: { label: '提示信息', tip: '自定义每项的提示信息' },
+      propType: { type: 'arrayOf', value: 'string' },
+    },
+    {
+      name: 'onBlur',
+      title: { label: '失去焦点时的回调', tip: '失去焦点时的回调' },
+      propType: 'func',
+    },
+    {
+      name: 'onChange',
+      title: { label: '选择时的回调', tip: '选择时的回调' },
+      propType: 'func',
+    },
+    {
+      name: 'onFocus',
+      title: { label: '获取焦点时的回调', tip: '获取焦点时的回调' },
+      propType: 'func',
+    },
+    {
+      name: 'onHoverChange',
+      title: { label: '鼠标经过时回调', tip: '鼠标经过时数值变化的回调' },
+      propType: 'func',
+    },
+    {
+      name: 'onKeyDown',
+      title: { label: '按键回调', tip: '按键回调' },
+      propType: 'func',
+    },
+  ],
+  configure: {
+    supports: {
+      style: true,
+      events: [
+        {
+          name: 'onBlur',
+          template: "onBlur(${extParams}){\n// 失去焦点时的回调\nconsole.log('onBlur');}",
+        },
+        {
+          name: 'onChange',
+          template:
+            "onChange(value,${extParams}){\n// 选择时的回调\nconsole.log('onChange',value);}",
+        },
+        {
+          name: 'onFocus',
+          template: "onFocus(${extParams}){\n// 获取焦点时的回调\nconsole.log('onFocus');}",
+        },
+        {
+          name: 'onHoverChange',
+          template:
+            "onHoverChange(value,${extParams}){\n// 鼠标经过时数值变化的回调\nconsole.log('onHoverChange',value);}",
+        },
+        {
+          name: 'onKeyDown',
+          template: "onKeyDown(event,${extParams}){\n// 按键回调\nconsole.log('onKeyDown',event);}",
+        },
+      ],
+    },
+  },
 };

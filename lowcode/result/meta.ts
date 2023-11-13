@@ -1,256 +1,51 @@
-
-import { IPublicTypeComponentMetadata, IPublicTypeSnippet } from '@alilc/lowcode-types';
-
-const ResultMeta: IPublicTypeComponentMetadata = {
-  "componentName": "Result",
-  "title": "Result",
-  "docUrl": "",
-  "screenshot": "",
-  "devMode": "proCode",
-  "npm": {
-    "package": "lowcode-antd-materials",
-    "version": "0.1.0",
-    "exportName": "Result",
-    "main": "src\\index.tsx",
-    "destructuring": true,
-    "subName": ""
-  },
-  "configure": {
-    "props": [
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "icon",
-            "zh-CN": "icon"
-          }
-        },
-        "name": "icon",
-        "setter": {
-          "componentName": "SlotSetter",
-          "props": {
-            "mode": "node"
-          },
-          "isRequired": false,
-          "initialValue": {
-            "type": "JSSlot",
-            "value": []
-          }
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "status",
-            "zh-CN": "status"
-          }
-        },
-        "name": "status",
-        "setter": {
-          "componentName": "SelectSetter",
-          "props": {
-            "dataSource": [
-              {
-                "label": "success",
-                "value": "success"
-              },
-              {
-                "label": "info",
-                "value": "info"
-              },
-              {
-                "label": "warning",
-                "value": "warning"
-              },
-              {
-                "label": "error",
-                "value": "error"
-              },
-              {
-                "label": "403",
-                "value": 403
-              },
-              {
-                "label": "404",
-                "value": 404
-              },
-              {
-                "label": "500",
-                "value": 500
-              },
-              {
-                "label": "403",
-                "value": "403"
-              },
-              {
-                "label": "404",
-                "value": "404"
-              },
-              {
-                "label": "500",
-                "value": "500"
-              }
-            ],
-            "options": [
-              {
-                "label": "success",
-                "value": "success"
-              },
-              {
-                "label": "info",
-                "value": "info"
-              },
-              {
-                "label": "warning",
-                "value": "warning"
-              },
-              {
-                "label": "error",
-                "value": "error"
-              },
-              {
-                "label": "403",
-                "value": 403
-              },
-              {
-                "label": "404",
-                "value": 404
-              },
-              {
-                "label": "500",
-                "value": 500
-              },
-              {
-                "label": "403",
-                "value": "403"
-              },
-              {
-                "label": "404",
-                "value": "404"
-              },
-              {
-                "label": "500",
-                "value": "500"
-              }
-            ]
-          },
-          "initialValue": "success"
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "title",
-            "zh-CN": "title"
-          }
-        },
-        "name": "title",
-        "setter": {
-          "componentName": "SlotSetter",
-          "props": {
-            "mode": "node"
-          },
-          "isRequired": false,
-          "initialValue": {
-            "type": "JSSlot",
-            "value": []
-          }
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "subTitle",
-            "zh-CN": "subTitle"
-          }
-        },
-        "name": "subTitle",
-        "setter": {
-          "componentName": "SlotSetter",
-          "props": {
-            "mode": "node"
-          },
-          "isRequired": false,
-          "initialValue": {
-            "type": "JSSlot",
-            "value": []
-          }
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "extra",
-            "zh-CN": "extra"
-          }
-        },
-        "name": "extra",
-        "setter": {
-          "componentName": "SlotSetter",
-          "props": {
-            "mode": "node"
-          },
-          "isRequired": false,
-          "initialValue": {
-            "type": "JSSlot",
-            "value": []
-          }
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "prefixCls",
-            "zh-CN": "prefixCls"
-          }
-        },
-        "name": "prefixCls",
-        "setter": {
-          "componentName": "StringSetter",
-          "isRequired": false,
-          "initialValue": ""
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "rootClassName",
-            "zh-CN": "rootClassName"
-          }
-        },
-        "name": "rootClassName",
-        "setter": {
-          "componentName": "StringSetter",
-          "isRequired": false,
-          "initialValue": ""
-        }
-      }
-    ],
-    "supports": {
-      "className": true,
-      "style": true
-    },
-    "component": {}
-  }
-};
-const snippets: IPublicTypeSnippet[] = [
-  {
-    "title": "Result",
-    "screenshot": "",
-    "schema": {
-      "componentName": "Result",
-      "props": {}
-    }
-  }
-];
+import snippets from './snippets';
 
 export default {
-  ...ResultMeta,
-  snippets
+  snippets,
+  componentName: 'Result',
+  title: '结果',
+  category: '反馈',
+  devMode: 'proCode',
+  npm: {
+    package: 'antdv5-lowcode-materials',
+    version: '0.1.0',
+    exportName: 'Result',
+    main: 'src\\index.tsx',
+    destructuring: true,
+    subName: '',
+  },
+  props: [
+    {
+      name: 'title',
+      title: { label: '标题', tip: 'title 文字' },
+      propType: 'node',
+    },
+    {
+      name: 'subTitle',
+      title: { label: '副标题', tip: 'subTitle 文字' },
+      propType: 'node',
+    },
+    {
+      name: 'status',
+      title: {
+        label: '状态',
+        tip: '结果的状态，决定图标和颜色',
+      },
+      propType: {
+        type: 'oneOf',
+        value: ['success', 'error', 'info', 'warning', '404', '403', '500'],
+      },
+    },
+    {
+      name: 'icon',
+      title: { label: '自定义 icon', tip: '自定义 icon' },
+      propType: 'node',
+    },
+    {
+      name: 'extra',
+      title: { label: '操作区', tip: '操作区' },
+      propType: 'node',
+    },
+  ],
+  configure: { supports: { style: true } },
 };
