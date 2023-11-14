@@ -9,7 +9,7 @@ export default {
   title: '子菜单',
   devMode: 'proCode',
   npm: {
-    package: 'antdv5-lowcode-materials',
+    package: 'hgj-antd-v5-lowcode-materials',
     version: '0.1.0',
     exportName: 'Menu',
     main: 'src\\index.tsx',

@@ -7,7 +7,7 @@ export default {
   category: '表单',
   devMode: 'proCode',
   npm: {
-    package: 'antdv5-lowcode-materials',
+    package: 'hgj-antd-v5-lowcode-materials',
     version: '0.1.0',
     exportName: 'Form',
     main: 'src\\index.tsx',
@@ -21,7 +21,7 @@ export default {
       isRequired: true,
       propType: 'string',
       setter: 'StringSetter',
-      supportVariable: true
+      supportVariable: true,
     },
     {
       name: 'label',
@@ -58,7 +58,7 @@ export default {
       propType: 'bool',
       defaultValue: true,
       setter: 'BoolSetter',
-      supportVariable: true
+      supportVariable: true,
     },
     {
       name: 'extra',
@@ -85,7 +85,7 @@ export default {
       propType: 'bool',
       defaultValue: false,
       setter: 'BoolSetter',
-      supportVariable: true
+      supportVariable: true,
     },
     // {
     //   name: 'hasFeedback',
@@ -105,7 +105,7 @@ export default {
       },
       propType: 'string',
       setter: 'StringSetter',
-      supportVariable: true
+      supportVariable: true,
     },
     {
       name: 'noStyle',
@@ -116,7 +116,7 @@ export default {
       propType: 'bool',
       defaultValue: false,
       setter: 'BoolSetter',
-      supportVariable: true
+      supportVariable: true,
     },
     {
       name: 'valuePropName',
@@ -127,7 +127,7 @@ export default {
       propType: 'string',
       defaultValue: 'value',
       setter: 'StringSetter',
-      supportVariable: true
+      supportVariable: true,
     },
     {
       name: 'getValueFromEvent',
@@ -235,15 +235,15 @@ export default {
               setValue(target: any, value: boolean) {
                 // 同步 必填标记
                 target.parent.parent.setPropValue('required', value);
-              }
-            }
+              },
+            },
           },
           {
             name: 'message',
             title: '错误信息提示',
             propType: 'string',
             setter: 'StringSetter',
-            supportVariable: true
+            supportVariable: true,
           },
         ],
       },

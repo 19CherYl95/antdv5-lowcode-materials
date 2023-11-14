@@ -1,97 +1,96 @@
-
 import { IPublicTypeComponentMetadata, IPublicTypeSnippet } from '@alilc/lowcode-types';
 
 const ItemGroupMeta: IPublicTypeComponentMetadata = {
-  "componentName": "ItemGroup",
-  "title": "ItemGroup",
-  "docUrl": "",
-  "screenshot": "",
-  "devMode": "proCode",
-  "npm": {
-    "package": "antdv5-lowcode-materials",
-    "version": "0.1.0",
-    "exportName": "Menu",
-    "main": "src\\index.tsx",
-    "destructuring": true,
-    "subName": "ItemGroup"
+  componentName: 'ItemGroup',
+  title: 'ItemGroup',
+  docUrl: '',
+  screenshot: '',
+  devMode: 'proCode',
+  npm: {
+    package: 'hgj-antd-v5-lowcode-materials',
+    version: '0.1.0',
+    exportName: 'Menu',
+    main: 'src\\index.tsx',
+    destructuring: true,
+    subName: 'ItemGroup',
   },
-  "configure": {
-    "props": [
+  configure: {
+    props: [
       {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "title",
-            "zh-CN": "title"
-          }
-        },
-        "name": "title",
-        "setter": {
-          "componentName": "SlotSetter",
-          "props": {
-            "mode": "node"
+        title: {
+          label: {
+            type: 'i18n',
+            'en-US': 'title',
+            'zh-CN': 'title',
           },
-          "isRequired": false,
-          "initialValue": {
-            "type": "JSSlot",
-            "value": []
-          }
-        }
+        },
+        name: 'title',
+        setter: {
+          componentName: 'SlotSetter',
+          props: {
+            mode: 'node',
+          },
+          isRequired: false,
+          initialValue: {
+            type: 'JSSlot',
+            value: [],
+          },
+        },
       },
       {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "eventKey",
-            "zh-CN": "@private I"
+        title: {
+          label: {
+            type: 'i18n',
+            'en-US': 'eventKey',
+            'zh-CN': '@private I',
           },
-          "tip": "eventKey | @private Internal filled key. Do not set it directly"
+          tip: 'eventKey | @private Internal filled key. Do not set it directly',
         },
-        "name": "eventKey",
-        "description": "@private Internal filled key. Do not set it directly",
-        "setter": {
-          "componentName": "StringSetter",
-          "isRequired": false,
-          "initialValue": ""
-        }
+        name: 'eventKey',
+        description: '@private Internal filled key. Do not set it directly',
+        setter: {
+          componentName: 'StringSetter',
+          isRequired: false,
+          initialValue: '',
+        },
       },
       {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "warnKey",
-            "zh-CN": "@private D"
+        title: {
+          label: {
+            type: 'i18n',
+            'en-US': 'warnKey',
+            'zh-CN': '@private D',
           },
-          "tip": "warnKey | @private Do not use. Private warning empty usage"
+          tip: 'warnKey | @private Do not use. Private warning empty usage',
         },
-        "name": "warnKey",
-        "description": "@private Do not use. Private warning empty usage",
-        "setter": {
-          "componentName": "BoolSetter",
-          "isRequired": false,
-          "initialValue": false
-        }
-      }
+        name: 'warnKey',
+        description: '@private Do not use. Private warning empty usage',
+        setter: {
+          componentName: 'BoolSetter',
+          isRequired: false,
+          initialValue: false,
+        },
+      },
     ],
-    "supports": {
-      "style": true,
-      "className": true
+    supports: {
+      style: true,
+      className: true,
     },
-    "component": {}
-  }
+    component: {},
+  },
 };
 const snippets: IPublicTypeSnippet[] = [
   {
-    "title": "ItemGroup",
-    "screenshot": "",
-    "schema": {
-      "componentName": "ItemGroup",
-      "props": {}
-    }
-  }
+    title: 'ItemGroup',
+    screenshot: '',
+    schema: {
+      componentName: 'ItemGroup',
+      props: {},
+    },
+  },
 ];
 
 export default {
   ...ItemGroupMeta,
-  snippets
+  snippets,
 };

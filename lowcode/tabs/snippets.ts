@@ -22,9 +22,9 @@ export default [
               type: 'JSSlot',
               value: [],
             },
-          }
-        ]
-      }
+          },
+        ],
+      },
     },
   },
   {
@@ -50,9 +50,9 @@ export default [
               type: 'JSSlot',
               value: [],
             },
-          }
-        ]
-      }
+          },
+        ],
+      },
     },
   },
   {
@@ -78,9 +78,9 @@ export default [
               type: 'JSSlot',
               value: [],
             },
-          }
-        ]
-      }
+          },
+        ],
+      },
     },
   },
 ];

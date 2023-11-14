@@ -6,7 +6,7 @@ export default [
       componentName: 'Skeleton',
       props: {
         active: true,
-        loading: true 
+        loading: true,
       },
     },
   },

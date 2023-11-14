@@ -9,7 +9,7 @@ export default {
   category: '数据展示',
   devMode: 'proCode',
   npm: {
-    package: 'antdv5-lowcode-materials',
+    package: 'hgj-antd-v5-lowcode-materials',
     version: '0.1.0',
     exportName: 'Timeline',
     main: 'src\\index.tsx',
@@ -91,6 +91,7 @@ export default {
         },
       },
       extraProps: {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         getValue(target, fieldValue, a, b, c) {
           const map = target.node.children.map((child) => {
             const key = child.getPropValue('key') ? String(child.getPropValue('key')) : child.id;

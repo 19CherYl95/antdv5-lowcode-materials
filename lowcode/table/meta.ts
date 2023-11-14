@@ -7,7 +7,7 @@ export default {
   category: '数据展示',
   devMode: 'proCode',
   npm: {
-    package: 'antdv5-lowcode-materials',
+    package: 'hgj-antd-v5-lowcode-materials',
     version: '0.1.0',
     exportName: 'Table',
     main: 'src\\index.tsx',
@@ -210,8 +210,7 @@ export default {
                     name: 'render',
                     title: {
                       label: '自定义渲染',
-                      tip:
-                        'render | 插槽内的物料表达式可通过this.record获取当前行数据，this.index获取索引',
+                      tip: 'render | 插槽内的物料表达式可通过this.record获取当前行数据，this.index获取索引',
                     },
                     propType: 'func',
                     setter: [
@@ -335,7 +334,7 @@ export default {
               if (value) {
                 target.parent.setPropValue('pagination', {
                   pageSize: 10,
-                  size: 'default'
+                  size: 'default',
                 });
               }
             },
@@ -538,8 +537,7 @@ export default {
           name: 'scroll.x',
           title: {
             label: '横向滚动',
-            tip:
-              'scroll.x | 	设置横向滚动，也可用于指定滚动区域的宽，可以设置为像素值，百分比，true 和 max-content',
+            tip: 'scroll.x | 	设置横向滚动，也可用于指定滚动区域的宽，可以设置为像素值，百分比，true 和 max-content',
           },
           propType: { type: 'oneOfType', value: ['number', 'bool'] },
           setter: ['NumberSetter', 'BoolSetter', 'VariableSetter'],
@@ -633,7 +631,10 @@ export default {
         },
         {
           name: 'rowSelection.preserveSelectedRowKeys',
-          title: { label: '保留选项', tip: 'rowSelection.preserveSelectedRowKeys | 当数据被删除时仍然保留选项' },
+          title: {
+            label: '保留选项',
+            tip: 'rowSelection.preserveSelectedRowKeys | 当数据被删除时仍然保留选项',
+          },
           propType: 'bool',
           setter: 'BoolSetter',
           condition: {

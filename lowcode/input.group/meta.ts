@@ -7,7 +7,7 @@ export default {
   category: '表单',
   devMode: 'proCode',
   npm: {
-    package: 'antdv5-lowcode-materials',
+    package: 'hgj-antd-v5-lowcode-materials',
     version: '0.1.0',
     exportName: 'Input',
     main: 'src\\index.tsx',
@@ -19,7 +19,7 @@ export default {
       name: 'compact',
       title: { label: '紧凑模式', tip: '是否用紧凑模式' },
       propType: 'bool',
-      setter: 'BoolSetter'
+      setter: 'BoolSetter',
     },
     {
       name: 'size',

@@ -9,7 +9,7 @@ export default {
   category: '数据展示',
   devMode: 'proCode',
   npm: {
-    package: 'antdv5-lowcode-materials',
+    package: 'hgj-antd-v5-lowcode-materials',
     version: '0.1.0',
     exportName: 'Carousel',
     main: 'src\\index.tsx',
@@ -79,6 +79,7 @@ export default {
         },
       },
       extraProps: {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         getValue(target, fieldValue) {
           console.log('getValue', target.node.children.length);
           const map = target.node.children.map((child) => {

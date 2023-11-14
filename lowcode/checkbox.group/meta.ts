@@ -6,7 +6,7 @@ export default {
   category: '表单',
   devMode: 'proCode',
   npm: {
-    package: 'antdv5-lowcode-materials',
+    package: 'hgj-antd-v5-lowcode-materials',
     version: '0.1.0',
     exportName: 'Checkbox.Group',
     main: 'src\\index.tsx',
@@ -24,10 +24,10 @@ export default {
         props: {
           itemSetter: {
             componentName: 'StringSetter',
-          }
-        }
+          },
+        },
       },
-      supportVariable: true
+      supportVariable: true,
     },
     {
       name: 'value',
@@ -38,10 +38,10 @@ export default {
         props: {
           itemSetter: {
             componentName: 'StringSetter',
-          }
-        }
+          },
+        },
       },
-      supportVariable: true
+      supportVariable: true,
     },
     {
       name: 'disabled',
@@ -49,14 +49,14 @@ export default {
       propType: 'bool',
       defaultValue: false,
       setter: 'BoolSetter',
-      supportVariable: true
+      supportVariable: true,
     },
     {
       name: 'name',
       title: { label: 'name属性', tip: 'name属性' },
       propType: 'string',
       setter: 'StringSetter',
-      supportVariable: true
+      supportVariable: true,
     },
     {
       name: 'options',
@@ -99,13 +99,13 @@ export default {
                     name: 'label',
                     title: '选项名',
                     setter: 'StringSetter',
-                    isRequired: true
+                    isRequired: true,
                   },
                   {
                     name: 'value',
                     title: '选项值',
                     setter: 'StringSetter',
-                    isRequired: true
+                    isRequired: true,
                   },
                   {
                     name: 'disabled',
@@ -125,7 +125,7 @@ export default {
           },
         },
       },
-      supportVariable: true
+      supportVariable: true,
     },
     {
       name: 'onChange',

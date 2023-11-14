@@ -7,7 +7,7 @@ export default {
   category: '表单',
   devMode: 'proCode',
   npm: {
-    package: 'antdv5-lowcode-materials',
+    package: 'hgj-antd-v5-lowcode-materials',
     version: '0.1.0',
     exportName: 'TreeSelect',
     main: 'src\\index.tsx',
@@ -41,7 +41,7 @@ export default {
       title: { label: '支持清除', tip: '是否允许清除' },
       propType: 'bool',
       defaultValue: false,
-      setter: 'BoolSetter'
+      setter: 'BoolSetter',
     },
     {
       name: 'autoClearSearchValue',
@@ -51,21 +51,21 @@ export default {
       },
       propType: 'bool',
       defaultValue: true,
-      setter: 'BoolSetter'
+      setter: 'BoolSetter',
     },
     {
       name: 'bordered',
       title: { label: '显示边框', tip: '是否显示边框' },
       propType: 'bool',
       defaultValue: true,
-      setter: 'BoolSetter'
+      setter: 'BoolSetter',
     },
     {
       name: 'disabled',
       title: { label: '是否禁用', tip: '是否为禁用状态' },
       propType: 'bool',
       defaultValue: false,
-      setter: 'BoolSetter'
+      setter: 'BoolSetter',
     },
     // {
     //   name: 'dropdownClassName',
@@ -82,7 +82,7 @@ export default {
         tip: '下拉菜单和选择器同宽',
       },
       propType: 'bool',
-      setter: 'BoolSetter'
+      setter: 'BoolSetter',
     },
     // {
     //   name: 'dropdownStyle',
@@ -97,25 +97,24 @@ export default {
       },
       propType: {
         type: 'oneOfType',
-        value: ['bool', 'func']
+        value: ['bool', 'func'],
       },
     },
     {
       name: 'labelInValue',
       title: {
         label: '值包含标签',
-        tip:
-          '是否把每个选项的 label 包装到 value 中，会把 value 类型从 `string` 变为 {value: string, label: ReactNode, halfChecked(treeCheckStrictly 时有效): string[] } 的格式',
+        tip: '是否把每个选项的 label 包装到 value 中，会把 value 类型从 `string` 变为 {value: string, label: ReactNode, halfChecked(treeCheckStrictly 时有效): string[] } 的格式',
       },
       propType: 'bool',
       defaultValue: true,
-      setter: 'BoolSetter'
+      setter: 'BoolSetter',
     },
     {
       name: 'listHeight',
       title: { label: '设置弹窗滚动高度', tip: '设置弹窗滚动高度' },
       propType: 'number',
-      setter: 'NumberSetter'
+      setter: 'NumberSetter',
     },
     {
       name: 'loadData',
@@ -126,7 +125,7 @@ export default {
       name: 'maxTagCount',
       title: { label: '最多显示多少个 tag', tip: '最多显示多少个 tag' },
       propType: 'number',
-      setter: 'NumberSetter'
+      setter: 'NumberSetter',
     },
     {
       name: 'maxTagPlaceholder',
@@ -141,20 +140,19 @@ export default {
       },
       propType: 'bool',
       defaultValue: false,
-      setter: 'BoolSetter'
+      setter: 'BoolSetter',
     },
     {
       name: 'placeholder',
       title: { label: '选择框默认文字', tip: '选择框默认文字' },
       propType: 'string',
-      setter: 'StringSetter'
+      setter: 'StringSetter',
     },
     {
       name: 'showCheckedStrategy',
       title: {
         label: '定义选中项回填的方式',
-        tip:
-          '定义选中项回填的方式。`SHOW_ALL`: 显示所有选中节点(包括父节点)。`SHOW_PARENT`: 只显示父节点(当父节点下所有子节点都选中时)。 默认只显示子节点',
+        tip: '定义选中项回填的方式。`SHOW_ALL`: 显示所有选中节点(包括父节点)。`SHOW_PARENT`: 只显示父节点(当父节点下所有子节点都选中时)。 默认只显示子节点',
       },
       propType: {
         type: 'oneOf',
@@ -165,7 +163,7 @@ export default {
       name: 'showSearch',
       title: { label: '是否支持搜索框', tip: '是否支持搜索框' },
       propType: 'bool',
-      setter: 'BoolSetter'
+      setter: 'BoolSetter',
     },
     {
       name: 'size',
@@ -199,7 +197,7 @@ export default {
         tip: '是否显示下拉图标，单选模式下默认 `true`',
       },
       propType: 'bool',
-      setter: 'BoolSetter'
+      setter: 'BoolSetter',
     },
     // {
     //   name: 'suffixIcon',
@@ -216,14 +214,14 @@ export default {
       title: { label: '显示勾选框', tip: '显示勾选框' },
       propType: 'bool',
       defaultValue: false,
-      setter: 'BoolSetter'
+      setter: 'BoolSetter',
     },
     {
       name: 'treeDefaultExpandAll',
       title: { label: '默认展开所有树节点', tip: '默认展开所有树节点' },
       propType: 'bool',
       defaultValue: false,
-      setter: 'BoolSetter'
+      setter: 'BoolSetter',
     },
     {
       name: 'treeDefaultExpandedKeys',
@@ -234,9 +232,9 @@ export default {
         props: {
           itemSetter: {
             componentName: 'StringSetter',
-          }
-        }
-      }
+          },
+        },
+      },
     },
     {
       name: 'treeExpandedKeys',
@@ -247,9 +245,9 @@ export default {
         props: {
           itemSetter: {
             componentName: 'StringSetter',
-          }
-        }
-      }
+          },
+        },
+      },
     },
     {
       name: 'virtual',
@@ -259,7 +257,7 @@ export default {
       },
       propType: 'bool',
       defaultValue: true,
-      setter: 'BoolSetter'
+      setter: 'BoolSetter',
     },
     {
       name: 'onChange',

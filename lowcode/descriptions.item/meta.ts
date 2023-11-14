@@ -3,7 +3,7 @@ export default {
   title: '描述列表项',
   devMode: 'proCode',
   npm: {
-    package: 'antdv5-lowcode-materials',
+    package: 'hgj-antd-v5-lowcode-materials',
     version: '0.1.0',
     exportName: 'Descriptions.Item',
     main: 'src\\index.tsx',

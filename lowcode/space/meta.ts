@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/consistent-type-assertions */
 import { ComponentMetadata } from '@alilc/lowcode-types';
 import snippets from './snippets';
 
@@ -8,7 +9,7 @@ export default {
   category: '布局',
   devMode: 'proCode',
   npm: {
-    package: 'antdv5-lowcode-materials',
+    package: 'hgj-antd-v5-lowcode-materials',
     version: '0.1.0',
     exportName: 'Space',
     main: 'src\\index.tsx',

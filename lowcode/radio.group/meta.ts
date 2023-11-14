@@ -6,7 +6,7 @@ export default {
   category: '表单',
   devMode: 'proCode',
   npm: {
-    package: 'antdv5-lowcode-materials',
+    package: 'hgj-antd-v5-lowcode-materials',
     version: '0.1.0',
     exportName: 'Radio',
     main: 'src\\index.tsx',
@@ -19,14 +19,14 @@ export default {
       title: { label: '默认值', tip: '默认选中值' },
       propType: 'string',
       setter: 'StringSetter',
-      supportVariable: true
+      supportVariable: true,
     },
     {
       name: 'value',
       title: { label: '当前值', tip: '指定选中的选项' },
       propType: 'string',
       setter: 'StringSetter',
-      supportVariable: true
+      supportVariable: true,
     },
     {
       name: 'disabled',
@@ -34,7 +34,7 @@ export default {
       propType: 'bool',
       defaultValue: false,
       setter: 'BoolSetter',
-      supportVariable: true
+      supportVariable: true,
     },
     {
       name: 'name',
@@ -44,7 +44,7 @@ export default {
       },
       propType: 'string',
       setter: 'StringSetter',
-      supportVariable: true
+      supportVariable: true,
     },
     {
       name: 'options',
@@ -87,13 +87,13 @@ export default {
                     name: 'label',
                     title: '选项名',
                     setter: 'StringSetter',
-                    isRequired: true
+                    isRequired: true,
                   },
                   {
                     name: 'value',
                     title: '选项值',
                     setter: 'StringSetter',
-                    isRequired: true
+                    isRequired: true,
                   },
                   {
                     name: 'disabled',

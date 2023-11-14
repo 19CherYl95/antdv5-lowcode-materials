@@ -7,7 +7,7 @@ export default {
   category: '表单',
   devMode: 'proCode',
   npm: {
-    package: 'antdv5-lowcode-materials',
+    package: 'hgj-antd-v5-lowcode-materials',
     version: '0.1.0',
     exportName: 'Radio',
     main: 'src\\index.tsx',
@@ -20,7 +20,7 @@ export default {
       title: { label: '内容', tip: '内容' },
       propType: 'string',
       setter: 'StringSetter',
-      supportVariable: true
+      supportVariable: true,
     },
     {
       name: 'autoFocus',
@@ -28,7 +28,7 @@ export default {
       propType: 'bool',
       defaultValue: false,
       setter: 'BoolSetter',
-      supportVariable: true
+      supportVariable: true,
     },
     {
       name: 'defaultChecked',
@@ -36,7 +36,7 @@ export default {
       propType: 'bool',
       defaultValue: false,
       setter: 'BoolSetter',
-      supportVariable: true
+      supportVariable: true,
     },
     {
       name: 'checked',
@@ -44,7 +44,7 @@ export default {
       propType: 'bool',
       defaultValue: false,
       setter: 'BoolSetter',
-      supportVariable: true
+      supportVariable: true,
     },
     {
       name: 'disabled',
@@ -52,7 +52,7 @@ export default {
       propType: 'bool',
       defaultValue: false,
       setter: 'BoolSetter',
-      supportVariable: true
+      supportVariable: true,
     },
     // {
     //   name: 'value',

@@ -7,7 +7,7 @@ export default {
   category: '反馈',
   devMode: 'proCode',
   npm: {
-    package: 'antdv5-lowcode-materials',
+    package: 'hgj-antd-v5-lowcode-materials',
     version: '0.1.0',
     exportName: 'Skeleton',
     main: 'src\\index.tsx',
@@ -54,8 +54,8 @@ export default {
       defaultValue: false,
     },
   ],
-  configure: { 
+  configure: {
     component: { isContainer: true },
-    supports: { style: true } 
+    supports: { style: true },
   },
 };

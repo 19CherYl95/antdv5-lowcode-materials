@@ -7,7 +7,7 @@ export default {
   category: '表单',
   devMode: 'proCode',
   npm: {
-    package: 'antdv5-lowcode-materials',
+    package: 'hgj-antd-v5-lowcode-materials',
     version: '0.1.0',
     exportName: 'InputNumber',
     main: 'src\\index.tsx',
@@ -32,35 +32,35 @@ export default {
       title: { label: '自动聚焦', tip: '自动获取焦点' },
       propType: 'bool',
       defaultValue: false,
-      setter: 'BoolSetter'
+      setter: 'BoolSetter',
     },
     {
       name: 'disabled',
       title: { label: '是否禁用', tip: '是否为禁用状态' },
       propType: 'bool',
       defaultValue: false,
-      setter: 'BoolSetter'
+      setter: 'BoolSetter',
     },
     {
       name: 'placeholder',
       title: { label: '占位提示', tip: '占位提示' },
       propType: 'string',
       defaultValue: '请输入',
-      setter: 'StringSetter'
+      setter: 'StringSetter',
     },
     {
       name: 'controls',
       title: { label: '是否显示增减按钮', tip: '是否显示增减按钮' },
       propType: 'bool',
       defaultValue: true,
-      setter: 'BoolSetter'
+      setter: 'BoolSetter',
     },
     {
       name: 'bordered',
       title: { label: '显示边框', tip: '是否有边框' },
       propType: 'bool',
       defaultValue: true,
-      setter: 'BoolSetter'
+      setter: 'BoolSetter',
     },
     {
       name: 'addonAfter',
@@ -84,19 +84,19 @@ export default {
       name: 'max',
       title: { label: '最大值', tip: '最大值' },
       propType: 'number',
-      setter: 'NumberSetter'
+      setter: 'NumberSetter',
     },
     {
       name: 'min',
       title: { label: '最小值', tip: '最小值' },
       propType: 'number',
-      setter: 'NumberSetter'
+      setter: 'NumberSetter',
     },
     {
       name: 'precision',
       title: { label: '数值精度', tip: '数值精度' },
       propType: 'number',
-      setter: 'NumberSetter'
+      setter: 'NumberSetter',
     },
     // {
     //   name: 'decimalSeparator',
@@ -132,7 +132,7 @@ export default {
       name: 'step',
       title: { label: '单步长', tip: '每次改变步数' },
       propType: 'number',
-      setter: 'NumberSetter'
+      setter: 'NumberSetter',
     },
     {
       name: 'onChange',

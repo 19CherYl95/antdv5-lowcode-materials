@@ -1,3 +1,6 @@
+/* eslint-disable react/no-unused-prop-types */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-shadow */
 import React, { useState, useEffect, Component, createElement } from 'react';
 // setter使用@alifd/next，和编辑器保持一致
 import { Input, Icon as NextIcon, Radio, Balloon, Search } from '@alifd/next';
@@ -13,14 +16,9 @@ const IconGroupNameMap: Record<IconGroup, string> = {
 };
 
 function getIconfontIconList() {
-  const iframe = document.querySelector<HTMLIFrameElement>(
-    'iframe.lc-simulator-content-frame',
-  )!;
+  const iframe = document.querySelector<HTMLIFrameElement>('iframe.lc-simulator-content-frame')!;
 
-  const antdIcons = get(iframe, 'contentWindow.icons', {}) as Record<
-    string,
-    any
-  >;
+  const antdIcons = get(iframe, 'contentWindow.icons', {}) as Record<string, any>;
 
   // iconfont的js会在页面中添加svg元素
   const symbols = Array.prototype.slice.call(
@@ -29,13 +27,15 @@ function getIconfontIconList() {
     ),
   );
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const Icon = antdIcons.createFromIconfontCN();
 
-  return symbols.map(symbol => {
+  return symbols.map((symbol) => {
     const { id } = symbol;
     return {
       name: id,
       group: 'iconfont',
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       icon: (props: any) => (
         <span role="img" className="anticon">
           <svg
@@ -52,20 +52,16 @@ function getIconfontIconList() {
 }
 
 function getAntdIconList() {
-  const iframe = document.querySelector<HTMLIFrameElement>(
-    'iframe.lc-simulator-content-frame',
-  );
+  const iframe = document.querySelector<HTMLIFrameElement>('iframe.lc-simulator-content-frame');
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const icons: Record<string, any> = {};
 
   // document.querySelectorAll('svg[style="position: absolute; width: 0px; height: 0px; overflow: hidden;"][aria-hidden="true"]')
-  const antdIcons = get(iframe, 'contentWindow.icons', {}) as Record<
-    string,
-    any
-  >;
+  const antdIcons = get(iframe, 'contentWindow.icons', {}) as Record<string, any>;
 
   return Object.keys(antdIcons)
-    .map(key => {
+    .map((key) => {
       const item = (antdIcons as any)[key];
 
       if (typeof item !== 'object') {
@@ -130,8 +126,7 @@ const AntdIconSetter = (props: AntdIconSetterProps) => {
 
   const { value, defaultValue, type, onChange, placeholder, hasClear } = props;
 
-  const _value =
-    typeof value === 'object' ? (value as any)?.props?.type : value;
+  const _value = typeof value === 'object' ? (value as any)?.props?.type : value;
   if (firstLoad && defaultValue && typeof value === 'undefined') {
     onChange(defaultValue);
     setFirstLoad(false);
@@ -156,12 +151,12 @@ const AntdIconSetter = (props: AntdIconSetterProps) => {
     const groups: { group: IconGroup; list: any[] }[] = [];
     const icons: any = {};
 
-    iconList.forEach(item => {
+    iconList.forEach((item) => {
       const { group, name, icon } = item!;
-      if (groups.every(item => item.group !== group)) {
+      if (groups.every((item) => item.group !== group)) {
         groups.push({ group: group as IconGroup, list: [] });
       }
-      const target = groups.find(item => item.group === group)!;
+      const target = groups.find((item) => item.group === group)!;
       target.list.push(item);
       icons[item!.name] = item?.icon;
     });
@@ -172,25 +167,21 @@ const AntdIconSetter = (props: AntdIconSetterProps) => {
   }, []);
 
   useEffect(() => {
-    const currentGroup = groups.find(item => item.group === selectedGroup);
+    const currentGroup = groups.find((item) => item.group === selectedGroup);
     setList(
-      (currentGroup?.list ?? []).filter(item => {
-        return search
-          ? item.name.toLowerCase().indexOf(search.toLowerCase()) > -1
-          : true;
+      (currentGroup?.list ?? []).filter((item) => {
+        return search ? item.name.toLowerCase().indexOf(search.toLowerCase()) > -1 : true;
       }),
     );
   }, [selectedGroup, search, groups]);
 
-  const currentIcon = (
-    <Icon type={_value} icons={icons} style={{ fontSize: 16 }} />
-  );
+  const currentIcon = <Icon type={_value} icons={icons} style={{ fontSize: 16 }} />;
   const clearIcon = hasClear && (
     <NextIcon
       size="xs"
       id="icon-clear"
       type="delete-filling"
-      onClick={e => {
+      onClick={(e) => {
         e.preventDefault();
         e.stopPropagation();
         handleChange('');
@@ -229,9 +220,9 @@ const AntdIconSetter = (props: AntdIconSetterProps) => {
             className="lc-antd-icon-setter-header-style"
             shape="button"
             value={selectedGroup}
-            onChange={value => setSelectedGroup(value as any)}
+            onChange={(value) => setSelectedGroup(value as any)}
           >
-            {groups.map(item => (
+            {groups.map((item) => (
               <Radio key={item.group} value={item.group}>
                 {IconGroupNameMap[item.group]}
               </Radio>
@@ -246,16 +237,14 @@ const AntdIconSetter = (props: AntdIconSetterProps) => {
         </div>
         <div className="lc-antd-icon-setter-content">
           <ul className="lc-antd-icon-setter-list">
-            {list.map(item => (
+            {list.map((item) => (
               <li
                 key={item.name}
                 className="lc-antd-icon-setter-list-item"
                 onClick={() => handleChange(item.name)}
               >
                 <Icon type={item.name} icons={icons} />
-                <div className="lc-antd-icon-setter-list-item-name">
-                  {item.name}
-                </div>
+                <div className="lc-antd-icon-setter-list-item-name">{item.name}</div>
               </li>
             ))}
           </ul>

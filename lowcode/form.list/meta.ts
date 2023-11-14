@@ -7,7 +7,7 @@ export default {
   snippets,
   devMode: 'proCode',
   npm: {
-    package: 'antdv5-lowcode-materials',
+    package: 'hgj-antd-v5-lowcode-materials',
     version: '0.1.0',
     exportName: 'Form',
     main: 'src\\index.tsx',

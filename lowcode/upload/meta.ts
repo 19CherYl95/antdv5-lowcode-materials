@@ -7,7 +7,7 @@ export default {
   category: '表单',
   devMode: 'proCode',
   npm: {
-    package: 'antdv5-lowcode-materials',
+    package: 'hgj-antd-v5-lowcode-materials',
     version: '0.1.0',
     exportName: 'Typography.Upload',
     main: 'src\\index.tsx',
@@ -46,13 +46,9 @@ export default {
                         setter: {
                           componentName: 'SelectSetter',
                           props: {
-                            options: [
-                              'error',
-                              'success',
-                              'done',
-                              'uploading',
-                              'removed',
-                            ].map((v) => ({ label: v, value: v })),
+                            options: ['error', 'success', 'done', 'uploading', 'removed'].map(
+                              (v) => ({ label: v, value: v }),
+                            ),
                           },
                         },
                       },
@@ -104,13 +100,9 @@ export default {
                         setter: {
                           componentName: 'SelectSetter',
                           props: {
-                            options: [
-                              'error',
-                              'success',
-                              'done',
-                              'uploading',
-                              'removed',
-                            ].map((v) => ({ label: v, value: v })),
+                            options: ['error', 'success', 'done', 'uploading', 'removed'].map(
+                              (v) => ({ label: v, value: v }),
+                            ),
                           },
                         },
                       },
@@ -212,8 +204,7 @@ export default {
           name: 'listType',
           title: {
             label: '上传列表样式',
-            tip:
-              'listType | 上传列表的内建样式，支持三种基本样式 `text`, `picture` 和 `picture-card`',
+            tip: 'listType | 上传列表的内建样式，支持三种基本样式 `text`, `picture` 和 `picture-card`',
           },
           propType: {
             type: 'oneOf',

@@ -7,7 +7,7 @@ export default {
   category: '布局',
   devMode: 'proCode',
   npm: {
-    package: 'antdv5-lowcode-materials',
+    package: 'hgj-antd-v5-lowcode-materials',
     version: '0.1.0',
     exportName: 'Row',
     main: 'src\\index.tsx',

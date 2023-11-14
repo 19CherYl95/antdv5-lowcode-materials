@@ -1,87 +1,86 @@
-
 import { IPublicTypeComponentMetadata, IPublicTypeSnippet } from '@alilc/lowcode-types';
 
 const OptionMeta: IPublicTypeComponentMetadata = {
-  "componentName": "Option",
-  "title": "Option",
-  "docUrl": "",
-  "screenshot": "",
-  "devMode": "proCode",
-  "npm": {
-    "package": "antdv5-lowcode-materials",
-    "version": "0.1.0",
-    "exportName": "Mentions",
-    "main": "src\\index.tsx",
-    "destructuring": true,
-    "subName": "Option"
+  componentName: 'Option',
+  title: 'Option',
+  docUrl: '',
+  screenshot: '',
+  devMode: 'proCode',
+  npm: {
+    package: 'hgj-antd-v5-lowcode-materials',
+    version: '0.1.0',
+    exportName: 'Mentions',
+    main: 'src\\index.tsx',
+    destructuring: true,
+    subName: 'Option',
   },
-  "configure": {
-    "props": [
+  configure: {
+    props: [
       {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "value",
-            "zh-CN": "value"
-          }
+        title: {
+          label: {
+            type: 'i18n',
+            'en-US': 'value',
+            'zh-CN': 'value',
+          },
         },
-        "name": "value",
-        "setter": {
-          "componentName": "StringSetter",
-          "isRequired": false,
-          "initialValue": ""
-        }
+        name: 'value',
+        setter: {
+          componentName: 'StringSetter',
+          isRequired: false,
+          initialValue: '',
+        },
       },
       {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "key",
-            "zh-CN": "key"
-          }
+        title: {
+          label: {
+            type: 'i18n',
+            'en-US': 'key',
+            'zh-CN': 'key',
+          },
         },
-        "name": "key",
-        "setter": {
-          "componentName": "StringSetter",
-          "isRequired": false,
-          "initialValue": ""
-        }
+        name: 'key',
+        setter: {
+          componentName: 'StringSetter',
+          isRequired: false,
+          initialValue: '',
+        },
       },
       {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "disabled",
-            "zh-CN": "disabled"
-          }
+        title: {
+          label: {
+            type: 'i18n',
+            'en-US': 'disabled',
+            'zh-CN': 'disabled',
+          },
         },
-        "name": "disabled",
-        "setter": {
-          "componentName": "BoolSetter",
-          "isRequired": false,
-          "initialValue": false
-        }
-      }
+        name: 'disabled',
+        setter: {
+          componentName: 'BoolSetter',
+          isRequired: false,
+          initialValue: false,
+        },
+      },
     ],
-    "supports": {
-      "className": true,
-      "style": true
+    supports: {
+      className: true,
+      style: true,
     },
-    "component": {}
-  }
+    component: {},
+  },
 };
 const snippets: IPublicTypeSnippet[] = [
   {
-    "title": "Option",
-    "screenshot": "",
-    "schema": {
-      "componentName": "Option",
-      "props": {}
-    }
-  }
+    title: 'Option',
+    screenshot: '',
+    schema: {
+      componentName: 'Option',
+      props: {},
+    },
+  },
 ];
 
 export default {
   ...OptionMeta,
-  snippets
+  snippets,
 };

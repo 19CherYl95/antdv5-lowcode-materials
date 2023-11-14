@@ -7,7 +7,7 @@ export default {
   category: '数据展示',
   devMode: 'proCode',
   npm: {
-    package: 'antdv5-lowcode-materials',
+    package: 'hgj-antd-v5-lowcode-materials',
     version: '0.1.0',
     exportName: 'Tree',
     main: 'src\\index.tsx',
@@ -29,14 +29,14 @@ export default {
       title: { label: '是否自动展开父节点', tip: '是否自动展开父节点' },
       propType: 'bool',
       defaultValue: true,
-      setter: 'BoolSetter'
+      setter: 'BoolSetter',
     },
     {
       name: 'blockNode',
       title: { label: '是否节点占据一行', tip: '是否节点占据一行' },
       propType: 'bool',
       defaultValue: false,
-      setter: 'BoolSetter'
+      setter: 'BoolSetter',
     },
     {
       name: 'checkable',
@@ -46,14 +46,13 @@ export default {
       },
       propType: 'bool',
       defaultValue: false,
-      setter: 'BoolSetter'
+      setter: 'BoolSetter',
     },
     {
       name: 'checkedKeys',
       title: {
         label: '复选框节点',
-        tip:
-          '（受控）选中复选框的树节点（注意：父子节点有关联，如果传入父节点 key，则子节点自动选中；相应当子节点 key 都传入，父节点也自动选中。当设置`checkable`和`checkStrictly`，它是一个有`checked`和`halfChecked`属性的对象，并且父子节点的选中与否不再关联',
+        tip: '（受控）选中复选框的树节点（注意：父子节点有关联，如果传入父节点 key，则子节点自动选中；相应当子节点 key 都传入，父节点也自动选中。当设置`checkable`和`checkStrictly`，它是一个有`checked`和`halfChecked`属性的对象，并且父子节点的选中与否不再关联',
       },
       propType: {
         type: 'oneOfType',
@@ -68,7 +67,7 @@ export default {
       },
       propType: 'bool',
       defaultValue: false,
-      setter: 'BoolSetter'
+      setter: 'BoolSetter',
     },
     {
       name: 'defaultCheckedKeys',
@@ -79,8 +78,8 @@ export default {
         props: {
           itemSetter: {
             componentName: 'StringSetter',
-          }
-        }
+          },
+        },
       },
     },
     {
@@ -88,7 +87,7 @@ export default {
       title: { label: '默认展开所有树节点', tip: '默认展开所有树节点' },
       propType: 'bool',
       defaultValue: false,
-      setter: 'BoolSetter'
+      setter: 'BoolSetter',
     },
     {
       name: 'defaultExpandedKeys',
@@ -99,8 +98,8 @@ export default {
         props: {
           itemSetter: {
             componentName: 'StringSetter',
-          }
-        }
+          },
+        },
       },
     },
     {
@@ -108,7 +107,7 @@ export default {
       title: { label: '默认展开父节点', tip: '默认展开父节点' },
       propType: 'bool',
       defaultValue: true,
-      setter: 'BoolSetter'
+      setter: 'BoolSetter',
     },
     {
       name: 'defaultSelectedKeys',
@@ -119,8 +118,8 @@ export default {
         props: {
           itemSetter: {
             componentName: 'StringSetter',
-          }
-        }
+          },
+        },
       },
     },
     {
@@ -128,14 +127,14 @@ export default {
       title: { label: '是否禁用', tip: '是否为禁用状态' },
       propType: 'bool',
       defaultValue: false,
-      setter: 'BoolSetter'
+      setter: 'BoolSetter',
     },
     {
       name: 'draggable',
       title: { label: '节点可拖拽', tip: '设置节点可拖拽（IE>8）' },
       propType: 'bool',
       defaultValue: false,
-      setter: 'BoolSetter'
+      setter: 'BoolSetter',
     },
     {
       name: 'expandedKeys',
@@ -149,8 +148,8 @@ export default {
         props: {
           itemSetter: {
             componentName: 'StringSetter',
-          }
-        }
+          },
+        },
       },
     },
     {
@@ -178,8 +177,8 @@ export default {
         props: {
           itemSetter: {
             componentName: 'StringSetter',
-          }
-        }
+          },
+        },
       },
     },
     {
@@ -190,14 +189,14 @@ export default {
       },
       propType: 'bool',
       defaultValue: false,
-      setter: 'BoolSetter'
+      setter: 'BoolSetter',
     },
     {
       name: 'selectable',
       title: { label: '是否可选中', tip: '是否可选中' },
       propType: 'bool',
       defaultValue: true,
-      setter: 'BoolSetter'
+      setter: 'BoolSetter',
     },
     {
       name: 'selectedKeys',
@@ -211,20 +210,19 @@ export default {
         props: {
           itemSetter: {
             componentName: 'StringSetter',
-          }
-        }
+          },
+        },
       },
     },
     {
       name: 'showIcon',
       title: {
         label: '展示图标',
-        tip:
-          '是否展示 TreeNode title 前的图标，没有默认样式，如设置为 true，需要自行定义图标相关样式',
+        tip: '是否展示 TreeNode title 前的图标，没有默认样式，如设置为 true，需要自行定义图标相关样式',
       },
       propType: 'bool',
       defaultValue: false,
-      setter: 'BoolSetter'
+      setter: 'BoolSetter',
     },
     // {
     //   name: 'switcherIcon',
@@ -247,7 +245,7 @@ export default {
       },
       propType: 'bool',
       defaultValue: true,
-      setter: 'BoolSetter'
+      setter: 'BoolSetter',
     },
     {
       name: 'onCheck',

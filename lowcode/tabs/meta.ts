@@ -9,7 +9,7 @@ export default {
   category: '数据展示',
   devMode: 'proCode',
   npm: {
-    package: 'antdv5-lowcode-materials',
+    package: 'hgj-antd-v5-lowcode-materials',
     version: '0.1.0',
     exportName: 'Tabs',
     main: 'src\\index.tsx',
@@ -33,14 +33,14 @@ export default {
                     title: 'key',
                     setter: 'StringSetter',
                     initialValue: (val) => val || uuid(),
-                    supportVariable: true
+                    supportVariable: true,
                   },
                   {
                     name: 'label',
                     title: '标题',
                     setter: 'StringSetter',
                     initialValue: '标签项',
-                    supportVariable: true
+                    supportVariable: true,
                   },
                   // {
                   //   name: 'closeable',
@@ -56,7 +56,7 @@ export default {
                     title: '禁用',
                     setter: 'BoolSetter',
                     initialValue: false,
-                    supportVariable: true
+                    supportVariable: true,
                   },
                   {
                     name: 'forceRender',
@@ -64,7 +64,7 @@ export default {
                     propType: 'bool',
                     setter: 'BoolSetter',
                     initialValue: false,
-                    supportVariable: true
+                    supportVariable: true,
                   },
                   {
                     name: 'children',
@@ -94,7 +94,7 @@ export default {
             },
           },
         },
-      }
+      },
     },
     // {
     //   name: 'tabs',
@@ -238,7 +238,7 @@ export default {
       },
       propType: 'bool',
       setter: 'BoolSetter',
-      supportVariable: true
+      supportVariable: true,
     },
     // {
     //   name: 'renderTabBar',
@@ -253,7 +253,7 @@ export default {
       },
       propType: 'string',
       setter: 'StringSetter',
-      supportVariable: true
+      supportVariable: true,
     },
     // {
     //   name: 'activeKey',
@@ -272,7 +272,7 @@ export default {
       propType: 'bool',
       setter: 'BoolSetter',
       defaultValue: false,
-      supportVariable: true
+      supportVariable: true,
     },
     {
       name: 'size',
@@ -292,7 +292,7 @@ export default {
       propType: 'bool',
       defaultValue: false,
       setter: 'BoolSetter',
-      supportVariable: true
+      supportVariable: true,
     },
     {
       name: 'tabBarExtraContent',
@@ -304,7 +304,7 @@ export default {
       title: { label: '标签间隙', tip: 'tabs之间的间隙' },
       propType: 'number',
       setter: 'NumberSetter',
-      supportVariable: true
+      supportVariable: true,
     },
     // {
     //   name: 'tabBarStyle',

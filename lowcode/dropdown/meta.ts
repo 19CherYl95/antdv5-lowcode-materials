@@ -7,7 +7,7 @@ export default {
   category: '导航',
   devMode: 'proCode',
   npm: {
-    package: 'antdv5-lowcode-materials',
+    package: 'hgj-antd-v5-lowcode-materials',
     version: '0.1.0',
     exportName: 'Dropdown',
     main: 'src\\index.tsx',
@@ -40,6 +40,7 @@ export default {
         },
       },
       extraProps: {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         getValue(target, fieldValue) {
           const { node } = target;
           let value = node.getPropValue('open');
@@ -97,8 +98,7 @@ export default {
       name: 'placement',
       title: {
         label: '弹出位置',
-        tip:
-          '菜单弹出位置：`bottomLeft` `bottomCenter` `bottomRight` `topLeft` `topCenter` `topRight`',
+        tip: '菜单弹出位置：`bottomLeft` `bottomCenter` `bottomRight` `topLeft` `topCenter` `topRight`',
       },
       propType: {
         type: 'oneOf',

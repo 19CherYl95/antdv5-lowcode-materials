@@ -9,7 +9,7 @@ export default {
   category: '数据展示',
   devMode: 'proCode',
   npm: {
-    package: 'antdv5-lowcode-materials',
+    package: 'hgj-antd-v5-lowcode-materials',
     version: '0.1.0',
     exportName: 'Descriptions',
     main: 'src\\index.tsx',
@@ -90,6 +90,7 @@ export default {
         },
       },
       extraProps: {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         getValue(target, fieldValue) {
           const map = target.node.children.map((child) => {
             const key = child.getPropValue('key') ? String(child.getPropValue('key')) : child.id;
@@ -200,8 +201,7 @@ export default {
       name: 'size',
       title: {
         label: '尺寸',
-        tip:
-          '设置列表的大小。可以设置为 `middle` 、`small`, 或不填（只有设置 `bordered={true}` 生效）',
+        tip: '设置列表的大小。可以设置为 `middle` 、`small`, 或不填（只有设置 `bordered={true}` 生效）',
       },
       propType: { type: 'oneOf', value: ['default', 'middle', 'small'] },
       defaultValue: 'middle',

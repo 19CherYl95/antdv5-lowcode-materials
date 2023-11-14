@@ -9,7 +9,7 @@ export default {
   category: '数据展示',
   devMode: 'proCode',
   npm: {
-    package: 'antdv5-lowcode-materials',
+    package: 'hgj-antd-v5-lowcode-materials',
     version: '0.1.0',
     exportName: 'Collapse',
     main: 'src\\index.tsx',
@@ -23,7 +23,7 @@ export default {
       propType: 'bool',
       defaultValue: true,
       setter: 'BoolSetter',
-      supportVariable: true
+      supportVariable: true,
     },
     {
       name: 'accordion',
@@ -31,7 +31,7 @@ export default {
       propType: 'bool',
       defaultValue: false,
       setter: 'BoolSetter',
-      supportVariable: true
+      supportVariable: true,
     },
     {
       name: 'collapsible',
@@ -57,7 +57,7 @@ export default {
       propType: 'bool',
       defaultValue: false,
       setter: 'BoolSetter',
-      supportVariable: true
+      supportVariable: true,
     },
     {
       name: 'ghost',
@@ -65,7 +65,7 @@ export default {
       propType: 'bool',
       defaultValue: false,
       setter: 'BoolSetter',
-      supportVariable: true
+      supportVariable: true,
     },
     {
       name: 'collapses',
@@ -82,13 +82,13 @@ export default {
                     name: 'key',
                     title: 'key',
                     setter: 'StringSetter',
-                    initialValue: (val) => val || uuid()
+                    initialValue: (val) => val || uuid(),
                   },
                   {
                     name: 'header',
                     title: '面板头内容',
                     setter: 'StringSetter',
-                    initialValue: '折叠项'
+                    initialValue: '折叠项',
                   },
                 ],
               },
@@ -106,6 +106,7 @@ export default {
         },
       },
       extraProps: {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         getValue(target, fieldValue) {
           console.log('getValue', target.node.children.length);
           const map = target.node.children.map((child) => {

@@ -9,7 +9,7 @@ export default {
   category: '表单',
   devMode: 'proCode',
   npm: {
-    package: 'antdv5-lowcode-materials',
+    package: 'hgj-antd-v5-lowcode-materials',
     version: '0.1.0',
     exportName: 'Transfer',
     main: 'src\\index.tsx',
@@ -74,8 +74,8 @@ export default {
       setter: {
         componentName: 'ArraySetter',
         props: {
-          itemSetter: 'StringSetter'
-        }
+          itemSetter: 'StringSetter',
+        },
       },
       supportVariable: true,
     },
@@ -89,8 +89,8 @@ export default {
       setter: {
         componentName: 'ArraySetter',
         props: {
-          itemSetter: 'StringSetter'
-        }
+          itemSetter: 'StringSetter',
+        },
       },
       supportVariable: true,
     },
@@ -160,11 +160,11 @@ export default {
                   ],
                 },
               },
-            }
+            },
           ],
           propType: {
             type: 'oneOfType',
-            value: ['bool', 'object']
+            value: ['bool', 'object'],
           },
           defaultValue: false,
         },
@@ -172,8 +172,7 @@ export default {
           name: 'render',
           title: {
             label: '每行数据渲染函数',
-            tip:
-              '每行数据渲染函数，该函数的入参为 `dataSource` 中的项，返回值为 ReactElement。或者返回一个普通对象，其中 `label` 字段为 ReactElement，`value` 字段为 title',
+            tip: '每行数据渲染函数，该函数的入参为 `dataSource` 中的项，返回值为 ReactElement。或者返回一个普通对象，其中 `label` 字段为 ReactElement，`value` 字段为 title',
           },
           propType: 'func',
           setter: [
@@ -191,8 +190,7 @@ export default {
           name: 'filterOption',
           title: {
             label: '过滤选项',
-            tip:
-              '接收 `inputValue` `option` 两个参数，当 `option` 符合筛选条件时，应返回 true，反之则返回 false',
+            tip: '接收 `inputValue` `option` 两个参数，当 `option` 符合筛选条件时，应返回 true，反之则返回 false',
           },
           propType: 'func',
           setter: [
@@ -226,7 +224,7 @@ export default {
               initialValue: {
                 type: 'JSSlot',
                 value: [],
-                params: ['props', 'info']
+                params: ['props', 'info'],
               },
             },
             'VariableSetter',

@@ -1,193 +1,192 @@
-
 import { IPublicTypeComponentMetadata, IPublicTypeSnippet } from '@alilc/lowcode-types';
 
 const BreadcrumbMeta: IPublicTypeComponentMetadata = {
-  "componentName": "Breadcrumb",
-  "title": "Breadcrumb",
-  "docUrl": "",
-  "screenshot": "",
-  "devMode": "proCode",
-  "npm": {
-    "package": "antdv5-lowcode-materials",
-    "version": "0.1.0",
-    "exportName": "Breadcrumb",
-    "main": "src\\index.tsx",
-    "destructuring": true,
-    "subName": ""
+  componentName: 'Breadcrumb',
+  title: 'Breadcrumb',
+  docUrl: '',
+  screenshot: '',
+  devMode: 'proCode',
+  npm: {
+    package: 'hgj-antd-v5-lowcode-materials',
+    version: '0.1.0',
+    exportName: 'Breadcrumb',
+    main: 'src\\index.tsx',
+    destructuring: true,
+    subName: '',
   },
-  "configure": {
-    "props": [
+  configure: {
+    props: [
       {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "prefixCls",
-            "zh-CN": "prefixCls"
-          }
-        },
-        "name": "prefixCls",
-        "setter": {
-          "componentName": "StringSetter",
-          "isRequired": false,
-          "initialValue": ""
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "params",
-            "zh-CN": "params"
-          }
-        },
-        "name": "params",
-        "setter": {
-          "componentName": "ObjectSetter",
-          "props": {
-            "config": {
-              "extraSetter": {
-                "componentName": "MixedSetter",
-                "isRequired": false,
-                "props": {}
-              }
-            }
+        title: {
+          label: {
+            type: 'i18n',
+            'en-US': 'prefixCls',
+            'zh-CN': 'prefixCls',
           },
-          "isRequired": false,
-          "initialValue": {}
-        }
+        },
+        name: 'prefixCls',
+        setter: {
+          componentName: 'StringSetter',
+          isRequired: false,
+          initialValue: '',
+        },
       },
       {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "separator",
-            "zh-CN": "separator"
-          }
-        },
-        "name": "separator",
-        "setter": {
-          "componentName": "SlotSetter",
-          "props": {
-            "mode": "node"
+        title: {
+          label: {
+            type: 'i18n',
+            'en-US': 'params',
+            'zh-CN': 'params',
           },
-          "isRequired": false,
-          "initialValue": {
-            "type": "JSSlot",
-            "value": []
-          }
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "rootClassName",
-            "zh-CN": "rootClassName"
-          }
         },
-        "name": "rootClassName",
-        "setter": {
-          "componentName": "StringSetter",
-          "isRequired": false,
-          "initialValue": ""
-        }
-      },
-      {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "routes",
-            "zh-CN": "@deprecate"
-          },
-          "tip": "routes | @deprecated Please use `items` instead"
-        },
-        "name": "routes",
-        "description": "@deprecated Please use `items` instead",
-        "setter": {
-          "componentName": "ArraySetter",
-          "props": {
-            "itemSetter": {
-              "componentName": "ObjectSetter",
-              "props": {
-                "config": {
-                  "extraSetter": {
-                    "componentName": "MixedSetter",
-                    "isRequired": false,
-                    "props": {}
-                  }
-                }
+        name: 'params',
+        setter: {
+          componentName: 'ObjectSetter',
+          props: {
+            config: {
+              extraSetter: {
+                componentName: 'MixedSetter',
+                isRequired: false,
+                props: {},
               },
-              "isRequired": false,
-              "initialValue": {}
-            }
+            },
           },
-          "initialValue": []
-        }
+          isRequired: false,
+          initialValue: {},
+        },
       },
       {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "items",
-            "zh-CN": "items"
-          }
+        title: {
+          label: {
+            type: 'i18n',
+            'en-US': 'separator',
+            'zh-CN': 'separator',
+          },
         },
-        "name": "items",
-        "setter": {
-          "componentName": "ArraySetter",
-          "props": {
-            "itemSetter": {
-              "componentName": "ObjectSetter",
-              "props": {
-                "config": {
-                  "extraSetter": {
-                    "componentName": "MixedSetter",
-                    "isRequired": false,
-                    "props": {}
-                  }
-                }
+        name: 'separator',
+        setter: {
+          componentName: 'SlotSetter',
+          props: {
+            mode: 'node',
+          },
+          isRequired: false,
+          initialValue: {
+            type: 'JSSlot',
+            value: [],
+          },
+        },
+      },
+      {
+        title: {
+          label: {
+            type: 'i18n',
+            'en-US': 'rootClassName',
+            'zh-CN': 'rootClassName',
+          },
+        },
+        name: 'rootClassName',
+        setter: {
+          componentName: 'StringSetter',
+          isRequired: false,
+          initialValue: '',
+        },
+      },
+      {
+        title: {
+          label: {
+            type: 'i18n',
+            'en-US': 'routes',
+            'zh-CN': '@deprecate',
+          },
+          tip: 'routes | @deprecated Please use `items` instead',
+        },
+        name: 'routes',
+        description: '@deprecated Please use `items` instead',
+        setter: {
+          componentName: 'ArraySetter',
+          props: {
+            itemSetter: {
+              componentName: 'ObjectSetter',
+              props: {
+                config: {
+                  extraSetter: {
+                    componentName: 'MixedSetter',
+                    isRequired: false,
+                    props: {},
+                  },
+                },
               },
-              "isRequired": false,
-              "initialValue": {}
-            }
+              isRequired: false,
+              initialValue: {},
+            },
           },
-          "initialValue": []
-        }
+          initialValue: [],
+        },
       },
       {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "itemRender",
-            "zh-CN": "itemRender"
-          }
+        title: {
+          label: {
+            type: 'i18n',
+            'en-US': 'items',
+            'zh-CN': 'items',
+          },
         },
-        "name": "itemRender",
-        "setter": {
-          "componentName": "FunctionSetter",
-          "isRequired": false
-        }
-      }
+        name: 'items',
+        setter: {
+          componentName: 'ArraySetter',
+          props: {
+            itemSetter: {
+              componentName: 'ObjectSetter',
+              props: {
+                config: {
+                  extraSetter: {
+                    componentName: 'MixedSetter',
+                    isRequired: false,
+                    props: {},
+                  },
+                },
+              },
+              isRequired: false,
+              initialValue: {},
+            },
+          },
+          initialValue: [],
+        },
+      },
+      {
+        title: {
+          label: {
+            type: 'i18n',
+            'en-US': 'itemRender',
+            'zh-CN': 'itemRender',
+          },
+        },
+        name: 'itemRender',
+        setter: {
+          componentName: 'FunctionSetter',
+          isRequired: false,
+        },
+      },
     ],
-    "supports": {
-      "style": true,
-      "className": true
+    supports: {
+      style: true,
+      className: true,
     },
-    "component": {}
-  }
+    component: {},
+  },
 };
 const snippets: IPublicTypeSnippet[] = [
   {
-    "title": "Breadcrumb",
-    "screenshot": "",
-    "schema": {
-      "componentName": "Breadcrumb",
-      "props": {}
-    }
-  }
+    title: 'Breadcrumb',
+    screenshot: '',
+    schema: {
+      componentName: 'Breadcrumb',
+      props: {},
+    },
+  },
 ];
 
 export default {
   ...BreadcrumbMeta,
-  snippets
+  snippets,
 };

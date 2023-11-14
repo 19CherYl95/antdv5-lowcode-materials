@@ -9,7 +9,7 @@ export default {
   category: '表单',
   devMode: 'proCode',
   npm: {
-    package: 'antdv5-lowcode-materials',
+    package: 'hgj-antd-v5-lowcode-materials',
     version: '0.1.0',
     exportName: 'Select',
     main: 'src\\index.tsx',
@@ -84,13 +84,13 @@ export default {
                     name: 'label',
                     title: '选项名',
                     setter: ['StringSetter', 'VariableSetter'],
-                    isRequired: true
+                    isRequired: true,
                   },
                   {
                     name: 'value',
                     title: '选项值',
                     setter: ['StringSetter', 'NumberSetter', 'VariableSetter'],
-                    isRequired: true
+                    isRequired: true,
                   },
                   {
                     name: 'disabled',
@@ -116,28 +116,28 @@ export default {
       title: { label: '支持清除', tip: '是否允许清除' },
       propType: 'bool',
       defaultValue: false,
-      setter: 'BoolSetter'
+      setter: 'BoolSetter',
     },
     {
       name: 'autoFocus',
       title: { label: '自动聚焦', tip: '默认获取焦点' },
       propType: 'bool',
       defaultValue: false,
-      setter: 'BoolSetter'
+      setter: 'BoolSetter',
     },
     {
       name: 'defaultActiveFirstOption',
       title: { label: '高亮首个选项', tip: '是否默认高亮第一个选项' },
       propType: 'bool',
       defaultValue: true,
-      setter: 'BoolSetter'
+      setter: 'BoolSetter',
     },
     {
       name: 'disabled',
       title: { label: '是否禁用', tip: '是否为禁用状态' },
       propType: 'bool',
       defaultValue: false,
-      setter: 'BoolSetter'
+      setter: 'BoolSetter',
     },
     {
       name: 'labelInValue',
@@ -147,7 +147,7 @@ export default {
       },
       propType: 'bool',
       defaultValue: false,
-      setter: 'BoolSetter'
+      setter: 'BoolSetter',
     },
     {
       name: 'mode',
@@ -193,26 +193,26 @@ export default {
       name: 'notFoundContent',
       title: { label: '搜索为空提示文案', tip: '搜索为空提示文案' },
       propType: 'string',
-      setter: 'StringSetter'
+      setter: 'StringSetter',
     },
     {
       name: 'placeholder',
       title: { label: '选择框默认文字', tip: '选择框默认文字' },
       propType: 'string',
-      setter: 'StringSetter'
+      setter: 'StringSetter',
     },
     {
       name: 'showArrow',
       title: { label: '是否显示下拉箭头', tip: '是否显示下拉小箭头' },
       propType: 'bool',
-      setter: 'BoolSetter'
+      setter: 'BoolSetter',
     },
     {
       name: 'showSearch',
       title: { label: '是否可搜索', tip: '是否可搜索' },
       propType: 'bool',
       defaultValue: false,
-      setter: 'BoolSetter'
+      setter: 'BoolSetter',
     },
     {
       name: 'size',
@@ -244,14 +244,14 @@ export default {
       title: { label: '加载中', tip: '加载中状态' },
       propType: 'bool',
       defaultValue: false,
-      setter: 'BoolSetter'
+      setter: 'BoolSetter',
     },
     {
       name: 'bordered',
       title: { label: '显示边框', tip: '是否有边框' },
       propType: 'bool',
       defaultValue: true,
-      setter: 'BoolSetter'
+      setter: 'BoolSetter',
     },
     {
       name: 'filterOption',

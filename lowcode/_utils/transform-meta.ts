@@ -1,3 +1,5 @@
+/* eslint-disable no-nested-ternary */
+/* eslint-disable no-case-declarations */
 import {
   FieldConfig,
   PropConfig,
@@ -12,10 +14,7 @@ import {
 // http://gitlab.alibaba-inc.com/ali-lowcode/ali-lowcode-engine/merge_requests/1054678
 // 这个MR合并后可以去掉这个文件
 
-function propConfigToFieldConfig(
-  propConfig: PropConfig,
-  supportVariable: boolean,
-): FieldConfig {
+function propConfigToFieldConfig(propConfig: PropConfig, supportVariable: boolean): FieldConfig {
   const { name, description } = propConfig;
   const title = {
     label: {
@@ -26,27 +25,19 @@ function propConfigToFieldConfig(
     tip: description ? `${name} | ${description}` : undefined,
   };
 
-  let setter =
-    (propConfig as any).setter ||
-    propTypeToSetter(propConfig.propType, supportVariable);
+  let setter = (propConfig as any).setter || propTypeToSetter(propConfig.propType, supportVariable);
 
   if (supportVariable && (propConfig as any).supportVariable !== false) {
     if (
       setter.componentName === 'MixedSetter' &&
       setter.props?.setters &&
+      // eslint-disable-next-line @typescript-eslint/no-shadow
       setter.props?.setters?.every((setter: any) => {
-        return (
-          setter?.componentName !== 'VariableSetter' &&
-          setter !== 'VariableSetter'
-        );
+        return setter?.componentName !== 'VariableSetter' && setter !== 'VariableSetter';
       })
     ) {
       setter.props.setters.push('VariableSetter');
-    } else if (
-      setter &&
-      setter !== 'VariableSetter' &&
-      setter.componentName !== 'VariableSetter'
-    ) {
+    } else if (setter && setter !== 'VariableSetter' && setter.componentName !== 'VariableSetter') {
       setter = {
         componentName: 'MixedSetter',
         props: {
@@ -64,10 +55,7 @@ function propConfigToFieldConfig(
   };
 }
 
-function propTypeToSetter(
-  propType: PropType,
-  supportVariable: boolean,
-): SetterType {
+function propTypeToSetter(propType: PropType, supportVariable: boolean): SetterType {
   let typeName: string;
   let isRequired: boolean | undefined = false;
   if (typeof propType === 'string') {
@@ -99,20 +87,15 @@ function propTypeToSetter(
         initialValue: false,
       };
     case 'oneOf':
-      const dataSource = ((propType as OneOf).value || []).map(
-        (value, index) => {
-          const t = typeof value;
-          return {
-            label:
-              t === 'string' || t === 'number' || t === 'boolean'
-                ? String(value)
-                : `value ${index}`,
-            value,
-          };
-        },
-      );
-      const componentName =
-        dataSource.length >= 4 ? 'SelectSetter' : 'RadioGroupSetter';
+      const dataSource = ((propType as OneOf).value || []).map((value, index) => {
+        const t = typeof value;
+        return {
+          label:
+            t === 'string' || t === 'number' || t === 'boolean' ? String(value) : `value ${index}`,
+          value,
+        };
+      });
+      const componentName = dataSource.length >= 4 ? 'SelectSetter' : 'RadioGroupSetter';
       return {
         componentName,
         props: { dataSource, options: dataSource },
@@ -144,10 +127,7 @@ function propTypeToSetter(
         props: {
           config: {
             items,
-            extraSetter:
-              typeName === 'shape'
-                ? propTypeToSetter('any', supportVariable)
-                : null,
+            extraSetter: typeName === 'shape' ? propTypeToSetter('any', supportVariable) : null,
           },
         },
         isRequired,
@@ -155,11 +135,7 @@ function propTypeToSetter(
           const data: any = {};
           items.forEach((item: any) => {
             let initial = item.defaultValue;
-            if (
-              initial == null &&
-              item.setter &&
-              typeof item.setter === 'object'
-            ) {
+            if (initial == null && item.setter && typeof item.setter === 'object') {
               initial = (item.setter as any).initialValue;
             }
             data[item.name] = initial
@@ -233,7 +209,7 @@ function propTypeToSetter(
 const NO_EVENTS = ['beforeUpload'];
 const EVENT_RE = /^on|after|before[A-Z][\w]*$/;
 
-export default function(
+export default function (
   metadata: TransformedComponentMetadata,
   supportVariable: boolean,
 ): TransformedComponentMetadata {
@@ -276,14 +252,11 @@ export default function(
   const supportedEvents: any[] | null = (supports as any).events ? null : [];
   const props: FieldConfig[] = [];
 
-  metadata.props.forEach(prop => {
+  metadata.props.forEach((prop) => {
     const { name, propType, description } = prop;
     if (
       name === 'children' &&
-      (component.isContainer ||
-        propType === 'node' ||
-        propType === 'element' ||
-        propType === 'any')
+      (component.isContainer || propType === 'node' || propType === 'element' || propType === 'any')
     ) {
       if (component.isContainer !== false) {
         component.isContainer = true;

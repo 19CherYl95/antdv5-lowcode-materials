@@ -1,83 +1,82 @@
-
 import { IPublicTypeComponentMetadata, IPublicTypeSnippet } from '@alilc/lowcode-types';
 
 const ErrorBoundaryMeta: IPublicTypeComponentMetadata = {
-  "componentName": "ErrorBoundary",
-  "title": "ErrorBoundary",
-  "docUrl": "",
-  "screenshot": "",
-  "devMode": "proCode",
-  "npm": {
-    "package": "antdv5-lowcode-materials",
-    "version": "0.1.0",
-    "exportName": "Alert",
-    "main": "src\\index.tsx",
-    "destructuring": true,
-    "subName": "ErrorBoundary"
+  componentName: 'ErrorBoundary',
+  title: 'ErrorBoundary',
+  docUrl: '',
+  screenshot: '',
+  devMode: 'proCode',
+  npm: {
+    package: 'hgj-antd-v5-lowcode-materials',
+    version: '0.1.0',
+    exportName: 'Alert',
+    main: 'src\\index.tsx',
+    destructuring: true,
+    subName: 'ErrorBoundary',
   },
-  "configure": {
-    "props": [
+  configure: {
+    props: [
       {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "message",
-            "zh-CN": "message"
-          }
-        },
-        "name": "message",
-        "setter": {
-          "componentName": "SlotSetter",
-          "props": {
-            "mode": "node"
+        title: {
+          label: {
+            type: 'i18n',
+            'en-US': 'message',
+            'zh-CN': 'message',
           },
-          "isRequired": false,
-          "initialValue": {
-            "type": "JSSlot",
-            "value": []
-          }
-        }
+        },
+        name: 'message',
+        setter: {
+          componentName: 'SlotSetter',
+          props: {
+            mode: 'node',
+          },
+          isRequired: false,
+          initialValue: {
+            type: 'JSSlot',
+            value: [],
+          },
+        },
       },
       {
-        "title": {
-          "label": {
-            "type": "i18n",
-            "en-US": "description",
-            "zh-CN": "description"
-          }
-        },
-        "name": "description",
-        "setter": {
-          "componentName": "SlotSetter",
-          "props": {
-            "mode": "node"
+        title: {
+          label: {
+            type: 'i18n',
+            'en-US': 'description',
+            'zh-CN': 'description',
           },
-          "isRequired": false,
-          "initialValue": {
-            "type": "JSSlot",
-            "value": []
-          }
-        }
-      }
+        },
+        name: 'description',
+        setter: {
+          componentName: 'SlotSetter',
+          props: {
+            mode: 'node',
+          },
+          isRequired: false,
+          initialValue: {
+            type: 'JSSlot',
+            value: [],
+          },
+        },
+      },
     ],
-    "supports": {
-      "style": true
+    supports: {
+      style: true,
     },
-    "component": {}
-  }
+    component: {},
+  },
 };
 const snippets: IPublicTypeSnippet[] = [
   {
-    "title": "ErrorBoundary",
-    "screenshot": "",
-    "schema": {
-      "componentName": "ErrorBoundary",
-      "props": {}
-    }
-  }
+    title: 'ErrorBoundary',
+    screenshot: '',
+    schema: {
+      componentName: 'ErrorBoundary',
+      props: {},
+    },
+  },
 ];
 
 export default {
   ...ErrorBoundaryMeta,
-  snippets
+  snippets,
 };

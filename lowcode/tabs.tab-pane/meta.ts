@@ -6,7 +6,7 @@ export default {
   category: '',
   devMode: 'proCode',
   npm: {
-    package: 'antdv5-lowcode-materials',
+    package: 'hgj-antd-v5-lowcode-materials',
     version: '0.1.0',
     exportName: 'Tabs',
     main: 'src\\index.tsx',
@@ -22,7 +22,7 @@ export default {
       },
       propType: 'string',
       setter: 'StringSetter',
-      supportVariable: true
+      supportVariable: true,
     },
     {
       name: 'tab',
@@ -32,7 +32,7 @@ export default {
       },
       propType: 'string',
       setter: 'StringSetter',
-      supportVariable: true
+      supportVariable: true,
     },
     // {
     //   name: 'closeable',
@@ -52,7 +52,7 @@ export default {
       propType: 'bool',
       defaultValue: false,
       setter: 'BoolSetter',
-      supportVariable: true
+      supportVariable: true,
     },
     {
       name: 'forceRender',
@@ -62,7 +62,7 @@ export default {
       },
       propType: 'bool',
       setter: 'BoolSetter',
-      supportVariable: true
+      supportVariable: true,
     },
   ],
   configure: {

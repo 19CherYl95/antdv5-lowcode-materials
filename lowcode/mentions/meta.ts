@@ -7,7 +7,7 @@ export default {
   category: '表单',
   devMode: 'proCode',
   npm: {
-    package: 'antdv5-lowcode-materials',
+    package: 'hgj-antd-v5-lowcode-materials',
     version: '0.1.0',
     exportName: 'Mentions',
     main: 'src\\index.tsx',
@@ -19,14 +19,14 @@ export default {
       name: 'defaultValue',
       title: { label: '默认值', tip: '默认值' },
       propType: 'string',
-      setter: 'StringSetter'
+      setter: 'StringSetter',
     },
     {
       name: 'autoFocus',
       title: { label: '自动聚焦', tip: '自动获得焦点' },
       propType: 'bool',
       defaultValue: false,
-      setter: 'BoolSetter'
+      setter: 'BoolSetter',
     },
     {
       name: 'filterOption',

@@ -7,7 +7,7 @@ export default {
   category: '反馈',
   devMode: 'proCode',
   npm: {
-    package: 'antdv5-lowcode-materials',
+    package: 'hgj-antd-v5-lowcode-materials',
     version: '0.1.0',
     exportName: 'Popconfirm',
     main: 'src\\index.tsx',
@@ -25,14 +25,14 @@ export default {
       title: { label: '确认按钮文字', tip: '确认按钮文字' },
       propType: 'string',
       setter: 'StringSetter',
-      supportVariable: true
+      supportVariable: true,
     },
     {
       name: 'cancelText',
       title: { label: '取消按钮文字', tip: '取消按钮文字' },
       propType: 'string',
       setter: 'StringSetter',
-      supportVariable: true
+      supportVariable: true,
     },
     {
       name: 'onConfirm',

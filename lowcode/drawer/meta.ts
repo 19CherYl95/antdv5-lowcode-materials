@@ -7,7 +7,7 @@ export default {
   category: '反馈',
   devMode: 'proCode',
   npm: {
-    package: 'antdv5-lowcode-materials',
+    package: 'hgj-antd-v5-lowcode-materials',
     version: '0.1.0',
     exportName: 'Drawer',
     main: 'src\\index.tsx',
@@ -216,7 +216,7 @@ export default {
                   componentName: 'Icon',
                   props: {
                     type: 'CloseOutlined',
-                    size: 16
+                    size: 16,
                   },
                 },
               ],

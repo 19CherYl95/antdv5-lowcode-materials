@@ -7,7 +7,7 @@ export default {
   category: '布局',
   devMode: 'proCode',
   npm: {
-    package: 'antdv5-lowcode-materials',
+    package: 'hgj-antd-v5-lowcode-materials',
     version: '0.1.0',
     exportName: 'Divider',
     main: 'src\\index.tsx',
@@ -35,8 +35,7 @@ export default {
       name: 'orientationMargin',
       title: {
         label: '标题边距',
-        tip:
-          '标题和最近 left/right 边框之间的距离，去除了分割线，同时 orientation 必须为 left 或 right',
+        tip: '标题和最近 left/right 边框之间的距离，去除了分割线，同时 orientation 必须为 left 或 right',
       },
       propType: { type: 'oneOfType', value: ['string', 'number'] },
     },
